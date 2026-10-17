@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { DesignMode } from '../components/Layout';
 import { FARM_ANIMALS, FLORAL_GALLERY } from '../data/siteContent';
-import { ReferoHeroFrame, ReferoSageStrip } from '../components/ReferoComponents';
+import {
+  ReferoHeroFrame,
+  ReferoSageStrip,
+  OriginalReferoHeroFrame,
+  OriginalReferoSageStrip
+} from '../components/ReferoComponents';
 
 const FARM_PILLARS = [
   {
@@ -85,7 +90,7 @@ const GATHERINGS_LIST = [
    5. THE FARM PAGE (/the-farm)
 ============================================================================ */
 export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
-  if (mode === 'refero') {
+  if (mode === 'organic') {
     return (
       <div className="bg-[#F4F1EE] text-[#3E3E3E]">
         <ReferoHeroFrame
@@ -202,6 +207,112 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
     );
   }
 
+  if (mode === 'refero') {
+    return (
+      <div className="bg-[#F4F1EE] text-[#3E3E3E]">
+        <OriginalReferoHeroFrame
+          image="/images/34-dji-0656.jpg"
+          imageAlt="Regenerative Farming at Ecomama Farms"
+          eyebrowLeft="WORKING REGENERATIVE RANCH · SANTA YNEZ"
+          headlineLeft="A Living Biodynamic Sanctuary."
+          statementRight="Home to 2,500+ organic heirloom garden roses, heritage stone-fruit orchards, closed-loop composting, and resident farm animals."
+          primaryAction={{ label: 'Explore Organic Florals', to: '/floral' }}
+          secondaryAction={{ label: 'Gatherings & Workshops', to: '/gatherings' }}
+          fullHeight={false}
+        />
+
+        <OriginalReferoSageStrip
+          label="Regenerative Agriculture"
+          statement="100% Chemical-Free Soil Biology · Rotational Grazing · Biodynamic Compost & Vermicompost Fertility"
+          rightLink={{ text: 'Our Sustainability Philosophy', to: '/sustainability' }}
+        />
+
+        <section
+          id="content-start"
+          className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto space-y-24"
+        >
+          {FARM_PILLARS.map((sec, idx) => (
+            <div
+              key={sec.id}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-8 border-t border-[#D9D4CC] first:border-t-0"
+            >
+              <div
+                className={`lg:col-span-5 bg-white rounded-[20px] p-8 border border-[#D9D4CC] space-y-4 ${
+                  idx % 2 === 1 ? 'lg:order-2 lg:mt-12' : ''
+                }`}
+              >
+                <div className="text-[12px] tracking-[-0.03em] text-[#78926E]">
+                  0{idx + 1} / Regenerative Pillar
+                </div>
+                <h2 className="refero-heading-lg text-[#3E3E3E]">{sec.title}</h2>
+                <p className="text-[15px] text-[#78756F] leading-[1.55]">{sec.redesignCopy}</p>
+                <div className="pt-2">
+                  <Link to="/contact" className="refero-ghost-link text-[#3E3E3E]">
+                    <span>Schedule a farm tour</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+
+              <div
+                className={`lg:col-span-7 grid grid-cols-12 gap-5 items-start ${
+                  idx % 2 === 1 ? 'lg:order-1' : ''
+                }`}
+              >
+                <div className="col-span-7 rounded-[20px] overflow-hidden aspect-[4/3] bg-white">
+                  <img
+                    src={sec.images[0]}
+                    alt={sec.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="col-span-5 mt-10 space-y-5">
+                  {sec.images.slice(1, 3).map((img, i) => (
+                    <div
+                      key={i}
+                      className="rounded-[20px] overflow-hidden aspect-[4/3] bg-white"
+                    >
+                      <img
+                        src={img}
+                        alt={`${sec.title} ${i + 2}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Resident Farm Animals Asymmetric Mosaic */}
+          <div className="pt-12 border-t border-[#D9D4CC]">
+            <h2 className="refero-heading-lg text-[#3E3E3E] mb-12">Meet Our Resident Animals</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {FARM_ANIMALS.map((animal, i) => (
+                <div
+                  key={animal.name}
+                  className={`bg-white rounded-[20px] p-5 border border-[#D9D4CC] space-y-3 ${
+                    i % 2 === 1 ? 'lg:mt-8' : ''
+                  }`}
+                >
+                  <div className="rounded-[20px] overflow-hidden aspect-square">
+                    <img
+                      src={animal.image}
+                      alt={animal.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="refero-heading text-[#3E3E3E]">{animal.name}</h3>
+                  <p className="text-[13px] text-[#78756F]">{animal.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div className="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto space-y-16">
       <h1 className="font-serif text-4xl md:text-6xl">The Farm</h1>
@@ -210,9 +321,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           <div key={sec.id} className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5 space-y-4">
               <h2 className="font-serif text-3xl">{sec.title}</h2>
-              <p className="text-sm opacity-80 leading-relaxed">
-                {mode === 'original' ? sec.originalCopy : sec.redesignCopy}
-              </p>
+              <p className="text-sm opacity-80 leading-relaxed">{sec.originalCopy}</p>
             </div>
             <div className="lg:col-span-7 grid grid-cols-2 gap-4">
               {sec.images.slice(0, 2).map((img, i) => (
@@ -235,7 +344,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
    6. GATHERINGS PAGE (/gatherings)
 ============================================================================ */
 export const GatheringsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
-  if (mode === 'refero') {
+  if (mode === 'organic') {
     return (
       <div className="bg-[#F4F1EE] text-[#3E3E3E]">
         <ReferoHeroFrame
@@ -295,6 +404,59 @@ export const GatheringsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
     );
   }
 
+  if (mode === 'refero') {
+    return (
+      <div className="bg-[#F4F1EE] text-[#3E3E3E]">
+        <OriginalReferoHeroFrame
+          image="/images/51-sunkissed-hair-2021-finals-2.jpg"
+          imageAlt="Al Fresco Long Table Gathering at Ecomama Farms"
+          eyebrowLeft="WORKSHOPS, RETREATS & LONG-TABLE DINNERS"
+          headlineLeft="Gatherings Rooted in the Season."
+          statementRight="From floral arranging in the rose fields to candlelit harvest dinners under the oaks."
+          primaryAction={{ label: 'Host a Private Gathering', to: '/contact' }}
+          secondaryAction={{ label: 'Partner With Us', to: '/partner-with-us' }}
+          fullHeight={false}
+        />
+
+        <OriginalReferoSageStrip
+          label="Seasonal Programming"
+          statement="Hands-On Botanical Workshops · Farm-to-Table Harvest Dinners · Executive & Wellness Retreats"
+        />
+
+        <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {GATHERINGS_LIST.map((g, idx) => (
+              <div
+                key={g.title}
+                className={`bg-white rounded-[20px] p-6 md:p-8 border border-[#D9D4CC] space-y-5 ${
+                  idx % 2 === 1 ? 'md:mt-14' : ''
+                }`}
+              >
+                <div className="rounded-[20px] overflow-hidden aspect-[16/10]">
+                  <img src={g.image} alt={g.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="flex items-center justify-between text-[12px] text-[#78926E]">
+                  <span>0{idx + 1} / Gathering Format</span>
+                  <span className="px-3 py-0.5 rounded-[100px] border border-[#D9D4CC] text-[#3E3E3E]">
+                    {g.cadence}
+                  </span>
+                </div>
+                <h2 className="refero-heading text-[#3E3E3E]">{g.title}</h2>
+                <p className="text-[14px] text-[#78756F] leading-[1.45]">{g.description}</p>
+                <div>
+                  <Link to="/contact" className="refero-pill-btn">
+                    <span>Inquire About {g.title}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div className="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto space-y-12">
       <h1 className="font-serif text-4xl md:text-6xl">Gatherings</h1>
@@ -322,7 +484,7 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
       ? FLORAL_GALLERY
       : FLORAL_GALLERY.filter((item) => item.tag === tagFilter);
 
-  if (mode === 'refero') {
+  if (mode === 'organic') {
     return (
       <div className="bg-[#F4F1EE] text-[#3E3E3E]">
         <ReferoHeroFrame
@@ -389,6 +551,76 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   </span>
                 </div>
                 <p className="text-[13.5px] text-[#66625B] font-light">{item.alt}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  if (mode === 'refero') {
+    return (
+      <div className="bg-[#F4F1EE] text-[#3E3E3E]">
+        <OriginalReferoHeroFrame
+          image="/images/55-hanna-carl-wedding-by-rachel-wakefield.jpg"
+          imageAlt="2,500+ Organic Garden Roses at Ecomama Farms"
+          eyebrowLeft="2,500+ ORGANIC GARDEN ROSES · SEED TO CENTERPIECE"
+          headlineLeft="100% Organic Estate Event Florals."
+          statementRight="Grown in living Santa Ynez soils without synthetic chemicals, harvested at peak fragrance for weddings and editorial installations."
+          primaryAction={{ label: 'Request Floral Availability', to: '/contact' }}
+          secondaryAction={{ label: 'Explore the Farm', to: '/the-farm' }}
+          fullHeight={false}
+        />
+
+        <OriginalReferoSageStrip
+          label="Botanical Program"
+          statement="Over 2,500 Heirloom Rose Bushes · Cut to Order Hours Before Your Ceremony · Zero Imported Foam or Chemicals"
+        />
+
+        <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-[#D9D4CC]">
+            <div>
+              <div className="text-[12px] uppercase tracking-[0.14em] text-[#78926E] mb-2">
+                17-Photograph Botanical Lookbook
+              </div>
+              <h2 className="refero-heading-lg text-[#3E3E3E]">Estate Rose &amp; Floral Portfolio</h2>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {tags.map((t) => (
+                <button
+                  key={t}
+                  onClick={() => setTagFilter(t)}
+                  className={`px-4 py-2 rounded-[100px] text-[13px] border transition-colors ${
+                    tagFilter === t
+                      ? 'bg-[#3E3E3E] text-[#F4F1EE] border-[#3E3E3E]'
+                      : 'bg-white text-[#3E3E3E] border-[#D9D4CC]'
+                  }`}
+                >
+                  {t}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {filteredGallery.map((item, idx) => (
+              <div
+                key={item.src}
+                className={`bg-white rounded-[20px] p-5 border border-[#D9D4CC] space-y-3 ${
+                  idx % 3 === 1 ? 'md:mt-10' : idx % 3 === 2 ? 'md:mt-20' : ''
+                }`}
+              >
+                <div className="rounded-[20px] overflow-hidden aspect-[4/5]">
+                  <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
+                </div>
+                <div className="flex items-center justify-between text-[12px] text-[#78926E] pt-1">
+                  <span>0{idx + 1}</span>
+                  <span className="px-2.5 py-0.5 rounded-[100px] border border-[#D9D4CC] text-[#3E3E3E]">
+                    {item.tag}
+                  </span>
+                </div>
+                <p className="text-[13px] text-[#78756F]">{item.alt}</p>
               </div>
             ))}
           </div>

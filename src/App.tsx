@@ -7,7 +7,7 @@ import { ExplorePage, LocalRecommendationsPage, AboutPage, OurStoryPage, Sustain
 import { ContactPage, PartnerWithUsPage, PrivacyPolicyPage } from './pages/ContactAndLegalPages';
 
 export function App() {
-  const [mode, setMode] = useState<DesignMode>('refero');
+  const [mode, setMode] = useState<DesignMode>('organic');
 
   return (
     <Layout mode={mode} setMode={setMode}>

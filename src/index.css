@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  /* Organic Botanical Refero Tokens — Ecomama Farms Palette */
+  /* Ecomama Farms Core Palette */
   --color-warm-cream: #F4F1EE;
   --color-linen-card: #FAF8F4;
   --color-sage-tint: #E9EFE6;
@@ -19,7 +19,7 @@
   --font-display: 'Old Standard TT', Georgia, serif;
   --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Layout & Organic Radii */
+  /* Layout & Radii */
   --page-max-width: 1440px;
   --section-gap: 100px;
   --radius-cards: 24px;
@@ -43,8 +43,11 @@
   }
 }
 
-/* Organic Refero System Scope */
-.refero-system {
+/* ============================================================================
+   1. ORGANIC REFERO MODE (.refero-organic)
+   Botanical, tactile linen (#FAF8F4), soft sage (#E9EFE6), relaxed tracking
+============================================================================ */
+.refero-system.refero-organic {
   background-color: #F4F1EE;
   color: #3E3E3E;
   font-family: 'Poppins', sans-serif;
@@ -52,21 +55,47 @@
   letter-spacing: -0.005em;
 }
 
-.refero-system h1,
-.refero-system h2,
-.refero-system h3,
-.refero-system .font-editorial {
+.refero-system.refero-organic h1,
+.refero-system.refero-organic h2,
+.refero-system.refero-organic h3,
+.refero-system.refero-organic .font-editorial {
   font-family: 'Old Standard TT', Georgia, serif !important;
   letter-spacing: -0.02em;
   line-height: 1.08;
 }
 
+/* ============================================================================
+   2. ORIGINAL REFERO MODE (.refero-original)
+   Refero Lightship fdcd4cbb: #FFFFFF cards, 20px radii, tight -0.04em tracking
+============================================================================ */
+.refero-system.refero-original {
+  background-color: #F4F1EE;
+  color: #3E3E3E;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.refero-system.refero-original h1,
+.refero-system.refero-original h2,
+.refero-system.refero-original h3,
+.refero-system.refero-original .font-editorial {
+  font-family: 'Old Standard TT', Georgia, serif !important;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+/* Shared & Mode-Adaptive Refero Classes */
 .refero-display {
   font-family: 'Old Standard TT', Georgia, serif;
   font-size: clamp(2.75rem, 5vw, 4.4rem);
   line-height: 1.04;
   letter-spacing: -0.022em;
   font-weight: 400;
+}
+
+.refero-original .refero-display {
+  line-height: 1.0;
+  letter-spacing: -0.045em;
 }
 
 .refero-heading-lg {
@@ -77,6 +106,11 @@
   font-weight: 400;
 }
 
+.refero-original .refero-heading-lg {
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
 .refero-heading {
   font-family: 'Old Standard TT', Georgia, serif;
   font-size: clamp(1.6rem, 2.3vw, 2.1rem);
@@ -85,7 +119,11 @@
   font-weight: 400;
 }
 
-/* Tactile Linen Card (replaces stark white SaaS box) */
+.refero-original .refero-heading {
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
 .refero-card {
   background-color: #FAF8F4;
   border-radius: 24px;
@@ -94,10 +132,21 @@
   box-shadow: none !important;
 }
 
+.refero-original .refero-card {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #D9D4CC;
+}
+
 .refero-photo {
   border-radius: 24px;
   overflow: hidden;
   box-shadow: none !important;
+}
+
+.refero-original .refero-photo {
+  border-radius: 20px;
 }
 
 .refero-arch-photo {
@@ -128,6 +177,20 @@
   border-color: #78926E;
 }
 
+.refero-original .refero-pill-btn {
+  padding: 10px 22px;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  border: 1px solid currentColor;
+  background: transparent;
+}
+
+.refero-original .refero-pill-btn:hover {
+  background-color: #3E3E3E;
+  color: #F4F1EE;
+  border-color: #3E3E3E;
+}
+
 .refero-ghost-link {
   display: inline-flex;
   align-items: center;
@@ -145,6 +208,17 @@
 .refero-ghost-link:hover {
   color: #78926E;
   border-bottom-color: #78926E;
+}
+
+.refero-original .refero-ghost-link {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  border-bottom-color: transparent;
+}
+
+.refero-original .refero-ghost-link:hover {
+  color: inherit;
+  border-bottom-color: currentColor;
 }
 
 .refero-pill-input {
@@ -165,6 +239,18 @@
 .refero-pill-input:focus {
   border-color: #78926E !important;
   background-color: #FFFFFF !important;
+}
+
+.refero-original .refero-pill-input {
+  border: 1px solid #D9D4CC !important;
+  background-color: #FFFFFF !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.refero-original .refero-pill-input:focus {
+  border-color: #3E3E3E !important;
 }
 
 /* Soft Bottom-Half Hero Gradient — keeps top half of hero image completely unshaded */

@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Refero (Lightship fdcd4cbb) Tokens Adapted to Ecomama Farms Colors */
+  --color-warm-cream: #F4F1EE;
+  --color-pure-white: #FFFFFF;
+  --color-obsidian: #3E3E3E;
+  --color-pebble: #78756F;
+  --color-driftwood: #999690;
+  --color-mist: #D9D4CC;
+  --color-ecomama-sage: #78926E;
+  --color-ecomama-sage-deep: #4E6745;
+  --color-ecomama-sage-soft: #E3EAE0;
+
+  /* Ecomama Fonts */
+  --font-display: 'Old Standard TT', Georgia, serif;
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Refero Type Scale & Tight Editorial Tracking */
+  --text-caption: 12px;
+  --leading-caption: 1.2;
+  --tracking-caption: -0.03em;
+
+  --text-body-sm: 14px;
+  --leading-body-sm: 1.25;
+  --tracking-body-sm: -0.03em;
+
+  --text-body: 16px;
+  --leading-body: 1.45;
+  --tracking-body: -0.025em;
+
+  --text-body-lg: 20px;
+  --leading-body-lg: 1.35;
+  --tracking-body-lg: -0.03em;
+
+  --text-subheading: 22px;
+  --leading-subheading: 1.2;
+  --tracking-subheading: -0.03em;
+
+  --text-heading-sm: 24px;
+  --leading-heading-sm: 1.2;
+  --tracking-heading-sm: -0.03em;
+
+  --text-heading: 34px;
+  --leading-heading: 1.15;
+  --tracking-heading: -0.03em;
+
+  --text-heading-lg: 48px;
+  --leading-heading-lg: 1.02;
+  --tracking-heading-lg: -0.045em;
+
+  --text-display: 72px;
+  --leading-display: 1.0;
+  --tracking-display: -0.05em;
+
+  /* Refero Spacing & Layout */
+  --page-max-width: 1440px;
+  --section-gap: 100px;
+  --card-padding: 24px;
+  --element-gap: 16px;
+
+  /* Refero Named Radii */
+  --radius-cards: 20px;
+  --radius-images: 20px;
+  --radius-inputs: 100px;
+  --radius-buttons: 100px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-warm-cream);
+    color: var(--color-obsidian);
+    font-family: var(--font-sans);
+  }
+}
+
+/* Refero Mode Global Scope Overrides:
+   When inside .refero-system, enforce Ecomama fonts, 20px card/image radii,
+   100px pill interactive elements, flat zero-shadow surfaces, and tight tracking */
+.refero-system {
+  background-color: #F4F1EE;
+  color: #3E3E3E;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.refero-system h1,
+.refero-system h2,
+.refero-system h3,
+.refero-system .font-editorial {
+  font-family: 'Old Standard TT', Georgia, serif !important;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.refero-system .font-sans-ui,
+.refero-system p,
+.refero-system span,
+.refero-system a,
+.refero-system button,
+.refero-system input,
+.refero-system select,
+.refero-system textarea {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Refero Reusable Classes */
+.refero-display {
+  font-family: 'Old Standard TT', Georgia, serif;
+  font-size: clamp(2.75rem, 5.2vw, 4.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.045em;
+  font-weight: 400;
+}
+
+.refero-heading-lg {
+  font-family: 'Old Standard TT', Georgia, serif;
+  font-size: clamp(2.1rem, 3.6vw, 3rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+}
+
+.refero-heading {
+  font-family: 'Old Standard TT', Georgia, serif;
+  font-size: clamp(1.65rem, 2.5vw, 2.125rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+
+.refero-card {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #D9D4CC;
+  box-shadow: none !important;
+}
+
+.refero-photo {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: none !important;
+}
+
+.refero-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 10px 22px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  border: 1px solid currentColor;
+  background: transparent;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.refero-pill-btn:hover {
+  background-color: #3E3E3E;
+  color: #F4F1EE;
+  border-color: #3E3E3E;
+}
+
+.refero-ghost-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.refero-ghost-link:hover {
+  border-bottom-color: currentColor;
+}
+
+.refero-pill-input {
+  width: 100%;
+  border-radius: 100px !important;
+  border: 1px solid #D9D4CC !important;
+  background-color: #FFFFFF !important;
+  padding: 14px 22px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 15px !important;
+  letter-spacing: -0.02em !important;
+  color: #3E3E3E !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease;
+}
+
+.refero-pill-input:focus {
+  border-color: #3E3E3E !important;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F1EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4BDB2;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #78926E;
+}

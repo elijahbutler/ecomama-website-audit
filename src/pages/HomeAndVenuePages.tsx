@@ -6,6 +6,7 @@ import { VIGNETTES_FACILITIES, VIGNETTES_PHOTO_OPS } from '../data/siteContent';
 import {
   ReferoHeroFrame,
   ReferoSageStrip,
+  BrandKitBotanicalSeal,
   OriginalReferoHeroFrame,
   OriginalReferoSageStrip
 } from '../components/ReferoComponents';
@@ -14,6 +15,8 @@ const SERVICE_TIERS = [
   {
     title: 'The Estate Wedding',
     subtitle: 'Full-Service Planning & Floral Design',
+    stamp: 'K I L N   &   G A R D E N   T I E R   I',
+    botanical: '/images/brandkit/illustration-04.png',
     image: '/images/29-val-and-blake-wedding-preview-1.jpg',
     description:
       'Our signature bespoke experience: unhurried access across all six estate spaces, in-house wedding planning, seasonal culinary curation, and 100% organic garden rose florals harvested on-site.',
@@ -27,6 +30,8 @@ const SERVICE_TIERS = [
   {
     title: 'Partial Planning & Curation',
     subtitle: 'Collaborative Estate Guidance',
+    stamp: 'K I L N   &   G A R D E N   T I E R   I I',
+    botanical: '/images/brandkit/illustration-02.png',
     image: '/images/30-jt-ally-photo.jpg',
     description:
       'Ideal for couples who have begun their planning journey and wish to partner with our Santa Ynez estate team for artisan vendor integration, garden flow, floral design, and effortless execution.',
@@ -40,6 +45,8 @@ const SERVICE_TIERS = [
   {
     title: 'Private Estate Buyout',
     subtitle: 'The Sanctuary Canvas',
+    stamp: 'K I L N   &   G A R D E N   T I E R   I I I',
+    botanical: '/images/brandkit/illustration-06.png',
     image: '/images/18-sb5-52.jpg',
     description:
       'Exclusive access to Ecomama Farms’ ceremony rose gardens, terraced reception lawn, Rose Barn, and Mountain View Barn for couples working with their own full-service planner.',
@@ -52,65 +59,107 @@ const SERVICE_TIERS = [
   }
 ];
 
+const BRANDKIT_ROSE_SPECIMENS = [
+  {
+    id: 'NO. 01',
+    name: 'Apricot Clay Tea Rose',
+    notes: 'Warm terracotta petal heart · Late spring harvest',
+    img: '/images/brandkit/illustration-01.png'
+  },
+  {
+    id: 'NO. 02',
+    name: 'Parchment Alba Heirloom',
+    notes: 'Unbleached linen bloom · Honeyed myrrh scent',
+    img: '/images/brandkit/illustration-02.png'
+  },
+  {
+    id: 'NO. 03',
+    name: 'Sun-Baked Ochre Austin',
+    notes: 'Kiln-fired amber rosette · Gathered at dawn',
+    img: '/images/brandkit/illustration-04.png'
+  },
+  {
+    id: 'NO. 04',
+    name: 'Velvet Damask Cutting',
+    notes: 'Deep botanical crimson · Long-stem apothecary rose',
+    img: '/images/brandkit/illustration-06.png'
+  },
+  {
+    id: 'NO. 05',
+    name: 'Long-Stemmed Garden Sprig',
+    notes: 'Hand-pruned stem with wild olive-toned foliage',
+    img: '/images/brandkit/illustration-08.png'
+  },
+  {
+    id: 'NO. 06',
+    name: 'Pressed Herbarium Bough',
+    notes: 'Botanical field study · Santa Ynez sanctuary',
+    img: '/images/brandkit/illustration-09.png'
+  }
+];
+
 /* ============================================================================
    1. HOME PAGE (/ and /home)
 ============================================================================ */
 export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
   if (mode === 'organic') {
     return (
-      <div className="bg-[#F4F1EE] text-[#3E3E3E]">
+      <div className="text-[#0E2725]">
         {/* 1. Full-Bleed Hero Frame with Soft Bottom-Half Gradient (Top half completely unshaded) */}
         <ReferoHeroFrame
           image="/images/02-screenshot-2026-03-30-at-2-37-39-pm.png"
           imageAlt="Aerial view of Ecomama Farms in the Santa Ynez Valley"
-          eyebrowLeft="In the Heart of the Santa Ynez Valley"
+          eyebrowLeft="Santa Ynez Valley · Vintage Rose Farm & Bespoke Estate"
           headlineLeft="Where Earth’s Beauty & Memorable Gatherings Converge."
-          statementRight="A working biodynamic rose sanctuary and private California ranch estate for bespoke weddings & gatherings."
-          subcaptionRight="Welcome to our lush 30+ acre sanctuary, dedicated to regenerative agriculture, heirloom roses, and unforgettable celebrations."
+          statementRight="A tactile, homegrown sanctuary of heirloom garden roses, hand-thrown stoneware tables, and bespoke California ranch celebrations."
+          subcaptionRight="Welcome to our lush 30+ acre biodynamic farmstead in the Santa Ynez Valley—tended by hand, rooted in living clay, and opened with warmth for unforgettable gatherings."
           primaryAction={{ label: 'Explore the Estate', to: '/venue' }}
           secondaryAction={{ label: 'Inquire for 2026–2027', to: '/contact' }}
+          botanicalIllustration="/images/brandkit/illustration-04.png"
           fullHeight={true}
         />
 
-        {/* 2. Organic Ecomama Sage Ribbon */}
+        {/* 2. Deep Botanical Pine & Stoneware Apothecary Strip */}
         <ReferoSageStrip
-          label="A Living Sanctuary"
-          statement="30+ Regenerative Acres · Over 2,500 Organic Heirloom Rose Bushes · Up to 180 Guests Under the Santa Ynez Sky"
-          rightLink={{ text: 'Arrange a Private Visit', to: '/contact' }}
+          label="Tended by Hand"
+          statement="30+ Biodynamic Acres · 2,500+ Heirloom Garden Rose Bushes · Wheel-Thrown Ceramic Tables & Bespoke Estate Gatherings"
+          rightLink={{ text: 'Arrange a Private Garden Walk', to: '/contact' }}
+          illustration="/images/brandkit/illustration-04.png"
         />
 
-        {/* 3. Organic Asymmetric Garden Collage & Poetic Narrative */}
+        {/* 3. Tactile Pottery & Vintage Rose Farm Collage */}
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-20">
             <div className="lg:col-span-7 space-y-3">
-              <div className="inline-flex items-center gap-2 text-[#78926E]">
-                <img src="/images/ecomama-rose-icon.png" alt="" className="w-4 h-4 opacity-80" />
-                <span
-                  className="italic text-[18px]"
-                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-                >
-                  A Sanctuary in Bloom
+              <div className="inline-flex items-center gap-2.5">
+                <img
+                  src="/images/brandkit/illustration-01.png"
+                  alt=""
+                  className="w-6 h-6 object-contain"
+                />
+                <span className="brandkit-stamp">
+                  H O M E G R O W N   S A N C T U A R Y   &amp;   A T E L I E R
                 </span>
               </div>
-              <h2 className="refero-heading-lg text-[#3E3E3E]">
-                Tended by hand as a living rose farm, opened with warmth for life’s most meaningful
+              <h2 className="refero-heading-lg text-[#0E2725]">
+                Rooted in living soil and raw clay—crafted for unhurried, deeply personal
                 celebrations.
               </h2>
             </div>
             <div className="lg:col-span-5">
-              <p className="text-[15.5px] leading-[1.7] text-[#66625B] font-light">
-                Every gathering at Ecomama Farms unfolds inside a living ecosystem—surrounded by
-                fragrant David Austin and heirloom garden roses, silver-leafed olive trees, organic
-                stone-fruit orchards, and sweeping views of the Santa Ynez Mountains.
+              <p className="text-[15.5px] leading-[1.75] text-[#0E2725]/80 font-light">
+                Every gathering at Ecomama Farms unfolds inside a working heirloom rose farm and
+                homestead—surrounded by fragrant David Austin roses, silver-leafed olive lanes,
+                stoneware vessels, and sweeping views of the Santa Ynez Mountains.
               </p>
             </div>
           </div>
 
-          {/* Asymmetric Botanical Collage — Warm Linen & Soft Arch / 24px Frames */}
+          {/* Asymmetric Tactile Collage — Raw Cotton-Rag Cards & Amphora Vessel Frames */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
             {/* Left Wide Garden Frame (7 cols) */}
             <div className="md:col-span-7 space-y-5">
-              <div className="rounded-[24px] overflow-hidden aspect-[16/11] bg-[#FAF8F4] border border-[#78926E]/20">
+              <div className="refero-photo aspect-[16/11] bg-[#F6F2EA]">
                 <img
                   src="/images/06-dji-0676-enhanced-nr-copy.jpg"
                   alt="The Venue at Ecomama Farms"
@@ -119,14 +168,11 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               </div>
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-1 px-2">
                 <div>
-                  <span
-                    className="italic text-[16px] text-[#78926E]"
-                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-                  >
-                    The Private Estate Venue
+                  <span className="brandkit-stamp block mb-1">
+                    0 1   ·   B E S P O K E   E V E N T   V E N U E
                   </span>
-                  <h3 className="refero-heading text-[#3E3E3E] mt-0.5">
-                    Lush ceremony lawns, open-air barns &amp; mountain-view terraces
+                  <h3 className="refero-heading text-[#0E2725]">
+                    Sunlit ceremony lawns, weathered timber barns &amp; mountain-view terraces
                   </h3>
                 </div>
                 <Link to="/venue" className="refero-pill-btn shrink-0 self-start sm:self-auto">
@@ -136,9 +182,9 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               </div>
             </div>
 
-            {/* Right Botanical Arch Portrait Frame (5 cols, vertically offset) */}
+            {/* Right Pottery Amphora Arch Frame (5 cols, vertically offset) */}
             <div className="md:col-span-5 md:mt-16 space-y-5">
-              <div className="refero-arch-photo aspect-[4/5] bg-[#FAF8F4] border border-[#78926E]/20">
+              <div className="refero-arch-photo aspect-[4/5] bg-[#F6F2EA]">
                 <img
                   src="/images/03-james-and-jess-at-ecomama-farms.jpg"
                   alt="2,500+ Organic Heirloom Roses"
@@ -146,31 +192,28 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 />
               </div>
               <div className="px-2 space-y-2">
-                <span
-                  className="italic text-[16px] text-[#78926E]"
-                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-                >
-                  Seed-to-Centerpiece Florals
+                <span className="brandkit-stamp block">
+                  0 2   ·   V I N T A G E   R O S E   F A R M
                 </span>
-                <h3 className="refero-heading text-[#3E3E3E]">
-                  2,500+ organic garden roses harvested at peak fragrance
+                <h3 className="refero-heading text-[#0E2725]">
+                  2,500+ heirloom garden roses gathered in stoneware buckets at dawn
                 </h3>
-                <p className="text-[14px] text-[#66625B] leading-[1.6] font-light">
-                  Grown in biodynamic Santa Ynez soil without synthetic sprays and gathered the
-                  morning of your celebration.
+                <p className="text-[14.5px] text-[#0E2725]/75 leading-[1.65] font-light">
+                  Grown in biodynamic Santa Ynez earth without synthetic sprays, hand-cut at first
+                  light, and arranged in our floral atelier hours before your guests arrive.
                 </p>
                 <div className="pt-1">
-                  <Link to="/floral" className="refero-ghost-link text-[#3E3E3E]">
-                    <span>Explore our floral studio</span>
+                  <Link to="/floral" className="refero-ghost-link text-[#0E2725]">
+                    <span>Visit the Floral Atelier</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
             </div>
 
-            {/* Third Offset Frame (5 cols left) + Warm Parchment Sanctuary Note (7 cols right) */}
+            {/* Third Offset Frame (5 cols left) + Tactile Stoneware & Pressed Rose Card (7 cols right) */}
             <div className="md:col-span-5 md:-mt-12 space-y-4">
-              <div className="rounded-[24px] overflow-hidden aspect-[4/3] bg-[#FAF8F4] border border-[#78926E]/20">
+              <div className="refero-photo aspect-[4/3] bg-[#F6F2EA]">
                 <img
                   src="/images/34-dji-0656.jpg"
                   alt="Regenerative Farming at Ecomama Farms"
@@ -178,20 +221,17 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 />
               </div>
               <div className="px-2">
-                <span
-                  className="italic text-[16px] text-[#78926E]"
-                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-                >
-                  Biodynamic &amp; Regenerative Roots
+                <span className="brandkit-stamp block mb-1">
+                  0 3   ·   S O I L ,   C L A Y   &amp;   O R C H A R D
                 </span>
                 <div className="flex items-center justify-between mt-1 gap-4">
                   <h3
-                    className="text-[22px] text-[#3E3E3E]"
-                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                    className="text-[23px] text-[#0E2725]"
+                    style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                   >
-                    Heritage orchards, living compost &amp; gentle farm animals
+                    Heritage orchards, living compost &amp; gentle sanctuary animals
                   </h3>
-                  <Link to="/the-farm" className="refero-ghost-link text-[#3E3E3E] shrink-0">
+                  <Link to="/the-farm" className="refero-ghost-link text-[#0E2725] shrink-0">
                     <span>Meet the Farm</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
@@ -200,56 +240,61 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
             </div>
 
             <div className="md:col-span-7 md:mt-6">
-              <div className="relative overflow-hidden bg-[#FAF8F4] rounded-[24px] p-8 md:p-12 border border-[#78926E]/25 space-y-7">
-                {/* Delicate Botanical Rose Watermark */}
+              <div className="refero-card relative overflow-hidden p-8 md:p-12 space-y-7">
+                {/* Pressed Rose Herbarium Illustration from Brand Kit */}
                 <img
-                  src="/images/ecomama-rose-icon.png"
+                  src="/images/brandkit/illustration-08.png"
                   alt=""
-                  className="pointer-events-none absolute -right-10 -bottom-10 w-56 h-56 object-contain opacity-[0.045]"
+                  className="pointer-events-none select-none absolute -right-4 -bottom-6 w-52 h-52 object-contain opacity-25"
                 />
 
-                <div className="space-y-2">
-                  <span
-                    className="italic text-[17px] text-[#78926E]"
-                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-                  >
-                    Life on the Estate
-                  </span>
-                  <h3 className="refero-heading text-[#3E3E3E]">
-                    “We wanted every guest to feel as though they had stepped into a private Santa
-                    Ynez garden party where time slows down.”
+                <div className="space-y-2 relative z-10">
+                  <div className="inline-flex items-center gap-2">
+                    <img
+                      src="/images/brandkit/illustration-03.png"
+                      alt=""
+                      className="w-5 h-5 object-contain"
+                    />
+                    <span className="brandkit-stamp">
+                      T H E   A R T   O F   S L O W   G A T H E R I N G
+                    </span>
+                  </div>
+                  <h3 className="refero-heading text-[#0E2725]">
+                    “We wanted every guest to feel as though they had stepped into an heirloom rose
+                    farm and pottery studio table where time slows down.”
                   </h3>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-4 border-t border-[#78926E]/20">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-4 border-t border-[#A7713F]/25 relative z-10">
                   {[
-                    { val: '30+ Acres', lbl: 'Private Sanctuary' },
-                    { val: '2,500+', lbl: 'Heirloom Rose Bushes' },
-                    { val: 'Up to 180', lbl: 'Celebration Guests' },
-                    { val: '100% Organic', lbl: 'Biodynamic Grounds' }
+                    { val: '30+ Acres', lbl: 'Biodynamic Farmstead' },
+                    { val: '2,500+', lbl: 'Vintage Rose Bushes' },
+                    { val: 'Up to 180', lbl: 'Long-Table Guests' },
+                    { val: '100% Organic', lbl: 'Living Soil & Clay' }
                   ].map((s) => (
                     <div key={s.lbl}>
                       <div
-                        className="text-[26px] md:text-[30px] leading-tight text-[#587050]"
-                        style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                        className="text-[26px] md:text-[30px] leading-tight text-[#A7713F]"
+                        style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                       >
                         {s.val}
                       </div>
-                      <div className="text-[12.5px] text-[#66625B] mt-1 font-light">{s.lbl}</div>
+                      <div className="text-[12.5px] text-[#0E2725]/75 mt-1 font-light">{s.lbl}</div>
                     </div>
                   ))}
                 </div>
 
-                <div className="pt-4 border-t border-[#78926E]/20 flex flex-wrap items-center justify-between gap-4">
-                  <p className="text-[14px] text-[#66625B] font-light">
-                    Welcoming bespoke weddings, harvest dinners, and seasonal botanical workshops.
+                <div className="pt-4 border-t border-[#A7713F]/25 flex flex-wrap items-center justify-between gap-4 relative z-10">
+                  <p className="text-[14px] text-[#0E2725]/75 font-light">
+                    Welcoming bespoke estate weddings, wheel-thrown pottery &amp; floral workshops,
+                    and harvest suppers.
                   </p>
                   <div className="flex items-center gap-5">
                     <Link to="/vignettes" className="refero-pill-btn">
                       <span>Wander the Spaces</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
-                    <Link to="/services" className="refero-ghost-link text-[#3E3E3E]">
+                    <Link to="/services" className="refero-ghost-link text-[#0E2725]">
                       <span>Offerings</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
@@ -260,7 +305,146 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           </div>
         </section>
 
-        {/* 4. Full-Bleed Sunset Section Break with Bottom-Half Gradient Only */}
+        {/* 4. NEW: Brand Kit Heirloom Rose Herbarium & Pottery Moodboard Section */}
+        <section className="stoneware-surface py-[96px] px-6 md:px-12 border-y border-[#A7713F]/30">
+          <div className="max-w-[1440px] mx-auto space-y-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+              <div className="lg:col-span-7 space-y-2.5">
+                <span className="brandkit-stamp block">
+                  F R O M   T H E   E C O M A M A   B R A N D   A T E L I E R
+                </span>
+                <h2 className="refero-heading-lg text-[#0E2725]">
+                  Pressed Botanical Specimens, Raw Stoneware &amp; Sun-Warmed Earth.
+                </h2>
+              </div>
+              <div className="lg:col-span-5">
+                <p className="text-[15px] text-[#0E2725]/80 leading-[1.7] font-light">
+                  Inspired by hand-thrown ceramics, vintage botanical studies, and unhurried
+                  countryside tables—explore the seasonal rose varieties and tactile textures that
+                  shape every celebration at Ecomama Farms.
+                </p>
+              </div>
+            </div>
+
+            {/* 6 Pressed Botanical Rose Specimen Cards from Brand Kit Pages 2 & 3 */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+              {BRANDKIT_ROSE_SPECIMENS.map((spec) => (
+                <div
+                  key={spec.id}
+                  className="refero-card p-5 flex flex-col items-center text-center justify-between group"
+                >
+                  <div className="w-full flex items-center justify-between text-[10px] tracking-[0.2em] text-[#A7713F] mb-2">
+                    <span style={{ fontFamily: "'Montserrat', sans-serif" }}>{spec.id}</span>
+                    <span className="w-2 h-2 rounded-full bg-[#A6A26A]" />
+                  </div>
+                  <div className="h-32 w-full flex items-center justify-center my-2">
+                    <img
+                      src={spec.img}
+                      alt={spec.name}
+                      className="max-h-28 max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <h3
+                      className="text-[18px] text-[#0E2725] leading-snug"
+                      style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                    >
+                      {spec.name}
+                    </h3>
+                    <p
+                      className="italic text-[13px] text-[#0E2725]/70 mt-1"
+                      style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                    >
+                      {spec.notes}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Tactile Brand Kit Moodboard Strip (Page 1 Moodboard Photographs + Deep Pine Glaze Note) */}
+            <div className="pine-glaze-surface rounded-[28px] p-8 md:p-12 border border-[#A7713F]/40 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5 space-y-4">
+                <span
+                  className="text-[10.5px] uppercase tracking-[0.28em] text-[#A6A26A] block"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  T A C T I L E   M A T E R I A L I T Y
+                </span>
+                <h3
+                  className="text-[30px] md:text-[36px] leading-[1.08] text-[#EDE8DC]"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif", color: '#EDE8DC' }}
+                >
+                  Linen, terracotta, weathered slate &amp; morning-cut roses.
+                </h3>
+                <p className="text-[14.5px] text-[#D2CCBE]/90 leading-[1.7] font-light">
+                  Our aesthetic honors the raw beauty of the Santa Ynez Valley: unbleached cotton
+                  menus, wheel-thrown ceramic vessels, beeswax tapers, and heirloom blooms that look
+                  and smell as though they were just gathered from the garden path.
+                </p>
+                <div className="pt-2 flex flex-wrap items-center gap-4">
+                  <Link
+                    to="/floral"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[100px] bg-[#A7713F] hover:bg-[#8F5E31] text-[#F6F2EA] text-[13.5px] tracking-[0.03em] transition-colors"
+                  >
+                    <span>Explore Event Florals</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                  <Link
+                    to="/gatherings"
+                    className="inline-flex items-center gap-1.5 text-[#D2CCBE] hover:text-[#A6A26A] text-[13.5px] border-b border-[#D2CCBE]/45 pb-0.5 transition-colors"
+                  >
+                    <span>Workshops &amp; Farm Dinners</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-4 items-center">
+                {[
+                  {
+                    src: '/images/brandkit/mood-1.jpg',
+                    caption: 'Heirloom Blooms',
+                    arch: true
+                  },
+                  {
+                    src: '/images/brandkit/mood-2.jpg',
+                    caption: 'Golden Hour Fields',
+                    arch: false
+                  },
+                  {
+                    src: '/images/brandkit/mood-3.jpg',
+                    caption: 'Stoneware & Linen',
+                    arch: true
+                  },
+                  {
+                    src: '/images/brandkit/mood-4.jpg',
+                    caption: 'Garden Gatherings',
+                    arch: false
+                  }
+                ].map((m) => (
+                  <div key={m.caption} className="space-y-2 text-center">
+                    <div
+                      className={`overflow-hidden aspect-[3/4] border border-[#D2CCBE]/30 ${
+                        m.arch ? 'rounded-t-[120px] rounded-b-[18px]' : 'rounded-[20px]'
+                      }`}
+                    >
+                      <img src={m.src} alt={m.caption} className="w-full h-full object-cover" />
+                    </div>
+                    <span
+                      className="italic text-[14px] text-[#D2CCBE] block"
+                      style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                    >
+                      {m.caption}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Full-Bleed Sunset Section Break with Bottom-Half Gradient Only */}
         <section className="relative w-full h-[74vh] rounded-none overflow-hidden">
           <img
             src="/images/05-ecomama-farms-santa-ynez-wedding-reception18.jpg"
@@ -270,27 +454,30 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           {/* Soft bottom-half gradient ONLY — keeps the twilight sky and mountain ridge unshaded */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] hero-bottom-shade" />
 
-          <div className="absolute inset-0 max-w-[1440px] mx-auto px-6 md:px-12 py-14 flex flex-col justify-end text-[#FAF8F4]">
+          <div className="absolute inset-0 max-w-[1440px] mx-auto px-6 md:px-12 py-14 flex flex-col justify-end text-[#F6F2EA]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
               <div className="lg:col-span-7 space-y-3">
                 <span
-                  className="italic text-[18px] text-[#E9EFE6]"
-                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                  className="italic text-[19px] text-[#A6A26A]"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
                   Al Fresco Twilight on the Terraced Lawn
                 </span>
-                <h2 className="refero-display text-[#FAF8F4]">
-                  Golden hour fading into starlight over the Santa Ynez mountains.
+                <h2
+                  className="refero-display text-[#F6F2EA]"
+                  style={{ color: '#F6F2EA' }}
+                >
+                  Golden hour fading into candlelight over the Santa Ynez mountains.
                 </h2>
               </div>
               <div className="lg:col-span-5 lg:text-right flex flex-col lg:items-end gap-4">
-                <p className="text-[15.5px] text-[#FAF8F4]/90 max-w-md font-light leading-relaxed">
+                <p className="text-[15.5px] text-[#EDE8DC]/90 max-w-md font-light leading-relaxed">
                   Move effortlessly from vows in the Heart of the Rose Garden to cocktails beside
-                  the weeping willow pond and candlelit dining on the lawn.
+                  the weeping willow pond and long-table stoneware dining on the lawn.
                 </p>
                 <Link
                   to="/vignettes"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[100px] bg-[#78926E]/90 hover:bg-[#78926E] border border-white/30 text-[#FAF8F4] text-[13.5px] transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[100px] bg-[#A7713F] hover:bg-[#8F5E31] border border-[#D2CCBE]/40 text-[#F6F2EA] text-[13.5px] transition-colors"
                 >
                   <span>Explore All Garden &amp; Barn Spaces</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -300,18 +487,15 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           </div>
         </section>
 
-        {/* 5. Asymmetric 6-Vignette Garden Showcase */}
+        {/* 6. Asymmetric 6-Vignette Garden Showcase */}
         <section className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#78926E]/25">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#A7713F]/30">
             <div>
-              <span
-                className="italic text-[18px] text-[#78926E] block mb-1"
-                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-              >
-                Gathered Across the Grounds
+              <span className="brandkit-stamp block mb-2">
+                G A T H E R E D   A C R O S S   T H E   G R O U N D S
               </span>
-              <h2 className="refero-heading-lg text-[#3E3E3E]">
-                Six Intimate Spaces, One Private Sanctuary
+              <h2 className="refero-heading-lg text-[#0E2725]">
+                Six Intimate Spaces, One Homegrown Sanctuary
               </h2>
             </div>
             <Link to="/vignettes" className="refero-pill-btn self-start md:self-auto">
@@ -331,33 +515,33 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               return (
                 <div
                   key={v.title}
-                  className={`${colSpan} bg-[#FAF8F4] rounded-[24px] p-6 border border-[#78926E]/20 flex flex-col justify-between`}
+                  className={`${colSpan} refero-card flex flex-col justify-between`}
                 >
                   <div>
-                    <div className="rounded-[20px] overflow-hidden aspect-[4/3] mb-5">
+                    <div className="refero-photo aspect-[4/3] mb-5">
                       <img
                         src={v.image}
                         alt={v.alt}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                       />
                     </div>
-                    <div className="flex items-center justify-between text-[12px] text-[#587050] mb-2">
+                    <div className="flex items-center justify-between text-[12px] text-[#A7713F] mb-2">
                       <span
-                        className="italic text-[15px]"
-                        style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                        className="italic text-[16px]"
+                        style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                       >
                         {v.tag}
                       </span>
-                      <span className="px-3 py-0.5 rounded-[100px] bg-[#E9EFE6] text-[#587050] text-[11.5px]">
+                      <span className="px-3 py-0.5 rounded-[100px] bg-[#D2CCBE]/70 text-[#0E2725] text-[11.5px]">
                         {v.capacity}
                       </span>
                     </div>
-                    <h3 className="refero-heading text-[#3E3E3E] mt-1 mb-2">{v.title}</h3>
-                    <p className="text-[14px] text-[#66625B] leading-[1.6] font-light mb-5">
+                    <h3 className="refero-heading text-[#0E2725] mt-1 mb-2">{v.title}</h3>
+                    <p className="text-[14px] text-[#0E2725]/75 leading-[1.65] font-light mb-5">
                       {v.originalCopy}
                     </p>
                   </div>
-                  <Link to="/vignettes" className="refero-ghost-link text-[#3E3E3E] self-start">
+                  <Link to="/vignettes" className="refero-ghost-link text-[#0E2725] self-start">
                     <span>Discover {v.title}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
@@ -365,6 +549,12 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               );
             })}
           </div>
+
+          <BrandKitBotanicalSeal
+            illustration="/images/brandkit/illustration-10.png"
+            stamp="S A N T A   Y N E Z   V A L L E Y   ·   C A L I F O R N I A"
+            quote="Every rose is cut at daybreak, every table set on raw linen and stoneware, and every weekend reserved for one family alone."
+          />
         </section>
       </div>
     );
@@ -557,7 +747,10 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               <span>UP TO 180 GUESTS</span>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-              <h2 className="lg:col-span-7 refero-display text-white">
+              <h2
+                className="lg:col-span-7 refero-display text-white"
+                style={{ color: '#FFFFFF' }}
+              >
                 Panoramic golden hour over the Santa Ynez mountains.
               </h2>
               <div className="lg:col-span-5 lg:text-right flex flex-col lg:items-end gap-4">
@@ -702,60 +895,66 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
 export const VenuePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
   if (mode === 'organic') {
     return (
-      <div className="bg-[#F4F1EE] text-[#3E3E3E]">
+      <div className="text-[#0E2725]">
         <ReferoHeroFrame
           image="/images/06-dji-0676-enhanced-nr-copy.jpg"
           imageAlt="Ecomama Farms Wedding & Event Venue"
           eyebrowLeft="Private Estate Venue · Santa Ynez Valley"
           headlineLeft="The Estate, in Full."
-          statementRight="Six distinct celebration spaces and six botanical portrait vignettes across 30+ acres of organic roses, olive trees, and orchards."
+          statementRight="Six distinct celebration spaces and six botanical portrait vignettes across 30+ acres of heirloom roses, olive trees, and orchards."
           primaryAction={{ label: 'Wander the 12 Vignettes', to: '/vignettes' }}
           secondaryAction={{ label: 'Explore Offerings', to: '/services' }}
+          botanicalIllustration="/images/brandkit/illustration-02.png"
           fullHeight={false}
         />
 
         <ReferoSageStrip
           label="Unhurried Celebrations"
-          statement="One Private Celebration Per Weekend · Up to 180 Guests · In-House Planning & Estate-Grown Organic Florals"
+          statement="One Private Celebration Per Weekend · Up to 180 Guests · In-House Planning & Estate-Grown Heirloom Florals"
           rightLink={{ text: 'Request Estate Guide', to: '/contact' }}
+          illustration="/images/brandkit/illustration-02.png"
         />
 
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-6 space-y-6">
-              <span
-                className="italic text-[18px] text-[#78926E] block"
-                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-              >
-                A Natural Sense of Place
-              </span>
-              <h2 className="refero-heading-lg text-[#3E3E3E]">
-                An unhurried flow from sunlit rose gardens to starlit dining.
+              <div className="inline-flex items-center gap-2.5">
+                <img
+                  src="/images/brandkit/illustration-05.png"
+                  alt=""
+                  className="w-6 h-6 object-contain"
+                />
+                <span className="brandkit-stamp">
+                  A   N A T U R A L   S E N S E   O F   P L A C E
+                </span>
+              </div>
+              <h2 className="refero-heading-lg text-[#0E2725]">
+                An unhurried flow from sunlit rose gardens to starlit stoneware dining.
               </h2>
-              <p className="text-[15.5px] text-[#66625B] leading-[1.7] font-light">
+              <p className="text-[15.5px] text-[#0E2725]/80 leading-[1.75] font-light">
                 In the heart of the Santa Ynez Valley lies a slice of paradise: Ecomama Farms.
-                Welcome to our lush sanctuary, dedicated to regenerative agriculture,
-                sustainability, and unforgettable events.
+                Welcome to our lush sanctuary, dedicated to regenerative agriculture, heirloom
+                garden roses, and bespoke celebrations that feel genuinely homegrown.
               </p>
-              <p className="text-[15.5px] text-[#66625B] leading-[1.7] font-light">
+              <p className="text-[15.5px] text-[#0E2725]/80 leading-[1.75] font-light">
                 On our sprawling property, you’ll find an idyllic wedding and events venue that can
                 accommodate up to 180 guests. Choose from several picturesque spots, including our
                 vibrant rose garden, tranquil willow pond, terraced lawn, and shaded olive lane,
-                each offering a magical backdrop for your special occasion.
+                each offering a tactile, storied backdrop for your special occasion.
               </p>
               <div className="flex flex-wrap gap-5 pt-2">
                 <Link to="/vignettes" className="refero-pill-btn">
                   <span>Explore All Vignettes</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
-                <Link to="/services" className="refero-ghost-link text-[#3E3E3E] py-2">
+                <Link to="/services" className="refero-ghost-link text-[#0E2725] py-2">
                   <span>View Services &amp; Offerings</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
 
-            {/* Asymmetric Photo Pair with Botanical Arch & 24px Frame */}
+            {/* Asymmetric Photo Pair with Pottery Amphora Arch & Stoneware Card */}
             <div className="lg:col-span-6 grid grid-cols-12 gap-6 items-start">
               <div className="col-span-7 refero-arch-photo aspect-[4/5]">
                 <img
@@ -765,28 +964,34 @@ export const VenuePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 />
               </div>
               <div className="col-span-5 mt-16 space-y-6">
-                <div className="rounded-[24px] overflow-hidden aspect-square">
+                <div className="refero-photo aspect-square">
                   <img
                     src="/images/26-screenshot-2024-07-24-at-9-19-50-pm.png"
                     alt="The Olive Lane"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="bg-[#FAF8F4] rounded-[24px] p-6 border border-[#78926E]/25">
-                  <div
-                    className="italic text-[15px] text-[#78926E] mb-1"
-                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-                  >
-                    Garden Capacity
-                  </div>
-                  <div className="refero-heading text-[#3E3E3E]">Up to 180 Guests</div>
-                  <p className="text-[12.5px] text-[#66625B] mt-1.5 font-light">
+                <div className="refero-card p-6 relative overflow-hidden">
+                  <img
+                    src="/images/brandkit/illustration-07.png"
+                    alt=""
+                    className="pointer-events-none absolute -right-2 -bottom-4 w-20 h-20 object-contain opacity-25"
+                  />
+                  <div className="brandkit-stamp mb-1">G A R D E N   C A P A C I T Y</div>
+                  <div className="refero-heading text-[#0E2725]">Up to 180 Guests</div>
+                  <p className="text-[12.5px] text-[#0E2725]/75 mt-1.5 font-light">
                     Heart of the Rose Garden (180) · Terraced Lawn (150–180) · Mountain View Barn
                   </p>
                 </div>
               </div>
             </div>
           </div>
+
+          <BrandKitBotanicalSeal
+            illustration="/images/brandkit/illustration-08.png"
+            stamp="P R I V A T E   E S T A T E   H O S P I T A L I T Y"
+            quote="We host only one wedding each weekend so the gardens, barns, and rose fields belong entirely to your gathering."
+          />
         </section>
       </div>
     );
@@ -921,7 +1126,7 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
 
   if (mode === 'organic') {
     return (
-      <div className="bg-[#F4F1EE] text-[#3E3E3E]">
+      <div className="text-[#0E2725]">
         <ReferoHeroFrame
           image="/images/17-dji-0658-enhanced-sr.jpg"
           imageAlt="Estate Vignettes at Ecomama Farms"
@@ -930,24 +1135,23 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           statementRight="Each celebration unfolds progressively across our 30+ acre ranch—from the Heart of the Garden to the Mountain View Barn."
           primaryAction={{ label: 'Book a Private Walkthrough', to: '/contact' }}
           secondaryAction={{ label: 'Explore Packages', to: '/services' }}
+          botanicalIllustration="/images/brandkit/illustration-03.png"
           fullHeight={false}
         />
 
         <ReferoSageStrip
           label="Twelve Intimate Settings"
           statement="Six Celebration Facilities & Suites Paired with Six Botanical Portrait Vignettes Across the Estate"
+          illustration="/images/brandkit/illustration-03.png"
         />
 
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-16 pb-6 border-b border-[#78926E]/25">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-16 pb-6 border-b border-[#A7713F]/30">
             <div>
-              <span
-                className="italic text-[17px] text-[#78926E] block"
-                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-              >
-                Wander the Estate
+              <span className="brandkit-stamp block mb-1.5">
+                W A N D E R   T H E   E S T A T E
               </span>
-              <h2 className="refero-heading-lg text-[#3E3E3E]">Sanctuary Spaces &amp; Vignettes</h2>
+              <h2 className="refero-heading-lg text-[#0E2725]">Sanctuary Spaces &amp; Vignettes</h2>
             </div>
             <div className="flex flex-wrap gap-2">
               {[
@@ -960,8 +1164,8 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   onClick={() => setTab(item.id as 'all' | 'facilities' | 'photo')}
                   className={`px-5 py-2 rounded-[100px] text-[13px] border transition-colors ${
                     tab === item.id
-                      ? 'bg-[#78926E] text-[#FAF8F4] border-[#78926E]'
-                      : 'bg-[#FAF8F4] text-[#3E3E3E] border-[#78926E]/30 hover:border-[#78926E]'
+                      ? 'bg-[#A7713F] text-[#F6F2EA] border-[#A7713F]'
+                      : 'bg-[#F6F2EA] text-[#0E2725] border-[#A7713F]/35 hover:border-[#A7713F]'
                   }`}
                 >
                   {item.label}
@@ -972,36 +1176,43 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
 
           {(tab === 'all' || tab === 'facilities') && (
             <div className="mb-24">
-              <div
-                className="italic text-[20px] text-[#78926E] mb-8"
-                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-              >
-                Ceremony Lawns, Heritage Barns &amp; Private Suites
+              <div className="flex items-center gap-2.5 mb-8">
+                <img
+                  src="/images/brandkit/illustration-04.png"
+                  alt=""
+                  className="w-6 h-6 object-contain"
+                />
+                <span
+                  className="italic text-[22px] text-[#A7713F]"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                >
+                  Ceremony Lawns, Heritage Barns &amp; Private Suites
+                </span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {VIGNETTES_FACILITIES.map((f, idx) => (
                   <div
                     key={f.title}
-                    className={`bg-[#FAF8F4] rounded-[24px] p-6 border border-[#78926E]/20 space-y-4 ${
+                    className={`refero-card space-y-4 ${
                       idx % 3 === 1 ? 'lg:mt-8' : idx % 3 === 2 ? 'lg:mt-16' : ''
                     }`}
                   >
-                    <div className="rounded-[20px] overflow-hidden aspect-[4/3]">
+                    <div className="refero-photo aspect-[4/3]">
                       <img src={f.image} alt={f.alt} className="w-full h-full object-cover" />
                     </div>
-                    <div className="flex items-center justify-between text-[12px] text-[#587050]">
+                    <div className="flex items-center justify-between text-[12px] text-[#A7713F]">
                       <span
-                        className="italic text-[15px]"
-                        style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                        className="italic text-[16px]"
+                        style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                       >
                         {f.tag}
                       </span>
-                      <span className="px-3 py-0.5 rounded-[100px] bg-[#E9EFE6] text-[#587050]">
+                      <span className="px-3 py-0.5 rounded-[100px] bg-[#D2CCBE]/70 text-[#0E2725]">
                         {f.capacity}
                       </span>
                     </div>
-                    <h3 className="refero-heading text-[#3E3E3E]">{f.title}</h3>
-                    <p className="text-[14px] text-[#66625B] leading-[1.6] font-light">
+                    <h3 className="refero-heading text-[#0E2725]">{f.title}</h3>
+                    <p className="text-[14px] text-[#0E2725]/75 leading-[1.65] font-light">
                       {f.originalCopy}
                     </p>
                   </div>
@@ -1012,25 +1223,32 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
 
           {(tab === 'all' || tab === 'photo') && (
             <div>
-              <div
-                className="italic text-[20px] text-[#78926E] mb-8"
-                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-              >
-                Botanical Walks, Orchards &amp; Golden-Hour Portrait Vignettes
+              <div className="flex items-center gap-2.5 mb-8">
+                <img
+                  src="/images/brandkit/illustration-06.png"
+                  alt=""
+                  className="w-6 h-6 object-contain"
+                />
+                <span
+                  className="italic text-[22px] text-[#A7713F]"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                >
+                  Botanical Walks, Orchards &amp; Golden-Hour Portrait Vignettes
+                </span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {VIGNETTES_PHOTO_OPS.map((p, idx) => (
                   <div
                     key={p.title}
-                    className={`bg-[#FAF8F4] rounded-[24px] p-6 border border-[#78926E]/20 space-y-4 ${
+                    className={`refero-card space-y-4 ${
                       idx % 3 === 1 ? 'lg:mt-8' : idx % 3 === 2 ? 'lg:mt-16' : ''
                     }`}
                   >
-                    <div className="rounded-[20px] overflow-hidden aspect-[4/3]">
+                    <div className="refero-photo aspect-[4/3]">
                       <img src={p.image} alt={p.alt} className="w-full h-full object-cover" />
                     </div>
-                    <h3 className="refero-heading text-[#3E3E3E]">{p.title}</h3>
-                    <p className="text-[14px] text-[#66625B] leading-[1.6] font-light">
+                    <h3 className="refero-heading text-[#0E2725]">{p.title}</h3>
+                    <p className="text-[14px] text-[#0E2725]/75 leading-[1.65] font-light">
                       {p.redesignCopy}
                     </p>
                   </div>
@@ -1179,21 +1397,23 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
 export const ServicesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
   if (mode === 'organic') {
     return (
-      <div className="bg-[#F4F1EE] text-[#3E3E3E]">
+      <div className="text-[#0E2725]">
         <ReferoHeroFrame
           image="/images/29-val-and-blake-wedding-preview-1.jpg"
           imageAlt="Ecomama Farms Services & Planning Packages"
           eyebrowLeft="Bespoke Celebrations & Floral Artistry"
           headlineLeft="Thoughtful Hospitality, Tailored to Your Vision."
-          statementRight="Whether you desire an all-inclusive estate wedding with farm-grown florals or a private sanctuary canvas for your planning team."
+          statementRight="Whether you desire an all-inclusive estate wedding with farm-grown heirloom roses or a private sanctuary canvas for your planning team."
           primaryAction={{ label: 'Request Custom Proposal', to: '/contact' }}
-          secondaryAction={{ label: 'Organic Event Florals', to: '/floral' }}
+          secondaryAction={{ label: 'Heirloom Event Florals', to: '/floral' }}
+          botanicalIllustration="/images/brandkit/illustration-05.png"
           fullHeight={false}
         />
 
         <ReferoSageStrip
           label="Bespoke Offerings"
           statement="The Estate Wedding (Full-Service) · Partial Planning & Design · Private Estate Buyout"
+          illustration="/images/brandkit/illustration-05.png"
         />
 
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
@@ -1201,38 +1421,47 @@ export const ServicesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
             {SERVICE_TIERS.map((pkg, idx) => (
               <div
                 key={pkg.title}
-                className={`bg-[#FAF8F4] rounded-[24px] p-8 border border-[#78926E]/25 space-y-6 ${
+                className={`refero-card relative overflow-hidden space-y-6 ${
                   idx === 1 ? 'lg:mt-10' : idx === 2 ? 'lg:mt-20' : ''
                 }`}
               >
-                <div className="rounded-[20px] overflow-hidden aspect-[16/10]">
+                <img
+                  src={pkg.botanical}
+                  alt=""
+                  className="pointer-events-none absolute -right-4 -bottom-4 w-28 h-28 object-contain opacity-15"
+                />
+                <div className="refero-photo aspect-[16/10]">
                   <img
                     src={pkg.image}
                     alt={pkg.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="flex items-center justify-between text-[12px] text-[#587050]">
+                <div className="flex items-center justify-between">
+                  <span className="brandkit-stamp">{pkg.stamp}</span>
+                  <img src={pkg.botanical} alt="" className="w-6 h-6 object-contain" />
+                </div>
+                <div>
                   <span
-                    className="italic text-[16px]"
-                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                    className="italic text-[16.5px] text-[#A7713F] block"
+                    style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                   >
                     {pkg.subtitle}
                   </span>
+                  <h2 className="refero-heading text-[#0E2725] mt-0.5">{pkg.title}</h2>
                 </div>
-                <h2 className="refero-heading text-[#3E3E3E]">{pkg.title}</h2>
-                <p className="text-[14px] text-[#66625B] leading-[1.6] font-light">
+                <p className="text-[14px] text-[#0E2725]/75 leading-[1.65] font-light">
                   {pkg.description}
                 </p>
-                <ul className="space-y-2.5 pt-3 border-t border-[#78926E]/20 text-[13.5px] text-[#3E3E3E] font-light">
+                <ul className="space-y-2.5 pt-3 border-t border-[#A7713F]/25 text-[13.5px] text-[#0E2725] font-light relative z-10">
                   {pkg.highlights.map((h) => (
                     <li key={h} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-[#78926E] shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-[#A7713F] shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </li>
                   ))}
                 </ul>
-                <div className="pt-2">
+                <div className="pt-2 relative z-10">
                   <Link to="/contact" className="refero-pill-btn w-full justify-center">
                     <span>Inquire for {pkg.title}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />

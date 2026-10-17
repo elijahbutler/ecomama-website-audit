@@ -82,11 +82,14 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
   const isLightTopPage = currentPath === '/privacy-policy';
   const useDarkNavText = isLightTopPage || scrollProgress > 0.35;
 
+  const brandFontHeading =
+    mode === 'organic' ? "'Sorts Mill Goudy', Georgia, serif" : "'Old Standard TT', Georgia, serif";
+
   return (
     <div
       className={`min-h-screen flex flex-col transition-colors duration-300 ${
         mode === 'organic'
-          ? 'refero-system refero-organic bg-[#F4F1EE] text-[#3E3E3E]'
+          ? 'refero-system refero-organic bg-[#EDE8DC] text-[#0E2725]'
           : mode === 'refero'
           ? 'refero-system refero-original bg-[#F4F1EE] text-[#3E3E3E]'
           : 'bg-[#F4F1EE] text-[#3E3E3E] font-sans'
@@ -101,7 +104,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
       <div
         className={
           isReferoFamily
-            ? 'fixed bottom-5 left-5 z-50 flex flex-wrap items-center gap-2 bg-[#3E3E3E]/95 backdrop-blur-md text-[#F4F1EE] px-3.5 py-2 rounded-[100px] border border-white/15'
+            ? 'fixed bottom-5 left-5 z-50 flex flex-wrap items-center gap-2 bg-[#0E2725]/95 backdrop-blur-md text-[#EDE8DC] px-3.5 py-2 rounded-[100px] border border-[#D2CCBE]/25'
             : 'sticky top-0 z-50 bg-[#1B1F1C] text-[#F6F3EE] border-b border-white/10 px-4 py-2 text-xs'
         }
       >
@@ -113,12 +116,12 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
           }
         >
           {/* Mode Switcher Pills: Organic Refero + Original Refero + 1:1 Original */}
-          <div className="flex items-center bg-black/40 p-0.5 rounded-[100px] border border-white/10">
+          <div className="flex items-center bg-black/35 p-0.5 rounded-[100px] border border-white/10">
             <button
               onClick={() => setMode('organic')}
               className={`flex items-center gap-1.5 px-3 py-1 rounded-[100px] font-medium transition-all text-[11px] ${
                 mode === 'organic'
-                  ? 'bg-[#78926E] text-white'
+                  ? 'bg-[#A7713F] text-[#F6F2EA]'
                   : 'text-white/70 hover:text-white'
               }`}
             >
@@ -155,10 +158,10 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
               aria-label="Jump to page"
               value={currentPath}
               onChange={(e) => navigate(e.target.value)}
-              className="bg-black/40 text-white border border-white/15 rounded-[100px] px-3 py-1 text-[11px] focus:outline-none focus:border-[#78926E]"
+              className="bg-black/35 text-white border border-white/15 rounded-[100px] px-3 py-1 text-[11px] focus:outline-none focus:border-[#A7713F]"
             >
               {allRouteEntries.map((pathKey) => (
-                <option key={pathKey} value={pathKey} className="bg-[#252A26] text-white">
+                <option key={pathKey} value={pathKey} className="bg-[#0E2725] text-white">
                   {ROUTE_LABELS[pathKey] || pathKey} ({pathKey})
                 </option>
               ))}
@@ -184,11 +187,11 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
       ====================================================================== */}
       {auditOpen && (
         <div className="fixed inset-0 z-50 flex justify-end bg-black/50 backdrop-blur-xs">
-          <div className="w-full max-w-xl bg-[#1E2320] text-[#F4F1EE] h-full overflow-y-auto p-6 md:p-8 border-l border-white/10">
+          <div className="w-full max-w-xl bg-[#0E2725] text-[#EDE8DC] h-full overflow-y-auto p-6 md:p-8 border-l border-white/10">
             <div className="flex items-start justify-between gap-4 pb-6 border-b border-white/10">
               <div>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-[#A3B899] font-semibold">
-                  Live Page Audit &amp; Refero Design Notes
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[#A6A26A] font-semibold">
+                  Live Page Audit &amp; Brand Kit Notes
                 </span>
                 <h2 className="text-2xl font-serif mt-1 text-white">
                   {currentTitle}{' '}
@@ -217,7 +220,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                   <div className="text-xs uppercase tracking-wider text-white/50">
                     Re-Design Score
                   </div>
-                  <div className="text-3xl font-serif text-[#A3B899] mt-1">
+                  <div className="text-3xl font-serif text-[#A6A26A] mt-1">
                     {currentAudit.scoreRedesign}/100
                   </div>
                 </div>
@@ -251,7 +254,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                       <p className="text-xs text-white/70 leading-relaxed">
                         {issue.originalProblem}
                       </p>
-                      <div className="pt-1.5 text-xs text-[#A3B899] flex items-start gap-1.5">
+                      <div className="pt-1.5 text-xs text-[#A6A26A] flex items-start gap-1.5">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0 mt-0.5" />
                         <span>
                           <strong>Fix Applied:</strong> {issue.redesignFix}
@@ -268,10 +271,9 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
 
       {/* =====================================================================
           MAIN NAVIGATION BAR
-          - In both Organic Refero & Original Refero modes: Implements the 3-zone
-            layout + the custom Ecomama Rose Icon scroll animation starting to the
-            left of the Ecomama logo at top-of-page, then floating smoothly toward
-            the center as the user scrolls down!
+          - Implements the 3-zone Refero layout + custom Ecomama Rose Icon
+            scroll animation starting to the left of the Ecomama logo at top-of-page,
+            then floating smoothly toward the center as the user scrolls down!
       ====================================================================== */}
       {isReferoFamily ? (
         <>
@@ -288,10 +290,12 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                 className={`pointer-events-auto relative flex items-center justify-between transition-all duration-300 rounded-[100px] ${
                   scrollProgress > 0.15
                     ? mode === 'organic'
-                      ? 'bg-[#FAF8F4]/95 backdrop-blur-md border border-[#78926E]/30 px-4 md:px-6 py-2.5 text-[#3E3E3E]'
+                      ? 'bg-[#F6F2EA]/95 backdrop-blur-md border border-[#A7713F]/35 px-4 md:px-6 py-2.5 text-[#0E2725]'
                       : 'bg-[#F4F1EE]/95 backdrop-blur-md border border-[#D9D4CC] px-4 md:px-6 py-2.5 text-[#3E3E3E]'
                     : useDarkNavText
-                    ? 'bg-transparent border border-transparent px-2 py-2 text-[#3E3E3E]'
+                    ? mode === 'organic'
+                      ? 'bg-transparent border border-transparent px-2 py-2 text-[#0E2725]'
+                      : 'bg-transparent border border-transparent px-2 py-2 text-[#3E3E3E]'
                     : 'bg-transparent border border-transparent px-2 py-2 text-white'
                 }`}
               >
@@ -303,7 +307,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                     className={`inline-flex items-center justify-center w-10 h-10 rounded-[100px] border transition-colors ${
                       useDarkNavText
                         ? mode === 'organic'
-                          ? 'border-[#78926E]/35 hover:border-[#78926E] text-[#3E3E3E]'
+                          ? 'border-[#A7713F]/45 hover:border-[#A7713F] text-[#0E2725]'
                           : 'border-[#3E3E3E]/25 hover:border-[#3E3E3E] text-[#3E3E3E]'
                         : 'border-white/35 hover:border-white text-white'
                     }`}
@@ -334,7 +338,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                             active
                               ? useDarkNavText
                                 ? mode === 'organic'
-                                  ? 'bg-[#E9EFE6] text-[#587050] border border-[#78926E]/35'
+                                  ? 'bg-[#D2CCBE]/65 text-[#0E2725] border border-[#A7713F]/45'
                                   : 'border border-[#3E3E3E]'
                                 : 'border border-white/80'
                               : 'border border-transparent hover:opacity-75'
@@ -387,16 +391,16 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                   >
                     <span
                       className="text-[15px] md:text-[16px] tracking-[0.34em] uppercase font-normal whitespace-nowrap"
-                      style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                      style={{ fontFamily: brandFontHeading }}
                     >
                       ECOMAMA FARMS
                     </span>
                     {mode === 'organic' ? (
                       <span
-                        className="italic text-[11px] tracking-[0.08em] opacity-85 -mt-0.5"
-                        style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                        className="italic text-[11.5px] tracking-[0.06em] opacity-90 -mt-0.5"
+                        style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                       >
-                        Santa Ynez Valley
+                        Santa Ynez Valley · Rose Farm &amp; Atelier
                       </span>
                     ) : (
                       <span className="text-[9px] tracking-[0.28em] uppercase opacity-75 -mt-0.5">
@@ -424,7 +428,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                             active
                               ? useDarkNavText
                                 ? mode === 'organic'
-                                  ? 'bg-[#E9EFE6] text-[#587050] border border-[#78926E]/35'
+                                  ? 'bg-[#D2CCBE]/65 text-[#0E2725] border border-[#A7713F]/45'
                                   : 'border border-[#3E3E3E]'
                                 : 'border border-white/80'
                               : 'border border-transparent hover:opacity-75'
@@ -441,8 +445,8 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                     className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-[100px] text-[13px] md:text-[13.5px] font-light border transition-colors ${
                       mode === 'organic'
                         ? useDarkNavText
-                          ? 'bg-[#78926E] border-[#78926E] text-[#FAF8F4] hover:bg-[#587050]'
-                          : 'bg-white/15 backdrop-blur-xs border-white/60 text-white hover:bg-white hover:text-[#3E3E3E]'
+                          ? 'bg-[#A7713F] border-[#A7713F] text-[#F6F2EA] hover:bg-[#0E2725] hover:border-[#0E2725]'
+                          : 'bg-[#A7713F]/85 backdrop-blur-xs border-[#D2CCBE]/60 text-[#F6F2EA] hover:bg-[#A7713F]'
                         : useDarkNavText
                         ? 'border-[#3E3E3E] text-[#3E3E3E] hover:bg-[#3E3E3E] hover:text-[#F4F1EE]'
                         : 'border-white/75 text-white hover:bg-white hover:text-[#3E3E3E]'
@@ -458,22 +462,43 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
 
           {/* FULL-SCREEN DIRECTORY MENU OVERLAY (All 14 Pages) */}
           {mobileMenuOpen && (
-            <div className="fixed inset-0 z-30 bg-[#F4F1EE] text-[#3E3E3E] pt-28 pb-16 px-6 md:px-12 overflow-y-auto">
+            <div
+              className={`fixed inset-0 z-30 pt-28 pb-16 px-6 md:px-12 overflow-y-auto ${
+                mode === 'organic'
+                  ? 'bg-[#EDE8DC] text-[#0E2725]'
+                  : 'bg-[#F4F1EE] text-[#3E3E3E]'
+              }`}
+            >
               <div className="max-w-[1440px] mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-6 border-t border-[#78926E]/25">
+                <div
+                  className={`grid grid-cols-1 lg:grid-cols-12 gap-12 pt-6 border-t ${
+                    mode === 'organic' ? 'border-[#A7713F]/30' : 'border-[#78926E]/25'
+                  }`}
+                >
                   <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
                     {NAVIGATION.map((group, idx) => (
                       <div key={group.path} className="space-y-3">
-                        {mode === 'refero' && (
+                        {mode === 'refero' ? (
                           <div className="text-[12px] tracking-[-0.03em] text-[#78756F]">
                             0{idx + 1} / Section
+                          </div>
+                        ) : (
+                          <div
+                            className="text-[10px] uppercase tracking-[0.28em] text-[#A7713F]"
+                            style={{ fontFamily: "'Montserrat', sans-serif" }}
+                          >
+                            CHAPTER 0{idx + 1}
                           </div>
                         )}
                         <Link
                           to={group.path}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="block text-[28px] hover:text-[#78926E] transition-colors"
-                          style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                          className={`block text-[28px] transition-colors ${
+                            mode === 'organic'
+                              ? 'hover:text-[#A7713F]'
+                              : 'hover:text-[#78926E]'
+                          }`}
+                          style={{ fontFamily: brandFontHeading }}
                         >
                           {group.label}
                         </Link>
@@ -484,7 +509,11 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                                 key={child.path}
                                 to={child.path}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="text-[14px] font-light text-[#66625B] hover:text-[#78926E] inline-flex items-center gap-1.5"
+                                className={`text-[14px] font-light inline-flex items-center gap-1.5 ${
+                                  mode === 'organic'
+                                    ? 'text-[#0E2725]/75 hover:text-[#A7713F]'
+                                    : 'text-[#66625B] hover:text-[#78926E]'
+                                }`}
                               >
                                 <span>{child.label}</span>
                                 <ArrowUpRight className="w-3.5 h-3.5 stroke-[1.5]" />
@@ -498,7 +527,14 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
 
                   {/* Framed Preview Card inside Menu */}
                   <div className="lg:col-span-4">
-                    <div className="refero-card">
+                    <div className="refero-card relative overflow-hidden">
+                      {mode === 'organic' && (
+                        <img
+                          src="/images/brandkit/illustration-08.png"
+                          alt=""
+                          className="pointer-events-none absolute -right-4 -bottom-4 w-28 h-28 object-contain opacity-20"
+                        />
+                      )}
                       <div className="refero-photo aspect-[16/10] mb-5">
                         <img
                           src="/images/06-dji-0676-enhanced-nr-copy.jpg"
@@ -506,22 +542,26 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <div className="flex items-center gap-2 text-[#78926E] mb-2">
+                      <div className="flex items-center gap-2 text-[#A7713F] mb-2">
                         <img
-                          src="/images/ecomama-rose-icon.png"
+                          src={
+                            mode === 'organic'
+                              ? '/images/brandkit/illustration-04.png'
+                              : '/images/ecomama-rose-icon.png'
+                          }
                           alt=""
-                          className="w-4 h-4 object-contain"
+                          className="w-5 h-5 object-contain"
                         />
                         <span
-                          className="italic text-[16px]"
-                          style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                          className="italic text-[17px]"
+                          style={{ fontFamily: brandFontHeading }}
                         >
-                          Private Sanctuary &amp; Rose Farm
+                          Heirloom Rose Farm &amp; Bespoke Estate
                         </span>
                       </div>
-                      <p className="text-[14px] text-[#66625B] font-light leading-[1.55] mb-4">
-                        2550 Calzada Ave, Santa Ynez, CA 93460 · Private estate walks by
-                        appointment.
+                      <p className="text-[14px] text-[#0E2725]/75 font-light leading-[1.6] mb-5">
+                        2550 Calzada Ave, Santa Ynez, CA 93460 · Private garden &amp; pottery
+                        studio walks by appointment.
                       </p>
                       <div className="flex flex-wrap gap-3">
                         <Link
@@ -534,7 +574,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                         </Link>
                         <a
                           href="tel:+18058941477"
-                          className="refero-ghost-link text-[#3E3E3E] py-2"
+                          className="refero-ghost-link text-[#0E2725] py-2"
                         >
                           (805) 894-1477
                         </a>
@@ -656,37 +696,38 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
           GLOBAL FOOTER
       ====================================================================== */}
       {mode === 'organic' ? (
-        <footer className="bg-[#F4F1EE] text-[#3E3E3E] pt-[100px] pb-24 px-6 md:px-12 border-t border-[#78926E]/25">
+        <footer className="stoneware-surface text-[#0E2725] pt-[96px] pb-24 px-6 md:px-12 border-t border-[#A7713F]/30">
           <div className="max-w-[1440px] mx-auto space-y-16">
-            <div className="relative overflow-hidden bg-[#FAF8F4] rounded-[24px] p-8 md:p-14 border border-[#78926E]/25 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Tactile Cotton-Rag & Pressed Rose Apothecary Journal Card */}
+            <div className="relative overflow-hidden refero-card p-8 md:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               <img
-                src="/images/ecomama-rose-icon.png"
+                src="/images/brandkit/illustration-09.png"
                 alt=""
-                className="pointer-events-none absolute -right-8 -bottom-8 w-52 h-52 object-contain opacity-[0.04]"
+                className="pointer-events-none select-none absolute -right-4 -bottom-6 w-56 h-56 object-contain opacity-20"
               />
               <div className="lg:col-span-6 space-y-3 relative z-10">
-                <div className="inline-flex items-center gap-2 text-[#78926E]">
+                <div className="inline-flex items-center gap-2.5">
                   <img
-                    src="/images/ecomama-rose-icon.png"
+                    src="/images/brandkit/illustration-04.png"
                     alt=""
-                    className="w-4 h-4 object-contain"
+                    className="w-6 h-6 object-contain"
                   />
                   <span
-                    className="italic text-[17px]"
-                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                    className="text-[10.5px] uppercase tracking-[0.28em] text-[#A7713F]"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
                   >
-                    Notes from the Rose Fields
+                    D I S P A T C H E S   F R O M   T H E   F I E L D S
                   </span>
                 </div>
                 <h2
-                  className="text-[34px] md:text-[46px] leading-[1.06] text-[#3E3E3E]"
-                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                  className="text-[34px] md:text-[46px] leading-[1.06] text-[#0E2725]"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
-                  Join the Ecomama Community.
+                  Letters from the Rose Farm &amp; Pottery Table.
                 </h2>
-                <p className="text-[15px] text-[#66625B] font-light leading-relaxed">
-                  Receive seasonal rose harvest notes, orchard-to-table dinner invitations, and
-                  private estate availability.
+                <p className="text-[15px] text-[#0E2725]/75 font-light leading-relaxed">
+                  Receive seasonal heirloom rose cuttings notes, orchard-to-table supper
+                  invitations, and private Santa Ynez estate availability.
                 </p>
               </div>
               <div className="lg:col-span-6 relative z-10">
@@ -705,37 +746,74 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                   />
                   <button
                     type="submit"
-                    className="px-8 py-3.5 rounded-[100px] bg-[#78926E] text-[#FAF8F4] hover:bg-[#587050] text-[14px] transition-colors shrink-0"
+                    className="px-8 py-3.5 rounded-[100px] bg-[#0E2725] text-[#F6F2EA] hover:bg-[#A7713F] text-[14px] tracking-[0.03em] transition-colors shrink-0"
                   >
                     Join the Garden List →
                   </button>
                 </form>
-                <p className="text-[12px] text-[#8C877E] mt-3 pl-4 font-light">
-                  We respect your privacy and send only occasional seasonal dispatches.
+                <p
+                  className="italic text-[14px] text-[#0E2725]/65 mt-3 pl-4"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                >
+                  Sent only when the seasons turn — never automated clutter.
                 </p>
               </div>
             </div>
 
+            {/* 4-Column Tactile Estate & Apothecary Directory */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pt-4">
               <div className="md:col-span-4 space-y-4">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3.5">
                   <img
-                    src="/images/ecomama-rose-icon.png"
-                    alt="Ecomama Farms Rose Icon"
-                    className="w-8 h-8 object-contain"
+                    src="/images/brandkit/illustration-06.png"
+                    alt="Ecomama Farms Heirloom Rose"
+                    className="w-10 h-10 object-contain"
                   />
-                  <span
-                    className="text-[20px] tracking-[0.26em] uppercase"
-                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-                  >
-                    ECOMAMA FARMS
-                  </span>
+                  <div>
+                    <span
+                      className="block text-[21px] tracking-[0.24em] uppercase text-[#0E2725]"
+                      style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                    >
+                      ECOMAMA FARMS
+                    </span>
+                    <span
+                      className="block italic text-[13px] text-[#A7713F] -mt-1"
+                      style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                    >
+                      Heirloom Rose Sanctuary &amp; Bespoke Gatherings
+                    </span>
+                  </div>
                 </div>
-                <p className="text-[14px] text-[#66625B] leading-[1.6] font-light max-w-sm">
-                  30+ acre regenerative estate, organic garden rose sanctuary, and bespoke wedding
-                  venue in the heart of the Santa Ynez Valley.
+                <p className="text-[14px] text-[#0E2725]/80 leading-[1.65] font-light max-w-sm">
+                  30+ acre biodynamic farmstead, vintage garden rose atelier, and private wedding
+                  sanctuary in the Santa Ynez Valley.
                 </p>
-                <div className="pt-2 space-y-1 text-[14px] text-[#3E3E3E] font-light">
+                {/* Official Brand Kit Color Swatch Signature */}
+                <div className="pt-2">
+                  <div
+                    className="text-[9.5px] uppercase tracking-[0.28em] text-[#0E2725]/60 mb-2"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    E S T A T E   P A L E T T E   ( B R A N D   K I T )
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {[
+                      { hex: '#D2CCBE', name: 'Stoneware Clay' },
+                      { hex: '#A7713F', name: 'Kiln Terracotta' },
+                      { hex: '#99AAAF', name: 'Coastal Slate' },
+                      { hex: '#0E2725', name: 'Deep Pine Ink' },
+                      { hex: '#A6A26A', name: 'Vintage Olive' }
+                    ].map((s) => (
+                      <div
+                        key={s.hex}
+                        title={`${s.name} (${s.hex})`}
+                        className="w-6 h-6 rounded-full border border-[#0E2725]/25"
+                        style={{ backgroundColor: s.hex }}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <div className="pt-2 space-y-1 text-[14px] text-[#0E2725] font-light">
                   <div>2550 Calzada Ave, Santa Ynez, CA 93460</div>
                   <div className="flex items-center gap-4 pt-1">
                     <a href="tel:+18058941477" className="refero-ghost-link">
@@ -750,20 +828,20 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
 
               <div className="md:col-span-3 space-y-2.5">
                 <div
-                  className="italic text-[17px] text-[#78926E] mb-3"
-                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                  className="text-[10.5px] uppercase tracking-[0.26em] text-[#A7713F] mb-3"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  Venue &amp; Celebrations
+                  B E S P O K E   E V E N T S
                 </div>
                 {[
                   { label: 'Venue Overview', to: '/venue' },
                   { label: 'Estate Vignettes', to: '/vignettes' },
                   { label: 'Services & Offerings', to: '/services' },
-                  { label: 'Organic Event Florals', to: '/floral' },
+                  { label: 'Heirloom Event Florals', to: '/floral' },
                   { label: 'Gatherings & Workshops', to: '/gatherings' }
                 ].map((l) => (
                   <div key={l.to}>
-                    <Link to={l.to} className="refero-ghost-link text-[#3E3E3E]">
+                    <Link to={l.to} className="refero-ghost-link text-[#0E2725]">
                       {l.label}
                     </Link>
                   </div>
@@ -772,20 +850,20 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
 
               <div className="md:col-span-3 space-y-2.5">
                 <div
-                  className="italic text-[17px] text-[#78926E] mb-3"
-                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                  className="text-[10.5px] uppercase tracking-[0.26em] text-[#A7713F] mb-3"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  The Living Sanctuary
+                  V I N T A G E   R O S E   F A R M
                 </div>
                 {[
                   { label: 'The Farm & Animals', to: '/the-farm' },
                   { label: 'About Ecomama', to: '/about' },
                   { label: 'Our Founder Story', to: '/our-story' },
-                  { label: 'Sustainability Practices', to: '/sustainability' },
+                  { label: 'Regenerative Soil & Clay', to: '/sustainability' },
                   { label: 'Santa Ynez Valley Guide', to: '/local-recommendations' }
                 ].map((l) => (
                   <div key={l.to}>
-                    <Link to={l.to} className="refero-ghost-link text-[#3E3E3E]">
+                    <Link to={l.to} className="refero-ghost-link text-[#0E2725]">
                       {l.label}
                     </Link>
                   </div>
@@ -794,36 +872,36 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
 
               <div className="md:col-span-2 space-y-2.5">
                 <div
-                  className="italic text-[17px] text-[#78926E] mb-3"
-                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                  className="text-[10.5px] uppercase tracking-[0.26em] text-[#A7713F] mb-3"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  Connect
+                  C O N N E C T
                 </div>
                 <div>
-                  <Link to="/contact" className="refero-ghost-link text-[#3E3E3E]">
+                  <Link to="/contact" className="refero-ghost-link text-[#0E2725]">
                     Contact Us
                   </Link>
                 </div>
                 <div>
-                  <Link to="/partner-with-us" className="refero-ghost-link text-[#3E3E3E]">
+                  <Link to="/partner-with-us" className="refero-ghost-link text-[#0E2725]">
                     Partner With Us
                   </Link>
                 </div>
                 <div>
-                  <Link to="/privacy-policy" className="refero-ghost-link text-[#3E3E3E]">
+                  <Link to="/privacy-policy" className="refero-ghost-link text-[#0E2725]">
                     Privacy Policy
                   </Link>
                 </div>
               </div>
             </div>
 
-            <div className="pt-8 border-t border-[#78926E]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12.5px] text-[#8C877E] font-light">
+            <div className="pt-8 border-t border-[#0E2725]/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12.5px] text-[#0E2725]/70 font-light">
               <span>© {new Date().getFullYear()} Ecomama Farms LLC · Santa Ynez, California</span>
               <span
-                className="italic text-[14px]"
-                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                className="italic text-[15px] text-[#0E2725]"
+                style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
               >
-                Where Earth’s Beauty &amp; Memorable Gatherings Converge
+                Tended by hand, fired in clay, gathered in bloom
               </span>
             </div>
           </div>
@@ -1021,27 +1099,28 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
           <div className="refero-card max-w-lg w-full relative">
             <button
               onClick={() => setInquiryModalOpen(false)}
-              className="absolute top-5 right-5 w-9 h-9 rounded-[100px] border border-[#78926E]/30 inline-flex items-center justify-center text-[#3E3E3E]/60 hover:text-[#3E3E3E]"
+              className="absolute top-5 right-5 w-9 h-9 rounded-[100px] border border-[#A7713F]/35 inline-flex items-center justify-center text-[#0E2725]/60 hover:text-[#0E2725]"
             >
               <X className="w-4 h-4" />
             </button>
-            <div className="inline-flex items-center gap-2 text-[#78926E] mb-2">
-              <img src="/images/ecomama-rose-icon.png" alt="" className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 text-[#A7713F] mb-2">
+              <img src="/images/brandkit/illustration-04.png" alt="" className="w-5 h-5" />
               <span
-                className="italic text-[16px]"
-                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                className="italic text-[16.5px]"
+                style={{ fontFamily: brandFontHeading }}
               >
                 Santa Ynez Valley Hospitality
               </span>
             </div>
             <h3
-              className="text-3xl text-[#3E3E3E]"
-              style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+              className="text-3xl text-[#0E2725]"
+              style={{ fontFamily: brandFontHeading }}
             >
               Arrange a Private Estate Walk
             </h3>
-            <p className="text-sm text-[#66625B] font-light mt-2 leading-relaxed">
-              Wander the rose gardens, heritage barns, and orchards with our Santa Ynez events team.
+            <p className="text-sm text-[#0E2725]/75 font-light mt-2 leading-relaxed">
+              Wander the heirloom rose fields, pottery studio tables, and heritage barns with our
+              Santa Ynez events team.
             </p>
             <form
               onSubmit={(e) => {
@@ -1088,7 +1167,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
               </div>
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-[100px] bg-[#78926E] text-[#FAF8F4] hover:bg-[#587050] text-[14px] transition-colors mt-2"
+                className="w-full py-3.5 rounded-[100px] bg-[#A7713F] text-[#F6F2EA] hover:bg-[#0E2725] text-[14px] transition-colors mt-2"
               >
                 Request Private Walkthrough →
               </button>

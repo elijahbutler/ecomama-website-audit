@@ -7,42 +7,42 @@ import { ReferoHeroFrame, ReferoSageStrip } from '../components/ReferoComponents
 
 const SERVICE_TIERS = [
   {
-    title: 'The Estate Wedding (Full-Service)',
-    subtitle: 'Comprehensive Planning & Production',
+    title: 'The Estate Wedding',
+    subtitle: 'Full-Service Planning & Floral Design',
     image: '/images/29-val-and-blake-wedding-preview-1.jpg',
     description:
-      'Our signature all-inclusive experience: full weekend access across all 6 estate facilities, in-house wedding planning, farm-to-table culinary curation, and 100% organic garden rose florals.',
+      'Our signature bespoke experience: unhurried access across all six estate spaces, in-house wedding planning, seasonal culinary curation, and 100% organic garden rose florals harvested on-site.',
     highlights: [
-      'Up to 180 guests across all 6 outdoor & barn vignettes',
-      'Full-service planning, design & day-of coordination',
-      'Bespoke organic garden rose florals harvested on-site',
-      'Bridal Loft & Groomsmen’s Cottage full-day access'
+      'Up to 180 guests across all outdoor gardens & heritage barns',
+      'Full-service planning, creative direction & day-of coordination',
+      'Bespoke organic garden rose florals harvested hours before vows',
+      'Bridal Loft & Groomsmen’s Cottage full-day sanctuary access'
     ]
   },
   {
-    title: 'Partial Planning & Design',
-    subtitle: 'Collaborative Estate Curation',
+    title: 'Partial Planning & Curation',
+    subtitle: 'Collaborative Estate Guidance',
     image: '/images/30-jt-ally-photo.jpg',
     description:
-      'Ideal for couples who have begun their planning journey and want our Santa Ynez estate team to curate vendor integration, floorplans, floral design, and seamless event execution.',
+      'Ideal for couples who have begun their planning journey and wish to partner with our Santa Ynez estate team for artisan vendor integration, garden flow, floral design, and effortless execution.',
     highlights: [
-      'Exclusive estate buyout across ceremony & reception lawns',
-      'Curated preferred Santa Ynez vendor & catering management',
+      'Exclusive private access across ceremony & reception lawns',
+      'Curated Santa Ynez Valley artisan & culinary coordination',
       'Custom estate floral & botanical installation options',
-      'Dedicated rehearsal & wedding-day production team'
+      'Dedicated rehearsal & wedding-day estate hosts'
     ]
   },
   {
-    title: 'Venue Only Buyout',
-    subtitle: 'The Private Estate Canvas',
+    title: 'Private Estate Buyout',
+    subtitle: 'The Sanctuary Canvas',
     image: '/images/18-sb5-52.jpg',
     description:
-      'Exclusive private access to Ecomama Farms’ ceremony gardens, terraced reception lawn, Rose Barn, and Mountain View Barn for couples working with their own full-service planner.',
+      'Exclusive access to Ecomama Farms’ ceremony rose gardens, terraced reception lawn, Rose Barn, and Mountain View Barn for couples working with their own full-service planner.',
     highlights: [
       'Private access to the Rose Garden, Terraced Lawn & Barns',
       'Bridal Loft & Groomsmen’s Cottage getting-ready suites',
-      'On-site estate manager & parking coordination',
-      'Optional add-on estate rose buckets & farm experiences'
+      'On-site estate steward & guest arrival coordination',
+      'Optional estate-grown heirloom rose buckets & farm experiences'
     ]
   }
 ];
@@ -54,166 +54,198 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
   if (mode === 'refero') {
     return (
       <div className="bg-[#F4F1EE] text-[#3E3E3E]">
-        {/* 1. Full-Bleed 100vw x 100vh Hero Frame (Zero Radius, Left+Right Split Display Type) */}
+        {/* 1. Full-Bleed Hero Frame with Soft Bottom-Half Gradient (Top half completely unshaded) */}
         <ReferoHeroFrame
           image="/images/02-screenshot-2026-03-30-at-2-37-39-pm.png"
           imageAlt="Aerial view of Ecomama Farms in the Santa Ynez Valley"
-          eyebrowLeft="SANTA YNEZ VALLEY · 30+ REGENERATIVE ACRES"
+          eyebrowLeft="In the Heart of the Santa Ynez Valley"
           headlineLeft="Where Earth’s Beauty & Memorable Gatherings Converge."
-          statementRight="A private California ranch estate with 2,500+ organic heirloom roses and six outdoor wedding vignettes."
-          subcaptionRight="In the heart of the Santa Ynez Valley lies a slice of paradise: Ecomama Farms."
-          primaryAction={{ label: 'Explore the Venue', to: '/venue' }}
+          statementRight="A working biodynamic rose sanctuary and private California ranch estate for bespoke weddings & gatherings."
+          subcaptionRight="Welcome to our lush 30+ acre sanctuary, dedicated to regenerative agriculture, heirloom roses, and unforgettable celebrations."
+          primaryAction={{ label: 'Explore the Estate', to: '/venue' }}
           secondaryAction={{ label: 'Inquire for 2026–2027', to: '/contact' }}
           fullHeight={true}
         />
 
-        {/* 2. Ecomama Sage Accent Strip (Replacing Lightship's Ember Orange Wash) */}
+        {/* 2. Organic Ecomama Sage Ribbon */}
         <ReferoSageStrip
-          label="Estate Highlights"
-          statement="30+ Regenerative Acres · 2,500+ Organic Garden Roses · Up to 180 Seated Guests · 6 Distinct Outdoor Vignettes"
-          rightLink={{ text: 'Schedule a Private Tour', to: '/contact' }}
+          label="A Living Sanctuary"
+          statement="30+ Regenerative Acres · Over 2,500 Organic Heirloom Rose Bushes · Up to 180 Guests Under the Santa Ynez Sky"
+          rightLink={{ text: 'Arrange a Private Visit', to: '/contact' }}
         />
 
-        {/* 3. Asymmetric Photo Mosaic & Editorial Headline Pair (100px Section Gap) */}
+        {/* 3. Organic Asymmetric Garden Collage & Poetic Narrative */}
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-16">
-            <div className="lg:col-span-7">
-              <div className="text-[12px] uppercase tracking-[0.14em] text-[#78926E] mb-3">
-                01 / The Sanctuary
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-20">
+            <div className="lg:col-span-7 space-y-3">
+              <div className="inline-flex items-center gap-2 text-[#78926E]">
+                <img src="/images/ecomama-rose-icon.png" alt="" className="w-4 h-4 opacity-80" />
+                <span
+                  className="italic text-[18px]"
+                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                >
+                  A Sanctuary in Bloom
+                </span>
               </div>
               <h2 className="refero-heading-lg text-[#3E3E3E]">
-                A working biodynamic rose farm designed as an open-air gallery for celebrations.
+                Tended by hand as a living rose farm, opened with warmth for life’s most meaningful
+                celebrations.
               </h2>
             </div>
             <div className="lg:col-span-5">
-              <p className="text-[16px] leading-[1.45] tracking-[-0.02em] text-[#78756F]">
-                Welcome to Ecomama Farms, a lush sanctuary dedicated to regenerative agriculture,
-                sustainability, and unforgettable events. Every celebration is surrounded by active
-                orchards, fragrant garden roses, and panoramic Santa Ynez Mountain views.
+              <p className="text-[15.5px] leading-[1.7] text-[#66625B] font-light">
+                Every gathering at Ecomama Farms unfolds inside a living ecosystem—surrounded by
+                fragrant David Austin and heirloom garden roses, silver-leafed olive trees, organic
+                stone-fruit orchards, and sweeping views of the Santa Ynez Mountains.
               </p>
             </div>
           </div>
 
-          {/* Off-Grid Asymmetric Collage Layout with 20px Border Radius */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
-            {/* Large Left Card (7 cols) */}
-            <div className="md:col-span-7 space-y-4">
-              <div className="rounded-[20px] overflow-hidden aspect-[16/11] bg-white">
+          {/* Asymmetric Botanical Collage — Warm Linen & Soft Arch / 24px Frames */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
+            {/* Left Wide Garden Frame (7 cols) */}
+            <div className="md:col-span-7 space-y-5">
+              <div className="rounded-[24px] overflow-hidden aspect-[16/11] bg-[#FAF8F4] border border-[#78926E]/20">
                 <img
                   src="/images/06-dji-0676-enhanced-nr-copy.jpg"
                   alt="The Venue at Ecomama Farms"
                   className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-700"
                 />
               </div>
-              <div className="flex items-start justify-between gap-4 pt-2 px-1">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-1 px-2">
                 <div>
-                  <span className="text-[12px] text-[#999690] tracking-[-0.02em]">
-                    01 — Private Estate Venue
+                  <span
+                    className="italic text-[16px] text-[#78926E]"
+                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                  >
+                    The Private Estate Venue
                   </span>
                   <h3 className="refero-heading text-[#3E3E3E] mt-0.5">
-                    Six distinct facilities &amp; six portrait spaces across 30+ acres
+                    Lush ceremony lawns, open-air barns &amp; mountain-view terraces
                   </h3>
                 </div>
-                <Link to="/venue" className="refero-pill-btn shrink-0">
-                  <span>Explore Venue</span>
+                <Link to="/venue" className="refero-pill-btn shrink-0 self-start sm:self-auto">
+                  <span>Discover the Venue</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
 
-            {/* Vertically Offset Right Card (5 cols, md:mt-20 offset per Refero Mosaic Spec) */}
-            <div className="md:col-span-5 md:mt-20 space-y-4">
-              <div className="rounded-[20px] overflow-hidden aspect-[4/5] bg-white">
+            {/* Right Botanical Arch Portrait Frame (5 cols, vertically offset) */}
+            <div className="md:col-span-5 md:mt-16 space-y-5">
+              <div className="refero-arch-photo aspect-[4/5] bg-[#FAF8F4] border border-[#78926E]/20">
                 <img
                   src="/images/03-james-and-jess-at-ecomama-farms.jpg"
                   alt="2,500+ Organic Heirloom Roses"
                   className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-700"
                 />
               </div>
-              <div className="flex items-start justify-between gap-4 pt-2 px-1">
-                <div>
-                  <span className="text-[12px] text-[#999690] tracking-[-0.02em]">
-                    02 — Seed-to-Centerpiece Florals
-                  </span>
-                  <h3 className="refero-heading text-[#3E3E3E] mt-0.5">
-                    2,500+ organic garden roses harvested at peak fragrance
-                  </h3>
-                </div>
-                <Link to="/floral" className="refero-ghost-link text-[#3E3E3E] shrink-0 mt-2">
-                  <span>Floral Program</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Third Offset Mosaic Card (5 cols left) + White Elevated Spec Card (7 cols right) */}
-            <div className="md:col-span-5 md:-mt-10 space-y-4">
-              <div className="rounded-[20px] overflow-hidden aspect-[4/3] bg-white">
-                <img
-                  src="/images/34-dji-0656.jpg"
-                  alt="Regenerative Farming at Ecomama Farms"
-                  className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-700"
-                />
-              </div>
-              <div className="px-1">
-                <span className="text-[12px] text-[#999690]">03 — Regenerative Stewardship</span>
-                <div className="flex items-center justify-between mt-1">
-                  <h3
-                    className="text-[22px] tracking-[-0.03em] text-[#3E3E3E]"
-                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-                  >
-                    Heritage orchards, biodynamic compost &amp; farm animals
-                  </h3>
-                  <Link to="/the-farm" className="refero-ghost-link text-[#3E3E3E]">
-                    <span>The Farm</span>
+              <div className="px-2 space-y-2">
+                <span
+                  className="italic text-[16px] text-[#78926E]"
+                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                >
+                  Seed-to-Centerpiece Florals
+                </span>
+                <h3 className="refero-heading text-[#3E3E3E]">
+                  2,500+ organic garden roses harvested at peak fragrance
+                </h3>
+                <p className="text-[14px] text-[#66625B] leading-[1.6] font-light">
+                  Grown in biodynamic Santa Ynez soil without synthetic sprays and gathered the
+                  morning of your celebration.
+                </p>
+                <div className="pt-1">
+                  <Link to="/floral" className="refero-ghost-link text-[#3E3E3E]">
+                    <span>Explore our floral studio</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
             </div>
 
-            <div className="md:col-span-7 md:mt-8">
-              <div className="bg-white rounded-[20px] p-8 md:p-12 border border-[#D9D4CC] space-y-6">
-                <div className="flex items-center justify-between border-b border-[#D9D4CC] pb-4">
-                  <div className="flex items-center gap-2.5">
-                    <img src="/images/ecomama-rose-icon.png" alt="" className="w-5 h-5" />
-                    <span className="text-[12px] uppercase tracking-[0.14em] text-[#78926E]">
-                      Estate Specifications
-                    </span>
-                  </div>
-                  <span className="text-[12px] text-[#999690]">Santa Ynez, CA</span>
+            {/* Third Offset Frame (5 cols left) + Warm Parchment Sanctuary Note (7 cols right) */}
+            <div className="md:col-span-5 md:-mt-12 space-y-4">
+              <div className="rounded-[24px] overflow-hidden aspect-[4/3] bg-[#FAF8F4] border border-[#78926E]/20">
+                <img
+                  src="/images/34-dji-0656.jpg"
+                  alt="Regenerative Farming at Ecomama Farms"
+                  className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
+              <div className="px-2">
+                <span
+                  className="italic text-[16px] text-[#78926E]"
+                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                >
+                  Biodynamic &amp; Regenerative Roots
+                </span>
+                <div className="flex items-center justify-between mt-1 gap-4">
+                  <h3
+                    className="text-[22px] text-[#3E3E3E]"
+                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                  >
+                    Heritage orchards, living compost &amp; gentle farm animals
+                  </h3>
+                  <Link to="/the-farm" className="refero-ghost-link text-[#3E3E3E] shrink-0">
+                    <span>Meet the Farm</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:col-span-7 md:mt-6">
+              <div className="relative overflow-hidden bg-[#FAF8F4] rounded-[24px] p-8 md:p-12 border border-[#78926E]/25 space-y-7">
+                {/* Delicate Botanical Rose Watermark */}
+                <img
+                  src="/images/ecomama-rose-icon.png"
+                  alt=""
+                  className="pointer-events-none absolute -right-10 -bottom-10 w-56 h-56 object-contain opacity-[0.045]"
+                />
+
+                <div className="space-y-2">
+                  <span
+                    className="italic text-[17px] text-[#78926E]"
+                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                  >
+                    Life on the Estate
+                  </span>
+                  <h3 className="refero-heading text-[#3E3E3E]">
+                    “We wanted every guest to feel as though they had stepped into a private Santa
+                    Ynez garden party where time slows down.”
+                  </h3>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-4 border-t border-[#78926E]/20">
                   {[
-                    { val: '180', lbl: 'Estate Capacity' },
-                    { val: '2,500+', lbl: 'Heirloom Roses' },
-                    { val: '12', lbl: 'Facilities & Vignettes' },
-                    { val: '100%', lbl: 'Organic & Biodynamic' }
+                    { val: '30+ Acres', lbl: 'Private Sanctuary' },
+                    { val: '2,500+', lbl: 'Heirloom Rose Bushes' },
+                    { val: 'Up to 180', lbl: 'Celebration Guests' },
+                    { val: '100% Organic', lbl: 'Biodynamic Grounds' }
                   ].map((s) => (
                     <div key={s.lbl}>
                       <div
-                        className="text-[34px] leading-none tracking-[-0.04em] text-[#3E3E3E]"
+                        className="text-[26px] md:text-[30px] leading-tight text-[#587050]"
                         style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
                       >
                         {s.val}
                       </div>
-                      <div className="text-[12px] text-[#78756F] mt-1.5">{s.lbl}</div>
+                      <div className="text-[12.5px] text-[#66625B] mt-1 font-light">{s.lbl}</div>
                     </div>
                   ))}
                 </div>
 
-                <div className="pt-4 border-t border-[#D9D4CC] flex flex-wrap items-center justify-between gap-4">
-                  <p className="text-[14px] text-[#78756F]">
-                    Available for full-weekend buyouts, intimate farm dinners, and custom workshops.
+                <div className="pt-4 border-t border-[#78926E]/20 flex flex-wrap items-center justify-between gap-4">
+                  <p className="text-[14px] text-[#66625B] font-light">
+                    Welcoming bespoke weddings, harvest dinners, and seasonal botanical workshops.
                   </p>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-5">
                     <Link to="/vignettes" className="refero-pill-btn">
-                      <span>View Vignettes</span>
+                      <span>Wander the Spaces</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
                     <Link to="/services" className="refero-ghost-link text-[#3E3E3E]">
-                      <span>Packages</span>
+                      <span>Offerings</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -223,33 +255,39 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           </div>
         </section>
 
-        {/* 4. Full-Bleed Cinematic Section Break (Zero Border Radius per Refero Spec) */}
-        <section className="relative w-full h-[72vh] rounded-none overflow-hidden">
+        {/* 4. Full-Bleed Sunset Section Break with Bottom-Half Gradient Only */}
+        <section className="relative w-full h-[74vh] rounded-none overflow-hidden">
           <img
             src="/images/05-ecomama-farms-santa-ynez-wedding-reception18.jpg"
             alt="The Terraced Lawn at Ecomama Farms"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/30" />
-          <div className="absolute inset-0 max-w-[1440px] mx-auto px-6 md:px-12 py-14 flex flex-col justify-between text-white">
-            <div className="flex items-center justify-between text-[12px] tracking-[-0.02em] border-b border-white/25 pb-4">
-              <span>FEATURED VIGNETTE — THE TERRACED LAWN &amp; ROSE GARDEN</span>
-              <span>UP TO 180 GUESTS</span>
-            </div>
+          {/* Soft bottom-half gradient ONLY — keeps the twilight sky and mountain ridge unshaded */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] hero-bottom-shade" />
+
+          <div className="absolute inset-0 max-w-[1440px] mx-auto px-6 md:px-12 py-14 flex flex-col justify-end text-[#FAF8F4]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-              <h2 className="lg:col-span-7 refero-display text-white">
-                Panoramic golden hour over the Santa Ynez mountains.
-              </h2>
+              <div className="lg:col-span-7 space-y-3">
+                <span
+                  className="italic text-[18px] text-[#E9EFE6]"
+                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                >
+                  Al Fresco Twilight on the Terraced Lawn
+                </span>
+                <h2 className="refero-display text-[#FAF8F4]">
+                  Golden hour fading into starlight over the Santa Ynez mountains.
+                </h2>
+              </div>
               <div className="lg:col-span-5 lg:text-right flex flex-col lg:items-end gap-4">
-                <p className="text-[16px] text-white/85 max-w-md">
-                  Move effortlessly from a Rose Garden ceremony to cocktail hour beside the willow
-                  pond and candlelit dining on the Terraced Lawn.
+                <p className="text-[15.5px] text-[#FAF8F4]/90 max-w-md font-light leading-relaxed">
+                  Move effortlessly from vows in the Heart of the Rose Garden to cocktails beside
+                  the weeping willow pond and candlelit dining on the lawn.
                 </p>
                 <Link
                   to="/vignettes"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[100px] border border-white text-white text-[14px] hover:bg-white hover:text-[#3E3E3E] transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[100px] bg-[#78926E]/90 hover:bg-[#78926E] border border-white/30 text-[#FAF8F4] text-[13.5px] transition-colors"
                 >
-                  <span>Explore All Estate Vignettes</span>
+                  <span>Explore All Garden &amp; Barn Spaces</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -257,55 +295,65 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           </div>
         </section>
 
-        {/* 5. Asymmetric 6-Vignette Preview Grid on Warm Cream Canvas */}
+        {/* 5. Asymmetric 6-Vignette Garden Showcase */}
         <section className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 pb-6 border-b border-[#D9D4CC]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#78926E]/25">
             <div>
-              <div className="text-[12px] uppercase tracking-[0.14em] text-[#78926E] mb-2">
-                02 / Venue Architecture
-              </div>
-              <h2 className="refero-heading-lg text-[#3E3E3E]">Six Spaces, One Private Estate</h2>
+              <span
+                className="italic text-[18px] text-[#78926E] block mb-1"
+                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+              >
+                Gathered Across the Grounds
+              </span>
+              <h2 className="refero-heading-lg text-[#3E3E3E]">
+                Six Intimate Spaces, One Private Sanctuary
+              </h2>
             </div>
             <Link to="/vignettes" className="refero-pill-btn self-start md:self-auto">
-              <span>Full Vignette Specifications</span>
+              <span>Explore All 12 Estate Vignettes</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-7 md:gap-8">
             {VIGNETTES_FACILITIES.map((v, i) => {
               const colSpan =
                 i % 3 === 0
                   ? 'md:col-span-5'
                   : i % 3 === 1
-                  ? 'md:col-span-4 md:mt-12'
-                  : 'md:col-span-3 md:mt-24';
+                  ? 'md:col-span-4 md:mt-10'
+                  : 'md:col-span-3 md:mt-20';
               return (
                 <div
                   key={v.title}
-                  className={`${colSpan} bg-white rounded-[20px] p-5 border border-[#D9D4CC] flex flex-col justify-between`}
+                  className={`${colSpan} bg-[#FAF8F4] rounded-[24px] p-6 border border-[#78926E]/20 flex flex-col justify-between`}
                 >
                   <div>
-                    <div className="rounded-[20px] overflow-hidden aspect-[4/3] mb-4">
+                    <div className="rounded-[20px] overflow-hidden aspect-[4/3] mb-5">
                       <img
                         src={v.image}
                         alt={v.alt}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                       />
                     </div>
-                    <div className="flex items-center justify-between text-[12px] text-[#78926E] mb-1">
-                      <span>0{i + 1}</span>
-                      <span className="px-2.5 py-0.5 rounded-[100px] border border-[#D9D4CC] text-[#3E3E3E]">
+                    <div className="flex items-center justify-between text-[12px] text-[#587050] mb-2">
+                      <span
+                        className="italic text-[15px]"
+                        style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                      >
                         {v.tag}
+                      </span>
+                      <span className="px-3 py-0.5 rounded-[100px] bg-[#E9EFE6] text-[#587050] text-[11.5px]">
+                        {v.capacity}
                       </span>
                     </div>
                     <h3 className="refero-heading text-[#3E3E3E] mt-1 mb-2">{v.title}</h3>
-                    <p className="text-[14px] text-[#78756F] leading-[1.4] mb-4">
+                    <p className="text-[14px] text-[#66625B] leading-[1.6] font-light mb-5">
                       {v.originalCopy}
                     </p>
                   </div>
                   <Link to="/vignettes" className="refero-ghost-link text-[#3E3E3E] self-start">
-                    <span>Inspect space</span>
+                    <span>Discover {v.title}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -326,7 +374,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
             alt="Ecomama Farms Aerial View"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/35" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[56%] hero-bottom-shade" />
           <div className="relative z-10 max-w-4xl px-6">
             <h1 className="font-serif text-4xl md:text-6xl leading-tight mb-6">
               Where Earth’s Beauty and Memorable Gatherings Converge
@@ -343,8 +391,16 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { title: 'The Farm', img: '/images/34-dji-0656.jpg', link: '/the-farm' },
-              { title: 'Roses', img: '/images/03-james-and-jess-at-ecomama-farms.jpg', link: '/floral' },
-              { title: 'The Venue', img: '/images/06-dji-0676-enhanced-nr-copy.jpg', link: '/venue' }
+              {
+                title: 'Roses',
+                img: '/images/03-james-and-jess-at-ecomama-farms.jpg',
+                link: '/floral'
+              },
+              {
+                title: 'The Venue',
+                img: '/images/06-dji-0676-enhanced-nr-copy.jpg',
+                link: '/venue'
+              }
             ].map((card) => (
               <div key={card.title} className="text-center space-y-4">
                 <div className="aspect-[4/5] overflow-hidden bg-black/5">
@@ -373,9 +429,9 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
         <img
           src="/images/05-ecomama-farms-santa-ynez-wedding-reception18.jpg"
           alt="Golden hour across the Ecomama Farms terraced lawn and Santa Ynez mountains"
-          className="absolute inset-0 w-full h-full object-cover opacity-80 scale-105 transition-transform duration-1000"
+          className="absolute inset-0 w-full h-full object-cover scale-105 transition-transform duration-1000"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#161B17] via-[#161B17]/45 to-black/25" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] hero-bottom-shade" />
 
         <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-8 space-y-6">
@@ -423,55 +479,58 @@ export const VenuePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
         <ReferoHeroFrame
           image="/images/06-dji-0676-enhanced-nr-copy.jpg"
           imageAlt="Ecomama Farms Wedding & Event Venue"
-          eyebrowLeft="PRIVATE ESTATE VENUE · SANTA YNEZ VALLEY"
+          eyebrowLeft="Private Estate Venue · Santa Ynez Valley"
           headlineLeft="The Estate, in Full."
-          statementRight="Six distinct facilities and six picturesque portrait settings across 30+ acres of organic roses, olive trees, and orchards for up to 180 guests."
-          primaryAction={{ label: 'Explore 12 Vignettes', to: '/vignettes' }}
-          secondaryAction={{ label: 'Compare Packages', to: '/services' }}
+          statementRight="Six distinct celebration spaces and six botanical portrait vignettes across 30+ acres of organic roses, olive trees, and orchards."
+          primaryAction={{ label: 'Wander the 12 Vignettes', to: '/vignettes' }}
+          secondaryAction={{ label: 'Explore Offerings', to: '/services' }}
           fullHeight={false}
         />
 
         <ReferoSageStrip
-          label="Venue Architecture"
-          statement="Exclusive One-Event-Per-Weekend Buyouts · Seated Receptions up to 180 · Curated In-House Planning & Organic Florals"
-          rightLink={{ text: 'Request Venue Brochure', to: '/contact' }}
+          label="Unhurried Celebrations"
+          statement="One Private Celebration Per Weekend · Up to 180 Guests · In-House Planning & Estate-Grown Organic Florals"
+          rightLink={{ text: 'Request Estate Guide', to: '/contact' }}
         />
 
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-6 space-y-6">
-              <div className="text-[12px] uppercase tracking-[0.14em] text-[#78926E]">
-                The Estate Canvas
-              </div>
+              <span
+                className="italic text-[18px] text-[#78926E] block"
+                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+              >
+                A Natural Sense of Place
+              </span>
               <h2 className="refero-heading-lg text-[#3E3E3E]">
-                An unhurried progressive flow from ceremony to starlight.
+                An unhurried flow from sunlit rose gardens to starlit dining.
               </h2>
-              <p className="text-[16px] text-[#78756F] leading-[1.5]">
+              <p className="text-[15.5px] text-[#66625B] leading-[1.7] font-light">
                 In the heart of the Santa Ynez Valley lies a slice of paradise: Ecomama Farms.
                 Welcome to our lush sanctuary, dedicated to regenerative agriculture,
                 sustainability, and unforgettable events.
               </p>
-              <p className="text-[16px] text-[#78756F] leading-[1.5]">
+              <p className="text-[15.5px] text-[#66625B] leading-[1.7] font-light">
                 On our sprawling property, you’ll find an idyllic wedding and events venue that can
                 accommodate up to 180 guests. Choose from several picturesque spots, including our
-                vibrant rose garden, tranquil pond, terraced lawn, and shaded olive lane, each
-                offering a magical backdrop for your special occasion.
+                vibrant rose garden, tranquil willow pond, terraced lawn, and shaded olive lane,
+                each offering a magical backdrop for your special occasion.
               </p>
-              <div className="flex flex-wrap gap-4 pt-2">
+              <div className="flex flex-wrap gap-5 pt-2">
                 <Link to="/vignettes" className="refero-pill-btn">
-                  <span>Inspect All Vignettes</span>
+                  <span>Explore All Vignettes</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link to="/services" className="refero-ghost-link text-[#3E3E3E] py-2">
-                  <span>View Services &amp; Packages</span>
+                  <span>View Services &amp; Offerings</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
 
-            {/* Asymmetric Photo Pair with 20px Radius */}
+            {/* Asymmetric Photo Pair with Botanical Arch & 24px Frame */}
             <div className="lg:col-span-6 grid grid-cols-12 gap-6 items-start">
-              <div className="col-span-7 rounded-[20px] overflow-hidden aspect-[4/5]">
+              <div className="col-span-7 refero-arch-photo aspect-[4/5]">
                 <img
                   src="/images/18-sb5-52.jpg"
                   alt="Terraced Lawn Reception"
@@ -479,18 +538,23 @@ export const VenuePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 />
               </div>
               <div className="col-span-5 mt-16 space-y-6">
-                <div className="rounded-[20px] overflow-hidden aspect-square">
+                <div className="rounded-[24px] overflow-hidden aspect-square">
                   <img
                     src="/images/26-screenshot-2024-07-24-at-9-19-50-pm.png"
                     alt="The Olive Lane"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="bg-white rounded-[20px] p-5 border border-[#D9D4CC]">
-                  <div className="text-[12px] text-[#78926E] mb-1">Estate Capacity</div>
+                <div className="bg-[#FAF8F4] rounded-[24px] p-6 border border-[#78926E]/25">
+                  <div
+                    className="italic text-[15px] text-[#78926E] mb-1"
+                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                  >
+                    Garden Capacity
+                  </div>
                   <div className="refero-heading text-[#3E3E3E]">Up to 180 Guests</div>
-                  <p className="text-[12px] text-[#78756F] mt-1">
-                    Rose Garden (180) · Terraced Lawn (150–180) · Mountain View Barn
+                  <p className="text-[12.5px] text-[#66625B] mt-1.5 font-light">
+                    Heart of the Rose Garden (180) · Terraced Lawn (150–180) · Mountain View Barn
                   </p>
                 </div>
               </div>
@@ -550,36 +614,43 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
         <ReferoHeroFrame
           image="/images/17-dji-0658-enhanced-sr.jpg"
           imageAlt="Estate Vignettes at Ecomama Farms"
-          eyebrowLeft="6 EVENT FACILITIES & 6 PORTRAIT VIGNETTES"
+          eyebrowLeft="Garden Lawns, Heritage Barns & Shaded Lanes"
           headlineLeft="Spaces Shaped by Orchard, Water & Rose."
-          statementRight="Each celebration flows progressively across our 30+ acre ranch—from the Heart of the Garden to the Mountain View Barn."
-          primaryAction={{ label: 'Book a Walkthrough', to: '/contact' }}
-          secondaryAction={{ label: 'View Packages', to: '/services' }}
+          statementRight="Each celebration unfolds progressively across our 30+ acre ranch—from the Heart of the Garden to the Mountain View Barn."
+          primaryAction={{ label: 'Book a Private Walkthrough', to: '/contact' }}
+          secondaryAction={{ label: 'Explore Packages', to: '/services' }}
           fullHeight={false}
         />
 
         <ReferoSageStrip
-          label="Audit Resolution Applied"
-          statement="Resolved live site's 'Currently under construction' Pond notice & unified capacity specs across all 12 estate spaces."
+          label="Twelve Intimate Settings"
+          statement="Six Celebration Facilities & Suites Paired with Six Botanical Portrait Vignettes Across the Estate"
         />
 
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
-          {/* 100px Pill Filter Bar per Refero Spec */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-14 pb-6 border-b border-[#D9D4CC]">
-            <h2 className="refero-heading-lg text-[#3E3E3E]">Estate Directory</h2>
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-16 pb-6 border-b border-[#78926E]/25">
+            <div>
+              <span
+                className="italic text-[17px] text-[#78926E] block"
+                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+              >
+                Wander the Estate
+              </span>
+              <h2 className="refero-heading-lg text-[#3E3E3E]">Sanctuary Spaces &amp; Vignettes</h2>
+            </div>
             <div className="flex flex-wrap gap-2">
               {[
-                { id: 'all', label: 'All 12 Spaces' },
-                { id: 'facilities', label: '6 Event Facilities' },
-                { id: 'photo', label: '6 Portrait Vignettes' }
+                { id: 'all', label: 'All Estate Spaces' },
+                { id: 'facilities', label: 'Ceremony, Barns & Suites' },
+                { id: 'photo', label: 'Garden & Orchard Vignettes' }
               ].map((item) => (
                 <button
                   key={item.id}
                   onClick={() => setTab(item.id as 'all' | 'facilities' | 'photo')}
-                  className={`px-4 py-2 rounded-[100px] text-[13px] tracking-[-0.02em] border transition-colors ${
+                  className={`px-5 py-2 rounded-[100px] text-[13px] border transition-colors ${
                     tab === item.id
-                      ? 'bg-[#3E3E3E] text-[#F4F1EE] border-[#3E3E3E]'
-                      : 'bg-white text-[#3E3E3E] border-[#D9D4CC] hover:border-[#3E3E3E]'
+                      ? 'bg-[#78926E] text-[#FAF8F4] border-[#78926E]'
+                      : 'bg-[#FAF8F4] text-[#3E3E3E] border-[#78926E]/30 hover:border-[#78926E]'
                   }`}
                 >
                   {item.label}
@@ -589,29 +660,39 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           </div>
 
           {(tab === 'all' || tab === 'facilities') && (
-            <div className="mb-20">
-              <div className="text-[12px] uppercase tracking-[0.14em] text-[#78926E] mb-8">
-                01 / Event Facilities &amp; Suites
+            <div className="mb-24">
+              <div
+                className="italic text-[20px] text-[#78926E] mb-8"
+                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+              >
+                Ceremony Lawns, Heritage Barns &amp; Private Suites
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {VIGNETTES_FACILITIES.map((f, idx) => (
                   <div
                     key={f.title}
-                    className={`bg-white rounded-[20px] p-6 border border-[#D9D4CC] space-y-4 ${
+                    className={`bg-[#FAF8F4] rounded-[24px] p-6 border border-[#78926E]/20 space-y-4 ${
                       idx % 3 === 1 ? 'lg:mt-8' : idx % 3 === 2 ? 'lg:mt-16' : ''
                     }`}
                   >
                     <div className="rounded-[20px] overflow-hidden aspect-[4/3]">
                       <img src={f.image} alt={f.alt} className="w-full h-full object-cover" />
                     </div>
-                    <div className="flex items-center justify-between text-[12px] text-[#78926E]">
-                      <span>{f.tag}</span>
-                      <span className="px-2.5 py-0.5 rounded-[100px] border border-[#D9D4CC] text-[#3E3E3E]">
+                    <div className="flex items-center justify-between text-[12px] text-[#587050]">
+                      <span
+                        className="italic text-[15px]"
+                        style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                      >
+                        {f.tag}
+                      </span>
+                      <span className="px-3 py-0.5 rounded-[100px] bg-[#E9EFE6] text-[#587050]">
                         {f.capacity}
                       </span>
                     </div>
                     <h3 className="refero-heading text-[#3E3E3E]">{f.title}</h3>
-                    <p className="text-[14px] text-[#78756F] leading-[1.45]">{f.originalCopy}</p>
+                    <p className="text-[14px] text-[#66625B] leading-[1.6] font-light">
+                      {f.originalCopy}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -620,14 +701,17 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
 
           {(tab === 'all' || tab === 'photo') && (
             <div>
-              <div className="text-[12px] uppercase tracking-[0.14em] text-[#78926E] mb-8">
-                02 / Botanical &amp; Portrait Vignettes
+              <div
+                className="italic text-[20px] text-[#78926E] mb-8"
+                style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+              >
+                Botanical Walks, Orchards &amp; Golden-Hour Portrait Vignettes
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {VIGNETTES_PHOTO_OPS.map((p, idx) => (
                   <div
                     key={p.title}
-                    className={`bg-white rounded-[20px] p-6 border border-[#D9D4CC] space-y-4 ${
+                    className={`bg-[#FAF8F4] rounded-[24px] p-6 border border-[#78926E]/20 space-y-4 ${
                       idx % 3 === 1 ? 'lg:mt-8' : idx % 3 === 2 ? 'lg:mt-16' : ''
                     }`}
                   >
@@ -635,7 +719,9 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                       <img src={p.image} alt={p.alt} className="w-full h-full object-cover" />
                     </div>
                     <h3 className="refero-heading text-[#3E3E3E]">{p.title}</h3>
-                    <p className="text-[14px] text-[#78756F] leading-[1.45]">{p.redesignCopy}</p>
+                    <p className="text-[14px] text-[#66625B] leading-[1.6] font-light">
+                      {p.redesignCopy}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -686,17 +772,17 @@ export const ServicesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
         <ReferoHeroFrame
           image="/images/29-val-and-blake-wedding-preview-1.jpg"
           imageAlt="Ecomama Farms Services & Planning Packages"
-          eyebrowLeft="TAILORED CELEBRATION PACKAGES"
-          headlineLeft="Venue Rental, Full Service & Partial Planning."
-          statementRight="Every wedding is unique—and your celebration at Ecomama Farms is tailored to reflect your personal style and vision."
+          eyebrowLeft="Bespoke Celebrations & Floral Artistry"
+          headlineLeft="Thoughtful Hospitality, Tailored to Your Vision."
+          statementRight="Whether you desire an all-inclusive estate wedding with farm-grown florals or a private sanctuary canvas for your planning team."
           primaryAction={{ label: 'Request Custom Proposal', to: '/contact' }}
           secondaryAction={{ label: 'Organic Event Florals', to: '/floral' }}
           fullHeight={false}
         />
 
         <ReferoSageStrip
-          label="Planning & Production"
-          statement="Three Transparent Tiers: The Estate Wedding (Full-Service) · Partial Planning · Venue Only Buyout"
+          label="Bespoke Offerings"
+          statement="The Estate Wedding (Full-Service) · Partial Planning & Design · Private Estate Buyout"
         />
 
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
@@ -704,7 +790,7 @@ export const ServicesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
             {SERVICE_TIERS.map((pkg, idx) => (
               <div
                 key={pkg.title}
-                className={`bg-white rounded-[20px] p-8 border border-[#D9D4CC] space-y-6 ${
+                className={`bg-[#FAF8F4] rounded-[24px] p-8 border border-[#78926E]/25 space-y-6 ${
                   idx === 1 ? 'lg:mt-10' : idx === 2 ? 'lg:mt-20' : ''
                 }`}
               >
@@ -715,17 +801,21 @@ export const ServicesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="flex items-center justify-between text-[12px] text-[#78926E]">
-                  <span>0{idx + 1} / Package Tier</span>
-                  <span className="px-3 py-0.5 rounded-[100px] border border-[#D9D4CC] text-[#3E3E3E]">
+                <div className="flex items-center justify-between">
+                  <span
+                    className="italic text-[16px] text-[#78926E]"
+                    style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
+                  >
                     {pkg.subtitle}
                   </span>
                 </div>
                 <h2 className="refero-heading text-[#3E3E3E]">{pkg.title}</h2>
-                <p className="text-[14px] text-[#78756F] leading-[1.45]">{pkg.description}</p>
-                <ul className="space-y-2.5 pt-3 border-t border-[#D9D4CC] text-[13px] text-[#3E3E3E]">
+                <p className="text-[14px] text-[#66625B] leading-[1.6] font-light">
+                  {pkg.description}
+                </p>
+                <ul className="space-y-2.5 pt-4 border-t border-[#78926E]/20 text-[13.5px] text-[#3E3E3E] font-light">
                   {pkg.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-2">
+                    <li key={h} className="flex items-start gap-2.5">
                       <Check className="w-4 h-4 text-[#78926E] shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </li>
@@ -733,7 +823,7 @@ export const ServicesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 </ul>
                 <div className="pt-2">
                   <Link to="/contact" className="refero-pill-btn w-full justify-center">
-                    <span>Inquire for {pkg.title}</span>
+                    <span>Inquire About {pkg.title}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>

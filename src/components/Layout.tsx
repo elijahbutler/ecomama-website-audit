@@ -89,7 +89,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
     <div
       className={`min-h-screen flex flex-col transition-colors duration-300 ${
         mode === 'organic'
-          ? 'refero-system refero-organic bg-[#EDE8DC] text-[#0E2725]'
+          ? 'refero-system refero-organic bg-[#FEF9EF] text-[#0E2725]'
           : mode === 'refero'
           ? 'refero-system refero-original bg-[#F4F1EE] text-[#3E3E3E]'
           : 'bg-[#F4F1EE] text-[#3E3E3E] font-sans'
@@ -104,7 +104,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
       <div
         className={
           isReferoFamily
-            ? 'fixed bottom-5 left-5 z-50 flex flex-wrap items-center gap-2 bg-[#0E2725]/95 backdrop-blur-md text-[#EDE8DC] px-3.5 py-2 rounded-[100px] border border-[#D2CCBE]/25'
+            ? 'fixed bottom-5 left-5 z-50 flex flex-wrap items-center gap-2 bg-[#0E2725]/95 backdrop-blur-md text-[#FEF9EF] px-3.5 py-2 rounded-[100px] border border-[#D2CCBE]/30 shadow-lg'
             : 'sticky top-0 z-50 bg-[#1B1F1C] text-[#F6F3EE] border-b border-white/10 px-4 py-2 text-xs'
         }
       >
@@ -121,7 +121,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
               onClick={() => setMode('organic')}
               className={`flex items-center gap-1.5 px-3 py-1 rounded-[100px] font-medium transition-all text-[11px] ${
                 mode === 'organic'
-                  ? 'bg-[#A7713F] text-[#F6F2EA]'
+                  ? 'bg-[#A7713F] text-[#FEF9EF]'
                   : 'text-white/70 hover:text-white'
               }`}
             >
@@ -187,7 +187,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
       ====================================================================== */}
       {auditOpen && (
         <div className="fixed inset-0 z-50 flex justify-end bg-black/50 backdrop-blur-xs">
-          <div className="w-full max-w-xl bg-[#0E2725] text-[#EDE8DC] h-full overflow-y-auto p-6 md:p-8 border-l border-white/10">
+          <div className="w-full max-w-xl bg-[#0E2725] text-[#FEF9EF] h-full overflow-y-auto p-6 md:p-8 border-l border-white/10">
             <div className="flex items-start justify-between gap-4 pb-6 border-b border-white/10">
               <div>
                 <span className="text-[10px] uppercase tracking-[0.2em] text-[#A6A26A] font-semibold">
@@ -290,7 +290,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                 className={`pointer-events-auto relative flex items-center justify-between transition-all duration-300 rounded-[100px] ${
                   scrollProgress > 0.15
                     ? mode === 'organic'
-                      ? 'bg-[#F6F2EA]/95 backdrop-blur-md border border-[#A7713F]/35 px-4 md:px-6 py-2.5 text-[#0E2725]'
+                      ? 'bg-[#FEF9EF]/95 backdrop-blur-md border border-[#D2CCBE] px-4 md:px-6 py-2.5 text-[#0E2725] shadow-sm'
                       : 'bg-[#F4F1EE]/95 backdrop-blur-md border border-[#D9D4CC] px-4 md:px-6 py-2.5 text-[#3E3E3E]'
                     : useDarkNavText
                     ? mode === 'organic'
@@ -307,7 +307,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                     className={`inline-flex items-center justify-center w-10 h-10 rounded-[100px] border transition-colors ${
                       useDarkNavText
                         ? mode === 'organic'
-                          ? 'border-[#A7713F]/45 hover:border-[#A7713F] text-[#0E2725]'
+                          ? 'border-[#D2CCBE] hover:border-[#A7713F] text-[#0E2725]'
                           : 'border-[#3E3E3E]/25 hover:border-[#3E3E3E] text-[#3E3E3E]'
                         : 'border-white/35 hover:border-white text-white'
                     }`}
@@ -334,11 +334,11 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                         <Link
                           key={item.path}
                           to={item.path}
-                          className={`px-3.5 py-1.5 rounded-[100px] text-[13.5px] font-light transition-all ${
+                          className={`px-3.5 py-1.5 rounded-[100px] text-[14px] font-medium tracking-[-0.023em] transition-all ${
                             active
                               ? useDarkNavText
                                 ? mode === 'organic'
-                                  ? 'bg-[#D2CCBE]/65 text-[#0E2725] border border-[#A7713F]/45'
+                                  ? 'bg-[#F5EEE1] text-[#0E2725] border border-[#D2CCBE]'
                                   : 'border border-[#3E3E3E]'
                                 : 'border border-white/80'
                               : 'border border-transparent hover:opacity-75'
@@ -378,7 +378,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                     />
                   </div>
 
-                  {/* Ecomama Wordmark / Logo (Visible at top of page, condenses as Rose Icon floats to center) */}
+                  {/* Ecomama Wordmark / Logo */}
                   <div
                     className="flex flex-col items-center justify-center will-change-transform pl-6"
                     style={{
@@ -424,11 +424,11 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                         <Link
                           key={item.path}
                           to={item.path}
-                          className={`px-3.5 py-1.5 rounded-[100px] text-[13.5px] font-light transition-all ${
+                          className={`px-3.5 py-1.5 rounded-[100px] text-[14px] font-medium tracking-[-0.023em] transition-all ${
                             active
                               ? useDarkNavText
                                 ? mode === 'organic'
-                                  ? 'bg-[#D2CCBE]/65 text-[#0E2725] border border-[#A7713F]/45'
+                                  ? 'bg-[#F5EEE1] text-[#0E2725] border border-[#D2CCBE]'
                                   : 'border border-[#3E3E3E]'
                                 : 'border border-white/80'
                               : 'border border-transparent hover:opacity-75'
@@ -442,14 +442,12 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
 
                   <button
                     onClick={() => setInquiryModalOpen(true)}
-                    className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-[100px] text-[13px] md:text-[13.5px] font-light border transition-colors ${
+                    className={`inline-flex items-center gap-1.5 px-5 py-2 rounded-[40px] text-[13.5px] md:text-[14px] font-semibold tracking-[-0.023em] transition-colors ${
                       mode === 'organic'
-                        ? useDarkNavText
-                          ? 'bg-[#A7713F] border-[#A7713F] text-[#F6F2EA] hover:bg-[#0E2725] hover:border-[#0E2725]'
-                          : 'bg-[#A7713F]/85 backdrop-blur-xs border-[#D2CCBE]/60 text-[#F6F2EA] hover:bg-[#A7713F]'
+                        ? 'bg-[#A7713F] text-[#FEF9EF] hover:bg-[#8E5D30]'
                         : useDarkNavText
-                        ? 'border-[#3E3E3E] text-[#3E3E3E] hover:bg-[#3E3E3E] hover:text-[#F4F1EE]'
-                        : 'border-white/75 text-white hover:bg-white hover:text-[#3E3E3E]'
+                        ? 'border border-[#3E3E3E] text-[#3E3E3E] hover:bg-[#3E3E3E] hover:text-[#F4F1EE]'
+                        : 'border border-white/75 text-white hover:bg-white hover:text-[#3E3E3E]'
                     }`}
                   >
                     <span>Inquire</span>
@@ -465,14 +463,14 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
             <div
               className={`fixed inset-0 z-30 pt-28 pb-16 px-6 md:px-12 overflow-y-auto ${
                 mode === 'organic'
-                  ? 'bg-[#EDE8DC] text-[#0E2725]'
+                  ? 'bg-[#FEF9EF] text-[#0E2725]'
                   : 'bg-[#F4F1EE] text-[#3E3E3E]'
               }`}
             >
               <div className="max-w-[1440px] mx-auto">
                 <div
                   className={`grid grid-cols-1 lg:grid-cols-12 gap-12 pt-6 border-t ${
-                    mode === 'organic' ? 'border-[#A7713F]/30' : 'border-[#78926E]/25'
+                    mode === 'organic' ? 'border-[#D2CCBE]' : 'border-[#78926E]/25'
                   }`}
                 >
                   <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
@@ -509,7 +507,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                                 key={child.path}
                                 to={child.path}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className={`text-[14px] font-light inline-flex items-center gap-1.5 ${
+                                className={`text-[14px] font-light inline-flex items-center gap-1.5 tracking-[-0.023em] ${
                                   mode === 'organic'
                                     ? 'text-[#0E2725]/75 hover:text-[#A7713F]'
                                     : 'text-[#66625B] hover:text-[#78926E]'
@@ -559,7 +557,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                           Heirloom Rose Farm &amp; Bespoke Estate
                         </span>
                       </div>
-                      <p className="text-[14px] text-[#0E2725]/75 font-light leading-[1.6] mb-5">
+                      <p className="text-[14px] text-[#333333] font-light leading-[1.6] tracking-[-0.023em] mb-5">
                         2550 Calzada Ave, Santa Ynez, CA 93460 · Private garden &amp; pottery
                         studio walks by appointment.
                       </p>
@@ -696,10 +694,10 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
           GLOBAL FOOTER
       ====================================================================== */}
       {mode === 'organic' ? (
-        <footer className="stoneware-surface text-[#0E2725] pt-[96px] pb-24 px-6 md:px-12 border-t border-[#A7713F]/30">
+        <footer className="bg-[#F5EEE1] text-[#0E2725] pt-[96px] pb-24 px-6 md:px-12 border-t border-[#D2CCBE]">
           <div className="max-w-[1440px] mx-auto space-y-16">
             {/* Tactile Cotton-Rag & Pressed Rose Apothecary Journal Card */}
-            <div className="relative overflow-hidden refero-card p-8 md:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="relative overflow-hidden step-card p-8 md:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               <img
                 src="/images/brandkit/illustration-09.png"
                 alt=""
@@ -720,12 +718,16 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                   </span>
                 </div>
                 <h2
-                  className="text-[34px] md:text-[46px] leading-[1.06] text-[#0E2725]"
+                  className="headline-dual text-[34px] md:text-[46px] leading-[1.06] text-[#0E2725]"
                   style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
-                  Letters from the Rose Farm &amp; Pottery Table.
+                  <span>Letters from the </span>
+                  <em className="italic font-light text-[#A7713F]">Rose Farm &amp; Table</em>.
                 </h2>
-                <p className="text-[15px] text-[#0E2725]/75 font-light leading-relaxed">
+                <p
+                  className="text-[15px] text-[#333333] font-light leading-relaxed tracking-[-0.023em]"
+                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                >
                   Receive seasonal heirloom rose cuttings notes, orchard-to-table supper
                   invitations, and private Santa Ynez estate availability.
                 </p>
@@ -746,13 +748,13 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                   />
                   <button
                     type="submit"
-                    className="px-8 py-3.5 rounded-[100px] bg-[#0E2725] text-[#F6F2EA] hover:bg-[#A7713F] text-[14px] tracking-[0.03em] transition-colors shrink-0"
+                    className="refero-pill-btn shrink-0"
                   >
                     Join the Garden List →
                   </button>
                 </form>
                 <p
-                  className="italic text-[14px] text-[#0E2725]/65 mt-3 pl-4"
+                  className="italic text-[14px] text-[#515151] mt-3 pl-4"
                   style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
                   Sent only when the seasons turn — never automated clutter.
@@ -784,7 +786,10 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                     </span>
                   </div>
                 </div>
-                <p className="text-[14px] text-[#0E2725]/80 leading-[1.65] font-light max-w-sm">
+                <p
+                  className="text-[14.5px] text-[#333333] leading-[1.65] font-light max-w-sm tracking-[-0.023em]"
+                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                >
                   30+ acre biodynamic farmstead, vintage garden rose atelier, and private wedding
                   sanctuary in the Santa Ynez Valley.
                 </p>
@@ -813,7 +818,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                     ))}
                   </div>
                 </div>
-                <div className="pt-2 space-y-1 text-[14px] text-[#0E2725] font-light">
+                <div className="pt-2 space-y-1 text-[14px] text-[#0E2725] font-light tracking-[-0.023em]">
                   <div>2550 Calzada Ave, Santa Ynez, CA 93460</div>
                   <div className="flex items-center gap-4 pt-1">
                     <a href="tel:+18058941477" className="refero-ghost-link">
@@ -895,10 +900,10 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
               </div>
             </div>
 
-            <div className="pt-8 border-t border-[#0E2725]/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12.5px] text-[#0E2725]/70 font-light">
+            <div className="pt-8 border-t border-[#0E2725]/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-[#515151] font-light">
               <span>© {new Date().getFullYear()} Ecomama Farms LLC · Santa Ynez, California</span>
               <span
-                className="italic text-[15px] text-[#0E2725]"
+                className="italic text-[15.5px] text-[#0E2725]"
                 style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
               >
                 Tended by hand, fired in clay, gathered in bloom
@@ -909,7 +914,6 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
       ) : mode === 'refero' ? (
         <footer className="bg-[#F4F1EE] text-[#3E3E3E] pt-[100px] pb-24 px-6 md:px-12 border-t border-[#D9D4CC]">
           <div className="max-w-[1440px] mx-auto space-y-16">
-            {/* Framed 20px Newsletter Card with 100px Pill Input */}
             <div className="bg-white rounded-[20px] p-8 md:p-12 border border-[#D9D4CC] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-6 space-y-2">
                 <div className="inline-flex items-center gap-2 text-[12px] tracking-[-0.03em] text-[#78926E]">
@@ -918,31 +922,27 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
                     alt=""
                     className="w-4 h-4 object-contain"
                   />
-                  <span>01 / Newsletter · Seasonal Estate Dispatches</span>
+                  <span>SANTA YNEZ VALLEY DISPATCHES</span>
                 </div>
-                <h2
-                  className="text-[34px] md:text-[44px] leading-[1.04] tracking-[-0.04em]"
-                  style={{ fontFamily: "'Old Standard TT', Georgia, serif" }}
-                >
-                  Join the Ecomama Community.
+                <h2 className="refero-heading-lg text-[#3E3E3E]">
+                  Subscribe to Seasonal Field Notes
                 </h2>
-                <p className="text-[15px] text-[#78756F] tracking-[-0.025em] font-light">
-                  Receive rose harvest schedules, farm-to-table workshop invitations, and private
-                  estate availability.
+                <p className="text-[14px] text-[#78756F]">
+                  Receive periodic updates on farm dinners, rose blooms, and estate availability.
                 </p>
               </div>
               <div className="lg:col-span-6">
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
-                    alert('Thank you for subscribing to the Ecomama Farms journal!');
+                    alert('Thank you for subscribing to Ecomama Farms!');
                   }}
                   className="flex flex-col sm:flex-row gap-3"
                 >
                   <input
                     type="email"
                     required
-                    placeholder="Enter your email address"
+                    placeholder="Enter your email"
                     className="refero-pill-input flex-1"
                   />
                   <button
@@ -958,7 +958,6 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
               </div>
             </div>
 
-            {/* 4-Column Architectural Directory */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pt-4">
               <div className="md:col-span-4 space-y-4">
                 <div className="flex items-center gap-3">
@@ -992,7 +991,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
               </div>
 
               <div className="md:col-span-3 space-y-2.5">
-                <div className="text-[12px] tracking-[-0.03em] text-[#78756F] mb-3">
+                <div className="text-[12px] tracking-[-0.03em] text-[#78926E] mb-3">
                   01 / Venue &amp; Celebrations
                 </div>
                 {[
@@ -1011,7 +1010,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
               </div>
 
               <div className="md:col-span-3 space-y-2.5">
-                <div className="text-[12px] tracking-[-0.03em] text-[#78756F] mb-3">
+                <div className="text-[12px] tracking-[-0.03em] text-[#78926E] mb-3">
                   02 / The Sanctuary
                 </div>
                 {[
@@ -1030,7 +1029,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
               </div>
 
               <div className="md:col-span-2 space-y-2.5">
-                <div className="text-[12px] tracking-[-0.03em] text-[#78756F] mb-3">
+                <div className="text-[12px] tracking-[-0.03em] text-[#78926E] mb-3">
                   03 / Connect
                 </div>
                 <div>
@@ -1096,10 +1095,10 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
       ====================================================================== */}
       {inquiryModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4">
-          <div className="refero-card max-w-lg w-full relative">
+          <div className="step-card max-w-lg w-full relative">
             <button
               onClick={() => setInquiryModalOpen(false)}
-              className="absolute top-5 right-5 w-9 h-9 rounded-[100px] border border-[#A7713F]/35 inline-flex items-center justify-center text-[#0E2725]/60 hover:text-[#0E2725]"
+              className="absolute top-5 right-5 w-9 h-9 rounded-[100px] border border-[#D2CCBE] inline-flex items-center justify-center text-[#0E2725]/60 hover:text-[#0E2725] bg-[#FEF9EF]"
             >
               <X className="w-4 h-4" />
             </button>
@@ -1113,12 +1112,16 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
               </span>
             </div>
             <h3
-              className="text-3xl text-[#0E2725]"
+              className="headline-dual text-3xl text-[#0E2725]"
               style={{ fontFamily: brandFontHeading }}
             >
-              Arrange a Private Estate Walk
+              <span>Arrange a </span>
+              <em className="italic font-light text-[#A7713F]">Private Estate Walk</em>
             </h3>
-            <p className="text-sm text-[#0E2725]/75 font-light mt-2 leading-relaxed">
+            <p
+              className="text-[14.5px] text-[#333333] font-light mt-2 leading-relaxed tracking-[-0.023em]"
+              style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+            >
               Wander the heirloom rose fields, pottery studio tables, and heritage barns with our
               Santa Ynez events team.
             </p>
@@ -1167,7 +1170,7 @@ export const Layout: React.FC<LayoutProps> = ({ mode, setMode, children }) => {
               </div>
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-[100px] bg-[#A7713F] text-[#F6F2EA] hover:bg-[#0E2725] text-[14px] transition-colors mt-2"
+                className="w-full py-3.5 rounded-[40px] bg-[#A7713F] text-[#FEF9EF] hover:bg-[#8E5D30] font-semibold text-[14.5px] tracking-[-0.023em] transition-colors mt-2"
               >
                 Request Private Walkthrough →
               </button>

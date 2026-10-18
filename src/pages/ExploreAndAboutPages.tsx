@@ -7,12 +7,16 @@ import {
   ReferoHeroFrame,
   ReferoSageStrip,
   BrandKitBotanicalSeal,
+  BotanicalTagList,
   OriginalReferoHeroFrame,
   OriginalReferoSageStrip
 } from '../components/ReferoComponents';
 
 const SUSTAINABILITY_PILLARS_LIST = [
   {
+    step: '01',
+    titleRoman: 'Biodynamic Living Soil &',
+    titleItalic: 'Clay Composting',
     title: 'Biodynamic Soil & Clay Composting',
     stamp: 'S O I L   B I O L O G Y   N O .   0 1',
     botanical: '/images/brandkit/illustration-04.png',
@@ -21,6 +25,9 @@ const SUSTAINABILITY_PILLARS_LIST = [
       'We build living topsoil and mineral-rich Santa Ynez clay through on-site thermal composting, vermicompost, cover cropping, and biodynamic preparations—never synthetic fertilizers or herbicides.'
   },
   {
+    step: '02',
+    titleRoman: 'Holistic Pasture &',
+    titleItalic: 'Animal Integration',
     title: 'Holistic Animal Integration',
     stamp: 'P A S T U R E   C A R E   N O .   0 2',
     botanical: '/images/brandkit/illustration-08.png',
@@ -29,6 +36,9 @@ const SUSTAINABILITY_PILLARS_LIST = [
       'Our rescue and heritage farm animals help manage pasture growth, aerate the earth naturally, and contribute to our closed-loop fertility cycle.'
   },
   {
+    step: '03',
+    titleRoman: 'Deep Mulch &',
+    titleItalic: 'Groundwater Care',
     title: 'Water Stewardship & Pollinator Habitat',
     stamp: 'W A T E R   &   F L O R A   N O .   0 3',
     botanical: '/images/brandkit/illustration-10.png',
@@ -49,7 +59,12 @@ export const ExplorePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           image="/images/72-jt-ally-808.jpg"
           imageAlt="Explore the Santa Ynez Valley & Ecomama Press"
           eyebrowLeft="Santa Ynez Valley Concierge & Love Notes"
-          headlineLeft="Explore Wine Country Around Ecomama."
+          headlineLeft={
+            <>
+              Explore Wine Country{' '}
+              <em className="italic font-light text-[#E4DDD0]">Around Ecomama.</em>
+            </>
+          }
           statementRight="Read reflections from couples who celebrated on the estate and discover our favorite tables, tasting rooms, ceramic studios, and inns across the valley."
           primaryAction={{ label: 'Open Valley Field Guide', to: '/local-recommendations' }}
           secondaryAction={{ label: 'Book a Farm Visit', to: '/contact' }}
@@ -75,10 +90,17 @@ export const ExplorePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               <span className="brandkit-stamp block">
                 F O R   Y O U R   W E D D I N G   W E E K E N D   G U E S T S
               </span>
-              <h2 className="refero-heading-lg text-[#0E2725]">
-                Eat, Drink, Stay &amp; Wander in the Santa Ynez Valley
+              <h2
+                className="headline-dual text-[32px] md:text-[42px] text-[#0E2725] leading-snug"
+                style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+              >
+                <span>Eat, Drink, Stay &amp; </span>
+                <em className="italic font-light text-[#A7713F]">Wander in Santa Ynez</em>
               </h2>
-              <p className="text-[15px] text-[#0E2725]/80 font-light leading-relaxed">
+              <p
+                className="text-[15.5px] text-[#333333] font-light leading-relaxed tracking-[-0.023em]"
+                style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+              >
                 Planning a multi-day celebration or retreat? Browse our curated field guide of 58
                 local farm-to-table restaurants, biodynamic wineries, artisan shops, and boutique
                 inns across Santa Ynez, Los Olivos, Solvang, and Los Alamos.
@@ -171,7 +193,12 @@ export const LocalRecommendationsPage: React.FC<{ mode: DesignMode }> = ({ mode 
           image="/images/80-the-laras-sb6-65.jpg"
           imageAlt="Local Recommendations in the Santa Ynez Valley"
           eyebrowLeft="Our Neighboring Tables, Vineyards & Inns"
-          headlineLeft="The Santa Ynez Valley Field Guide."
+          headlineLeft={
+            <>
+              The Santa Ynez Valley{' '}
+              <em className="italic font-light text-[#E4DDD0]">Field Guide.</em>
+            </>
+          }
           statementRight="Handpicked by the Ecomama Farms team across Santa Ynez, Los Olivos, Solvang, Los Alamos, and Buellton."
           primaryAction={{ label: 'Inquire for Group Stays', to: '/contact' }}
           botanicalIllustration="/images/brandkit/illustration-05.png"
@@ -184,18 +211,25 @@ export const LocalRecommendationsPage: React.FC<{ mode: DesignMode }> = ({ mode 
               <span className="brandkit-stamp block mb-1">
                 C U R A T E D   B Y   O U R   T E A M
               </span>
-              <h2 className="refero-heading-lg text-[#0E2725]">Valley Favorites</h2>
+              <h2
+                className="headline-dual text-[32px] md:text-[42px] text-[#0E2725]"
+                style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+              >
+                <span>Valley </span>
+                <em className="italic font-light text-[#A7713F]">Favorites &amp; Tables</em>
+              </h2>
             </div>
             <div className="flex flex-wrap gap-2">
               {categories.map((c) => (
                 <button
                   key={c}
                   onClick={() => setSelectedCategory(c)}
-                  className={`px-4 py-2 rounded-[100px] text-[13px] border transition-colors ${
+                  className={`px-5 py-2.5 rounded-[40px] text-[13.5px] font-medium tracking-[-0.023em] border transition-colors ${
                     selectedCategory === c
-                      ? 'bg-[#A7713F] text-[#F6F2EA] border-[#A7713F]'
-                      : 'bg-[#F6F2EA] text-[#0E2725] border-[#A7713F]/35 hover:border-[#A7713F]'
+                      ? 'bg-[#A7713F] text-[#FEF9EF] border-[#A7713F]'
+                      : 'bg-[#F5EEE1] text-[#0E2725] border-[#D2CCBE] hover:border-[#A7713F]'
                   }`}
+                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
                 >
                   {c}
                 </button>
@@ -206,7 +240,7 @@ export const LocalRecommendationsPage: React.FC<{ mode: DesignMode }> = ({ mode 
           <div className="space-y-14">
             {visibleGroups.map((group) => (
               <div key={group.category} className="space-y-6">
-                <div className="flex items-center justify-between border-b border-[#A7713F]/25 pb-3">
+                <div className="flex items-center justify-between border-b border-[#D2CCBE]/70 pb-3">
                   <h3 className="refero-heading text-[#0E2725]">{group.category}</h3>
                   <span
                     className="italic text-[16px] text-[#A7713F]"
@@ -228,11 +262,14 @@ export const LocalRecommendationsPage: React.FC<{ mode: DesignMode }> = ({ mode 
                         >
                           {item.name}
                         </div>
-                        <div className="text-[12.5px] text-[#0E2725]/70 mt-0.5 font-light">
+                        <div
+                          className="text-[13px] text-[#515151] mt-0.5 font-light tracking-[-0.023em]"
+                          style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                        >
                           {item.town}
                         </div>
                       </div>
-                      <span className="px-3 py-1 rounded-[100px] bg-[#D2CCBE]/75 text-[11px] text-[#0E2725] shrink-0">
+                      <span className="px-3 py-1 rounded-[9999px] bg-[#FEF9EF] border border-[#D2CCBE] text-[11px] font-medium text-[#0E2725] shrink-0">
                         {group.category}
                       </span>
                     </div>
@@ -344,7 +381,12 @@ export const AboutPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           image="/images/82-ecomama-farms-james-and-jess-7.jpg"
           imageAlt="About Ecomama Farms"
           eyebrowLeft="Our Story & Regenerative Philosophy"
-          headlineLeft="Rooted in Reverence for the Land."
+          headlineLeft={
+            <>
+              Rooted in Reverence for the{' '}
+              <em className="italic font-light text-[#E4DDD0]">Land &amp; Living Soil.</em>
+            </>
+          }
           statementRight="Discover how Ecomama Farms grew from a family dream into a 30+ acre biodynamic rose sanctuary and homegrown gathering place."
           primaryAction={{ label: 'Read Our Story', to: '/our-story' }}
           secondaryAction={{ label: 'Sustainability Practices', to: '/sustainability' }}
@@ -356,7 +398,7 @@ export const AboutPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           id="content-start"
           className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          <div className="refero-card relative overflow-hidden space-y-5">
+          <div className="step-card relative overflow-hidden space-y-5">
             <img
               src="/images/brandkit/illustration-04.png"
               alt=""
@@ -371,17 +413,22 @@ export const AboutPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
             </div>
             <span className="brandkit-stamp block">F O U N D E D   I N   2 0 1 9</span>
             <h2 className="refero-heading text-[#0E2725]">Our Story</h2>
-            <p className="text-[14.5px] text-[#0E2725]/75 font-light leading-relaxed">
+            <p
+              className="text-[15px] text-[#333333] font-light leading-relaxed tracking-[-0.023em]"
+              style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+            >
               Born from a deep reverence for Mother Earth, Ecomama Farms was founded by Tamie
               Posnick to restore the land while bringing people together in beauty.
             </p>
-            <Link to="/our-story" className="refero-pill-btn">
-              <span>Read Founder Story</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </Link>
+            <div className="pt-2">
+              <Link to="/our-story" className="refero-pill-btn">
+                <span>Read Founder Story</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
 
-          <div className="refero-card relative overflow-hidden space-y-5 md:mt-12">
+          <div className="step-card relative overflow-hidden space-y-5 md:mt-12">
             <img
               src="/images/brandkit/illustration-08.png"
               alt=""
@@ -396,14 +443,19 @@ export const AboutPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
             </div>
             <span className="brandkit-stamp block">B I O D Y N A M I C   S T E W A R D S H I P</span>
             <h2 className="refero-heading text-[#0E2725]">Sustainability</h2>
-            <p className="text-[14.5px] text-[#0E2725]/75 font-light leading-relaxed">
+            <p
+              className="text-[15px] text-[#333333] font-light leading-relaxed tracking-[-0.023em]"
+              style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+            >
               From closed-loop composting to 100% organic soil biology, explore our regenerative
               farming and heirloom rose practices.
             </p>
-            <Link to="/sustainability" className="refero-pill-btn">
-              <span>Explore Sustainability</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </Link>
+            <div className="pt-2">
+              <Link to="/sustainability" className="refero-pill-btn">
+                <span>Explore Sustainability</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
         </section>
       </div>
@@ -506,7 +558,12 @@ export const OurStoryPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           image="/images/85-dji-0676-enhanced-nr.jpg"
           imageAlt="Our Story at Ecomama Farms"
           eyebrowLeft="Founded in 2019 · Santa Ynez, California"
-          headlineLeft="A Love Letter to the Land."
+          headlineLeft={
+            <>
+              A Love Letter to the{' '}
+              <em className="italic font-light text-[#E4DDD0]">Land &amp; Living Soil.</em>
+            </>
+          }
           statementRight="What began in 2019 as Tamie Posnick’s vision to heal the soil became a 30+ acre sanctuary of 2,500+ organic garden roses, heritage orchards, and timeless celebrations."
           primaryAction={{ label: 'Explore Sustainability', to: '/sustainability' }}
           secondaryAction={{ label: 'Visit the Estate', to: '/contact' }}
@@ -525,15 +582,25 @@ export const OurStoryPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               <span className="brandkit-stamp block">
                 F R O M   D E P L E T E D   E A R T H   T O   L I V I N G   S A N C T U A R Y
               </span>
-              <h2 className="refero-heading-lg text-[#0E2725]">
-                Healing the earth while celebrating life’s milestones.
+              <h2
+                className="headline-dual text-[32px] md:text-[42px] text-[#0E2725] leading-[1.12]"
+                style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+              >
+                <span>Healing the earth while </span>
+                <em className="italic font-light text-[#A7713F]">celebrating life’s milestones</em>.
               </h2>
-              <p className="text-[15px] text-[#0E2725]/80 leading-[1.75] font-light">
+              <p
+                className="text-[15.5px] text-[#333333] leading-[1.75] font-light tracking-[-0.023em]"
+                style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+              >
                 In 2019, founder Tamie Posnick purchased a sun-drenched property in the Santa Ynez
                 Valley with a clear mission: to transform depleted conventional ground into a
                 thriving biodynamic sanctuary.
               </p>
-              <p className="text-[15px] text-[#0E2725]/80 leading-[1.75] font-light">
+              <p
+                className="text-[15.5px] text-[#333333] leading-[1.75] font-light tracking-[-0.023em]"
+                style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+              >
                 Today, over 2,500 organic heirloom rose bushes bloom alongside olive groves,
                 stone-fruit orchards, and pastures—creating an authentic, homegrown sanctuary for
                 bespoke weddings and community gatherings.
@@ -650,7 +717,12 @@ export const SustainabilityPage: React.FC<{ mode: DesignMode }> = ({ mode }) => 
           image="/images/88-3870-baseline-ave-37-copy.jpg"
           imageAlt="Regenerative Sustainability at Ecomama Farms"
           eyebrowLeft="Biodynamic & Regenerative Principles"
-          headlineLeft="Farming for Future Generations."
+          headlineLeft={
+            <>
+              Farming for{' '}
+              <em className="italic font-light text-[#E4DDD0]">Future Generations.</em>
+            </>
+          }
           statementRight="Every rose, orchard tree, and pasture at Ecomama Farms is tended without synthetic pesticides—building living topsoil, raw clay vitality, and biodiversity."
           primaryAction={{ label: 'Explore the Farm', to: '/the-farm' }}
           secondaryAction={{ label: 'Partner With Us', to: '/partner-with-us' }}
@@ -660,21 +732,24 @@ export const SustainabilityPage: React.FC<{ mode: DesignMode }> = ({ mode }) => 
 
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {SUSTAINABILITY_PILLARS_LIST.map((p, idx) => (
+            {SUSTAINABILITY_PILLARS_LIST.map((p) => (
               <div
                 key={p.title}
-                className={`refero-card relative overflow-hidden space-y-4 ${
-                  idx % 3 === 1 ? 'md:mt-10' : idx % 3 === 2 ? 'md:mt-20' : ''
-                }`}
+                className="step-card relative overflow-hidden space-y-4"
               >
                 <img
                   src={p.botanical}
                   alt=""
                   className="pointer-events-none absolute -right-4 -bottom-4 w-28 h-28 object-contain opacity-15"
                 />
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between pb-3 border-b border-[#D2CCBE]/60">
+                  <span
+                    className="text-[14px] font-semibold text-[#A7713F] tracking-[-0.023em]"
+                    style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                  >
+                    STEP {p.step}
+                  </span>
                   <span className="brandkit-stamp">{p.stamp}</span>
-                  <img src={p.botanical} alt="" className="w-6 h-6 object-contain" />
                 </div>
                 <div
                   className="italic text-[16.5px] text-[#A7713F]"
@@ -682,8 +757,17 @@ export const SustainabilityPage: React.FC<{ mode: DesignMode }> = ({ mode }) => 
                 >
                   {p.metric}
                 </div>
-                <h2 className="refero-heading text-[#0E2725]">{p.title}</h2>
-                <p className="text-[14.5px] text-[#0E2725]/75 leading-[1.65] font-light">
+                <h2
+                  className="headline-dual text-[28px] md:text-[32px] text-[#0E2725] leading-snug"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                >
+                  <span>{p.titleRoman} </span>
+                  <em className="italic font-light text-[#A7713F]">{p.titleItalic}</em>
+                </h2>
+                <p
+                  className="text-[14.5px] text-[#333333] leading-[1.65] font-light tracking-[-0.023em]"
+                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                >
                   {p.description}
                 </p>
               </div>

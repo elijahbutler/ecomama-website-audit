@@ -7,6 +7,7 @@ import {
   ReferoHeroFrame,
   ReferoSageStrip,
   BrandKitBotanicalSeal,
+  BotanicalTagList,
   OriginalReferoHeroFrame,
   OriginalReferoSageStrip
 } from '../components/ReferoComponents';
@@ -17,6 +18,8 @@ const FARM_PILLARS = [
     stamp: 'H E I R L O O M   R O S E   F I E L D S',
     botanical: '/images/brandkit/illustration-04.png',
     subtitle: 'Over 2,500 Bushes · 1,200+ Heirloom Varieties',
+    titleRoman: 'Heirloom & David Austin',
+    titleItalic: 'Garden Roses',
     title: 'Heirloom & David Austin Roses',
     originalCopy:
       'Our farm is home to over 1,200 heirloom roses, each nurtured using biodynamic and organic practices.',
@@ -33,6 +36,8 @@ const FARM_PILLARS = [
     stamp: 'S T O N E   F R U I T   &   O L I V E   G R O V E',
     botanical: '/images/brandkit/illustration-08.png',
     subtitle: 'Seasonal Stone Fruit, Citrus & Cold-Pressed Olive Oil',
+    titleRoman: 'The Organic Orchard &',
+    titleItalic: 'Ancient Olive Grove',
     title: 'The Organic Orchard & Olive Grove',
     originalCopy:
       'Our orchard produces a variety of organic fruits, including apples, peaches, plums, pomegranates, figs, and citrus.',
@@ -49,6 +54,8 @@ const FARM_PILLARS = [
     stamp: 'L I V I N G   S O I L   &   C L A Y',
     botanical: '/images/brandkit/illustration-10.png',
     subtitle: 'Closed-Loop Biodynamic Fertility',
+    titleRoman: 'Living Compost Windrows &',
+    titleItalic: 'Soil Tilth',
     title: 'Living Compost & Soil Stewardship',
     originalCopy:
       'Composting is at the heart of our regenerative farming practices, turning organic waste into nutrient-rich soil.',
@@ -64,6 +71,8 @@ const FARM_PILLARS = [
 
 const GATHERINGS_LIST = [
   {
+    titleRoman: 'Rehearsal Dinners &',
+    titleItalic: 'Welcome Suppers',
     title: 'Rehearsal Dinners & Welcome Gatherings',
     stamp: 'G A T H E R I N G   N O .   0 1',
     botanical: '/images/brandkit/illustration-01.png',
@@ -73,6 +82,8 @@ const GATHERINGS_LIST = [
       'Begin your wedding weekend with wood-fired Santa Ynez cuisine, wheel-thrown stoneware platters, and local biodynamic wines in the Rose Barn or beneath the century oak.'
   },
   {
+    titleRoman: 'Farm-to-Table',
+    titleItalic: 'Harvest Dinners',
     title: 'Farm-to-Table Harvest Dinners',
     stamp: 'G A T H E R I N G   N O .   0 2',
     botanical: '/images/brandkit/illustration-04.png',
@@ -82,6 +93,8 @@ const GATHERINGS_LIST = [
       'Intimate candlelit long-table suppers featuring seasonal produce from our orchard, local Santa Ynez chefs, unbleached linen runners, and freshly cut garden roses.'
   },
   {
+    titleRoman: 'Botanical, Pottery &',
+    titleItalic: 'Floral Workshops',
     title: 'Botanical, Pottery & Floral Workshops',
     stamp: 'G A T H E R I N G   N O .   0 3',
     botanical: '/images/brandkit/illustration-06.png',
@@ -91,6 +104,8 @@ const GATHERINGS_LIST = [
       'Harvest heirloom blooms directly from the field and learn sustainable, foam-free floral artistry in handmade ceramic vessels with our floral studio.'
   },
   {
+    titleRoman: 'Wellness, Yoga &',
+    titleItalic: 'Creative Offsites',
     title: 'Wellness, Yoga & Restorative Retreats',
     stamp: 'G A T H E R I N G   N O .   0 4',
     botanical: '/images/brandkit/illustration-09.png',
@@ -112,7 +127,12 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           image="/images/34-dji-0656.jpg"
           imageAlt="Regenerative Farming at Ecomama Farms"
           eyebrowLeft="Working Regenerative Homestead · Santa Ynez"
-          headlineLeft="A Living Biodynamic Rose Farm."
+          headlineLeft={
+            <>
+              A Living{' '}
+              <em className="italic font-light text-[#E4DDD0]">Biodynamic Rose Farm.</em>
+            </>
+          }
           statementRight="Home to 2,500+ organic heirloom garden roses, heritage stone-fruit orchards, closed-loop composting, and resident sanctuary animals."
           primaryAction={{ label: 'Explore Heirloom Florals', to: '/floral' }}
           secondaryAction={{ label: 'Gatherings & Workshops', to: '/gatherings' }}
@@ -127,6 +147,27 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           illustration="/images/brandkit/illustration-08.png"
         />
 
+        <section className="bg-[#FEF9EF] py-6 px-6 md:px-12 border-b border-[#D2CCBE]/60">
+          <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <span
+              className="text-[11px] uppercase tracking-[0.24em] text-[#A7713F] font-semibold shrink-0"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              FARM SPECIFICATIONS
+            </span>
+            <BotanicalTagList
+              items={[
+                'Over 2,500 Rose Bushes',
+                '1,200+ Heirloom Varieties',
+                'Living Thermal Compost',
+                'Closed-Loop Ranch Soil',
+                'Organic Orchard & Olive Lane',
+                'Resident Animal Sanctuaries'
+              ]}
+            />
+          </div>
+        </section>
+
         <section
           id="content-start"
           className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto space-y-24"
@@ -137,7 +178,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-8 border-t border-[#A7713F]/25 first:border-t-0"
             >
               <div
-                className={`lg:col-span-5 refero-card relative overflow-hidden space-y-4 ${
+                className={`lg:col-span-5 step-card relative overflow-hidden space-y-4 ${
                   idx % 2 === 1 ? 'lg:order-2 lg:mt-12' : ''
                 }`}
               >
@@ -156,8 +197,17 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 >
                   {sec.subtitle}
                 </div>
-                <h2 className="refero-heading-lg text-[#0E2725]">{sec.title}</h2>
-                <p className="text-[15px] text-[#0E2725]/80 leading-[1.7] font-light">
+                <h2
+                  className="headline-dual text-[30px] md:text-[36px] text-[#0E2725] leading-snug"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                >
+                  <span>{sec.titleRoman} </span>
+                  <em className="italic font-light text-[#A7713F]">{sec.titleItalic}</em>
+                </h2>
+                <p
+                  className="text-[15.5px] text-[#333333] leading-[1.7] font-light tracking-[-0.023em]"
+                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                >
                   {sec.redesignCopy}
                 </p>
                 <div className="pt-2">
@@ -173,7 +223,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   idx % 2 === 1 ? 'lg:order-1' : ''
                 }`}
               >
-                <div className="col-span-7 refero-arch-photo aspect-[4/5] bg-[#F6F2EA]">
+                <div className="col-span-7 refero-arch-photo aspect-[4/5] bg-[#F5EEE1]">
                   <img
                     src={sec.images[0]}
                     alt={sec.title}
@@ -184,7 +234,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   {sec.images.slice(1, 3).map((img, i) => (
                     <div
                       key={i}
-                      className="refero-photo aspect-[4/3] bg-[#F6F2EA]"
+                      className="refero-photo aspect-[4/3] bg-[#F5EEE1]"
                     >
                       <img
                         src={img}
@@ -203,7 +253,13 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
             <span className="brandkit-stamp block mb-2">
               G E N T L E   C O M P A N I O N S   O F   T H E   L A N D
             </span>
-            <h2 className="refero-heading-lg text-[#0E2725] mb-12">Meet Our Resident Animals</h2>
+            <h2
+              className="headline-dual text-[32px] md:text-[40px] text-[#0E2725] mb-12 leading-[1.12]"
+              style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+            >
+              <span>Meet Our Resident </span>
+              <em className="italic font-light text-[#A7713F]">Sanctuary Animals</em>
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {FARM_ANIMALS.map((animal, i) => (
                 <div
@@ -220,7 +276,12 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                     />
                   </div>
                   <h3 className="refero-heading text-[#0E2725]">{animal.name}</h3>
-                  <p className="text-[13.5px] text-[#0E2725]/75 font-light">{animal.role}</p>
+                  <p
+                    className="text-[14px] text-[#515151] font-light tracking-[-0.023em]"
+                    style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                  >
+                    {animal.role}
+                  </p>
                 </div>
               ))}
             </div>
@@ -374,7 +435,12 @@ export const GatheringsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           image="/images/51-sunkissed-hair-2021-finals-2.jpg"
           imageAlt="Al Fresco Long Table Gathering at Ecomama Farms"
           eyebrowLeft="Workshops, Retreats & Long-Table Dinners"
-          headlineLeft="Gatherings Rooted in the Season."
+          headlineLeft={
+            <>
+              Gatherings Rooted in the{' '}
+              <em className="italic font-light text-[#E4DDD0]">Season &amp; Soil.</em>
+            </>
+          }
           statementRight="From floral & ceramic arranging in the rose fields to candlelit harvest suppers beneath the Santa Ynez oaks."
           primaryAction={{ label: 'Host a Private Gathering', to: '/contact' }}
           secondaryAction={{ label: 'Partner With Us', to: '/partner-with-us' }}
@@ -393,7 +459,7 @@ export const GatheringsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
             {GATHERINGS_LIST.map((g, idx) => (
               <div
                 key={g.title}
-                className={`refero-card relative overflow-hidden space-y-5 ${
+                className={`step-card relative overflow-hidden space-y-5 ${
                   idx % 2 === 1 ? 'md:mt-14' : ''
                 }`}
               >
@@ -407,15 +473,24 @@ export const GatheringsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="brandkit-stamp">{g.stamp}</span>
-                  <span className="px-3 py-0.5 rounded-[100px] bg-[#D2CCBE]/75 text-[#0E2725] text-[12px]">
+                  <span className="px-3 py-0.5 rounded-[9999px] bg-[#FEF9EF] border border-[#D2CCBE] text-[#0E2725] text-[12px] font-medium tracking-[-0.023em]">
                     {g.cadence}
                   </span>
                 </div>
-                <h2 className="refero-heading text-[#0E2725]">{g.title}</h2>
-                <p className="text-[14.5px] text-[#0E2725]/75 leading-[1.65] font-light">
+                <h2
+                  className="headline-dual text-[28px] md:text-[32px] text-[#0E2725] leading-snug"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                >
+                  <span>{g.titleRoman} </span>
+                  <em className="italic font-light text-[#A7713F]">{g.titleItalic}</em>
+                </h2>
+                <p
+                  className="text-[15px] text-[#333333] leading-[1.65] font-light tracking-[-0.023em]"
+                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                >
                   {g.description}
                 </p>
-                <div className="relative z-10">
+                <div className="pt-4 border-t border-[#D2CCBE]/60 relative z-10">
                   <Link to="/contact" className="refero-pill-btn">
                     <span>Inquire About {g.title}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -522,7 +597,12 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           image="/images/55-hanna-carl-wedding-by-rachel-wakefield.jpg"
           imageAlt="2,500+ Organic Garden Roses at Ecomama Farms"
           eyebrowLeft="2,500+ Heirloom Garden Roses · Seed to Centerpiece"
-          headlineLeft="Vintage Rose Farm & Event Floral Atelier."
+          headlineLeft={
+            <>
+              Vintage Rose Farm &amp;{' '}
+              <em className="italic font-light text-[#E4DDD0]">Floral Atelier.</em>
+            </>
+          }
           statementRight="Grown in living Santa Ynez soils without synthetic chemicals, harvested at peak fragrance, and arranged in wheel-thrown vessels."
           primaryAction={{ label: 'Inquire for Event Florals', to: '/contact' }}
           secondaryAction={{ label: 'Explore the Rose Fields', to: '/the-farm' }}
@@ -535,6 +615,29 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           statement="Over 2,500 Heirloom & David Austin Rose Bushes · Cut Hours Before Your Ceremony · 100% Foam-Free & Chemical-Free"
           illustration="/images/brandkit/illustration-06.png"
         />
+
+        {/* Inline Floral Botanical Registry */}
+        <section className="bg-[#FEF9EF] py-6 px-6 md:px-12 border-b border-[#D2CCBE]/60">
+          <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <span
+              className="text-[11px] uppercase tracking-[0.24em] text-[#A7713F] font-semibold shrink-0"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              BOTANICAL REGISTRY
+            </span>
+            <BotanicalTagList
+              items={[
+                '1,200+ Heirloom Varieties',
+                'David Austin Rosettes',
+                'Cut at First Dawn',
+                '100% Foam-Free',
+                'Hand-Thrown Ceramic Urns',
+                'Natural Plant Dyes',
+                'Living Santa Ynez Clay'
+              ]}
+            />
+          </div>
+        </section>
 
         {/* 12-Illustration Brand Kit Botanical Study Strip */}
         <section className="stoneware-surface py-12 px-6 md:px-12 border-b border-[#A7713F]/30">
@@ -556,7 +659,7 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 return (
                   <div
                     key={num}
-                    className="bg-[#F6F2EA] rounded-[18px] p-2.5 border border-[#A7713F]/25 flex flex-col items-center justify-center aspect-square hover:border-[#A7713F] transition-colors"
+                    className="bg-[#FEF9EF] rounded-[18px] p-2.5 border border-[#D2CCBE]/80 flex flex-col items-center justify-center aspect-square hover:border-[#A7713F] transition-colors"
                   >
                     <img
                       src={`/images/brandkit/illustration-${num}.png`}
@@ -576,8 +679,12 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               <span className="brandkit-stamp block mb-1.5">
                 G A T H E R E D   F R O M   O U R   F I E L D S
               </span>
-              <h2 className="refero-heading-lg text-[#0E2725]">
-                Heirloom Rose &amp; Ceramic Vessel Lookbook
+              <h2
+                className="headline-dual text-[32px] md:text-[42px] text-[#0E2725]"
+                style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+              >
+                <span>Heirloom Rose &amp; </span>
+                <em className="italic font-light text-[#A7713F]">Ceramic Vessel Lookbook</em>
               </h2>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -585,11 +692,12 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 <button
                   key={t}
                   onClick={() => setTagFilter(t)}
-                  className={`px-4 py-2 rounded-[100px] text-[13px] border transition-colors ${
+                  className={`px-5 py-2.5 rounded-[40px] text-[13.5px] font-medium tracking-[-0.023em] border transition-colors ${
                     tagFilter === t
-                      ? 'bg-[#A7713F] text-[#F6F2EA] border-[#A7713F]'
-                      : 'bg-[#F6F2EA] text-[#0E2725] border-[#A7713F]/35 hover:border-[#A7713F]'
+                      ? 'bg-[#A7713F] text-[#FEF9EF] border-[#A7713F]'
+                      : 'bg-[#F5EEE1] text-[#0E2725] border-[#D2CCBE] hover:border-[#A7713F]'
                   }`}
+                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
                 >
                   {t}
                 </button>
@@ -601,30 +709,49 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
             {filteredGallery.map((item, idx) => (
               <div
                 key={item.src}
-                className={`refero-card p-5 space-y-3 ${
-                  idx % 3 === 1 ? 'md:mt-10' : idx % 3 === 2 ? 'md:mt-20' : ''
-                }`}
+                className="refero-card p-5 space-y-4 flex flex-col justify-between group"
               >
-                <div
-                  className={`${
-                    idx % 2 === 0 ? 'refero-arch-photo' : 'refero-photo'
-                  } aspect-[4/5]`}
-                >
-                  <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
-                </div>
-                <div className="flex items-center justify-between pt-1">
-                  <span
-                    className="italic text-[16px] text-[#A7713F]"
+                <div>
+                  <div className="refero-photo aspect-[4/5] mb-4 bg-[#FEF9EF]">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="flex items-center justify-between text-[11.5px] text-[#A7713F] mb-1 font-semibold">
+                    <span className="uppercase tracking-[0.16em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                      {item.tag}
+                    </span>
+                    <span className="text-[#515151] font-light tracking-[-0.023em]">
+                      NO. 0{idx + 1} · Santa Ynez
+                    </span>
+                  </div>
+                  <p
+                    className="italic text-[16.5px] text-[#0E2725] leading-snug"
                     style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                   >
-                    {item.tag}
-                  </span>
-                  <span className="brandkit-stamp text-[9.5px]">NO. 0{idx + 1}</span>
+                    “{item.alt}”
+                  </p>
                 </div>
-                <p className="text-[13.5px] text-[#0E2725]/75 font-light">{item.alt}</p>
+                <div className="pt-3 border-t border-[#D2CCBE]/60 flex items-center justify-between">
+                  <span className="text-[12.5px] text-[#7A7467] font-light tracking-[-0.023em]">
+                    Hand-harvested in Santa Ynez
+                  </span>
+                  <Link to="/contact" className="refero-ghost-link text-[#0E2725]">
+                    <span>Inquire</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
+
+          <BrandKitBotanicalSeal
+            illustration="/images/brandkit/illustration-12.png"
+            stamp="S E E D   T O   C E N T E R P I E C E"
+            quote="No shipping boxes, no chemical preservatives—just petals, dew, clay, and love."
+          />
         </section>
       </div>
     );
@@ -637,25 +764,25 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           image="/images/55-hanna-carl-wedding-by-rachel-wakefield.jpg"
           imageAlt="2,500+ Organic Garden Roses at Ecomama Farms"
           eyebrowLeft="2,500+ ORGANIC GARDEN ROSES · SEED TO CENTERPIECE"
-          headlineLeft="100% Organic Estate Event Florals."
-          statementRight="Grown in living Santa Ynez soils without synthetic chemicals, harvested at peak fragrance for weddings and editorial installations."
-          primaryAction={{ label: 'Request Floral Availability', to: '/contact' }}
+          headlineLeft="Organic Garden Rose Farm & Atelier."
+          statementRight="Grown in living Santa Ynez soils without synthetic sprays, harvested at peak fragrance, and arranged in-house."
+          primaryAction={{ label: 'Floral Inquiries', to: '/contact' }}
           secondaryAction={{ label: 'Explore the Farm', to: '/the-farm' }}
           fullHeight={false}
         />
 
         <OriginalReferoSageStrip
-          label="Botanical Program"
-          statement="Over 2,500 Heirloom Rose Bushes · Cut to Order Hours Before Your Ceremony · Zero Imported Foam or Chemicals"
+          label="Floral Program"
+          statement="2,500+ Heirloom & David Austin Rose Bushes · Harvested Dawn-of-Wedding · 100% Foam-Free Mechanics"
         />
 
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-[#D9D4CC]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 pb-6 border-b border-[#D9D4CC]">
             <div>
               <div className="text-[12px] uppercase tracking-[0.14em] text-[#78926E] mb-2">
-                17-Photograph Botanical Lookbook
+                01 / Field to Floral Design
               </div>
-              <h2 className="refero-heading-lg text-[#3E3E3E]">Estate Rose &amp; Floral Portfolio</h2>
+              <h2 className="refero-heading-lg text-[#3E3E3E]">Rose Varieties &amp; Floral Lookbook</h2>
             </div>
             <div className="flex flex-wrap gap-2">
               {tags.map((t) => (
@@ -665,7 +792,7 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   className={`px-4 py-2 rounded-[100px] text-[13px] border transition-colors ${
                     tagFilter === t
                       ? 'bg-[#3E3E3E] text-[#F4F1EE] border-[#3E3E3E]'
-                      : 'bg-white text-[#3E3E3E] border-[#D9D4CC]'
+                      : 'bg-white text-[#3E3E3E] border-[#D9D4CC] hover:border-[#3E3E3E]'
                   }`}
                 >
                   {t}
@@ -678,20 +805,31 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
             {filteredGallery.map((item, idx) => (
               <div
                 key={item.src}
-                className={`bg-white rounded-[20px] p-5 border border-[#D9D4CC] space-y-3 ${
-                  idx % 3 === 1 ? 'md:mt-10' : idx % 3 === 2 ? 'md:mt-20' : ''
-                }`}
+                className="bg-white rounded-[20px] p-5 border border-[#D9D4CC] space-y-4 flex flex-col justify-between"
               >
-                <div className="rounded-[20px] overflow-hidden aspect-[4/5]">
-                  <img src={item.src} alt={item.alt} className="w-full h-full object-cover" />
+                <div>
+                  <div className="rounded-[20px] overflow-hidden aspect-[4/5] mb-4">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="flex items-center justify-between text-[12px] text-[#78926E] mb-1">
+                    <span>{item.tag}</span>
+                    <span className="text-[#999690]">NO. 0{idx + 1}</span>
+                  </div>
+                  <p className="text-[15px] font-serif text-[#3E3E3E] leading-snug">
+                    “{item.alt}”
+                  </p>
                 </div>
-                <div className="flex items-center justify-between text-[12px] text-[#78926E] pt-1">
-                  <span>0{idx + 1}</span>
-                  <span className="px-2.5 py-0.5 rounded-[100px] border border-[#D9D4CC] text-[#3E3E3E]">
-                    {item.tag}
-                  </span>
+                <div className="pt-3 border-t border-[#D9D4CC] flex items-center justify-between">
+                  <span className="text-[12px] text-[#999690]">Estate Harvested</span>
+                  <Link to="/contact" className="refero-ghost-link text-[#3E3E3E]">
+                    <span>Inquire</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
-                <p className="text-[13px] text-[#78756F]">{item.alt}</p>
               </div>
             ))}
           </div>
@@ -702,12 +840,16 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
 
   return (
     <div className="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto space-y-12">
-      <h1 className="font-serif text-4xl md:text-6xl">Event Floral</h1>
+      <h1 className="font-serif text-4xl md:text-6xl">Organic Roses &amp; Florals</h1>
+      <p className="text-base max-w-2xl opacity-80 leading-relaxed">
+        Our farm is home to over 2,500 organic heirloom garden roses. Each variety is nurtured with
+        living soil and harvested hours before your event.
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {FLORAL_GALLERY.map((item) => (
-          <div key={item.src} className="bg-white p-5 border border-black/10 space-y-3">
-            <img src={item.src} alt={item.alt} className="w-full h-72 object-cover" />
-            <p className="text-xs opacity-75">{item.alt}</p>
+        {filteredGallery.map((item) => (
+          <div key={item.src} className="space-y-3">
+            <img src={item.src} alt={item.alt} className="w-full h-80 object-cover" />
+            <p className="text-sm italic">{item.alt}</p>
           </div>
         ))}
       </div>

@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 
-interface ReferoHeroFrameProps {
+export interface ReferoHeroFrameProps {
   image: string;
   imageAlt: string;
   eyebrowLeft?: string;
-  headlineLeft: string;
+  headlineLeft: React.ReactNode;
   statementRight: string;
   subcaptionRight?: string;
   primaryAction?: { label: string; to: string };
@@ -16,12 +16,13 @@ interface ReferoHeroFrameProps {
 }
 
 /* ============================================================================
-   1. ORGANIC BRAND KIT REFERO HERO & POTTERY / ROSE FARM STRIP
-      Uses Official Ecomama Farms Brand Kit:
-      - Palette: #D2CCBE (Stoneware Clay), #A7713F (Terracotta Ochre),
-                 #99AAAF (Coastal Slate), #0E2725 (Deep Pine), #A6A26A (Vintage Olive)
-      - Fonts:   Sorts Mill Goudy (Headings & Italic Notes) + Kumbh Sans / Europa (Body)
-                 + Montserrat (Spaced Apothecary Stamps)
+   1. ORGANIC REFERO HERO (Refero 21b71be3-78a0-4681-a5b9-64cc4b40eb67)
+      "Warm apothecary journal on parchment":
+      - Surfaces: Level 0 Parchment (#FEF9EF), Level 3 Terracotta Seal (#A7713F)
+      - Typography: Sorts Mill Goudy Roman + Italic Display Rhythm,
+                    Kumbh Sans body with tight -0.023em tracking
+      - Controls: 40px radius pill CTA buttons
+      - Photography: Full-bleed unshaded upper half, soft bottom-half gradient
 ============================================================================ */
 export const ReferoHeroFrame: React.FC<ReferoHeroFrameProps> = ({
   image,
@@ -39,7 +40,7 @@ export const ReferoHeroFrame: React.FC<ReferoHeroFrameProps> = ({
     <section
       className={`relative w-full ${
         fullHeight ? 'min-h-screen' : 'min-h-[86vh]'
-      } rounded-none overflow-hidden flex flex-col justify-between bg-[#0E2725] text-[#F6F2EA] select-none`}
+      } rounded-none overflow-hidden flex flex-col justify-between bg-[#0E2725] text-[#FEF9EF] select-none`}
     >
       {/* Full-Bleed Photograph — Completely Unshaded Across the Upper & Middle Canvas */}
       <img
@@ -48,56 +49,62 @@ export const ReferoHeroFrame: React.FC<ReferoHeroFrameProps> = ({
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      {/* Feather-light top-edge whisper ONLY behind the top 110px navigation bar */}
+      {/* Feather-light top-edge whisper ONLY behind the top navigation bar */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-28 hero-top-nav-whisper" />
 
       {/* Soft Bottom-Half Organic Gradient — Shades ONLY the bottom ~56% behind the hero text */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] hero-bottom-shade" />
 
-      {/* Top Spacer for Transparent 3-Zone Navigation Bar */}
+      {/* Top Spacer for Transparent Navigation Bar */}
       <div className="h-28 md:h-36 relative z-10" />
 
       {/* Opposite Viewport Edges Split Headline (Left + Right Compositional Tension) */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 pb-12 md:pb-16 flex-1 flex flex-col justify-end">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-          {/* Left Edge Display Statement */}
+          {/* Left Edge Display Statement with Signature Roman + Italic Typography */}
           <div className="lg:col-span-7">
             {eyebrowLeft && (
-              <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-[100px] bg-[#0E2725]/55 backdrop-blur-[3px] border border-[#D2CCBE]/40 text-[#EDE8DC] mb-6">
+              <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-[9999px] bg-[#0E2725]/60 backdrop-blur-[4px] border border-[#D2CCBE]/45 text-[#FEF9EF] mb-6">
                 <img
                   src={botanicalIllustration}
                   alt=""
                   className="w-5 h-5 object-contain opacity-95"
                 />
                 <span
-                  className="italic tracking-[0.02em]"
-                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif", fontSize: '15.5px' }}
+                  className="text-[13px] font-medium tracking-[-0.023em] uppercase text-[#A7713F] bg-[#FEF9EF] px-2 py-0.5 rounded-full"
+                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                >
+                  EST. 2020
+                </span>
+                <span
+                  className="italic tracking-[0.01em] text-[#FEF9EF]/95"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif", fontSize: '15px' }}
                 >
                   {eyebrowLeft}
                 </span>
               </div>
             )}
             <h1
-              className="text-[#F6F2EA] font-normal drop-shadow-[0_2px_20px_rgba(14,39,37,0.45)]"
+              className="headline-dual text-[#FEF9EF] font-normal drop-shadow-[0_2px_24px_rgba(14,39,37,0.55)]"
               style={{
                 fontFamily: "'Sorts Mill Goudy', Georgia, serif",
-                fontSize: 'clamp(2.85rem, 5.2vw, 4.55rem)',
+                fontSize: 'clamp(2.85rem, 5.2vw, 4.65rem)',
                 lineHeight: 1.03,
                 letterSpacing: '-0.012em',
-                color: '#F6F2EA'
+                color: '#FEF9EF'
               }}
             >
               {headlineLeft}
             </h1>
           </div>
 
-          {/* Right Edge Counter-Statement & Tactile Kiln Terracotta / Linen Actions */}
+          {/* Right Edge Counter-Statement & 40px Pill Actions per Refero 21b71be3 */}
           <div className="lg:col-span-5 lg:pl-8 flex flex-col justify-end items-start lg:items-end lg:text-right">
             <p
-              className="text-[#EDE8DC] font-normal max-w-md mb-5 drop-shadow-[0_2px_14px_rgba(14,39,37,0.4)]"
+              className="headline-dual text-[#FEF9EF] font-normal max-w-md mb-5 drop-shadow-[0_2px_14px_rgba(14,39,37,0.4)]"
               style={{
                 fontFamily: "'Sorts Mill Goudy', Georgia, serif",
-                fontSize: 'clamp(1.45rem, 2.1vw, 2.02rem)',
+                fontSize: 'clamp(1.45rem, 2.1vw, 2.05rem)',
                 lineHeight: 1.22,
                 letterSpacing: '-0.008em'
               }}
@@ -106,58 +113,58 @@ export const ReferoHeroFrame: React.FC<ReferoHeroFrameProps> = ({
             </p>
             {subcaptionRight && (
               <p
-                className="text-[14.5px] leading-[1.6] text-[#D2CCBE] max-w-sm mb-7 font-light"
+                className="text-[15px] leading-[1.65] text-[#D2CCBE] max-w-sm mb-7 font-light tracking-[-0.023em]"
                 style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
               >
                 {subcaptionRight}
               </p>
             )}
 
-            <div className="flex flex-wrap items-center gap-5">
+            <div className="flex flex-wrap items-center gap-4">
               {primaryAction && (
                 <Link
                   to={primaryAction.to}
-                  className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-[100px] bg-[#A7713F] hover:bg-[#8F5E31] border border-[#D2CCBE]/40 text-[#F6F2EA] text-[13.5px] tracking-[0.04em] transition-all"
+                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-[40px] bg-[#A7713F] hover:bg-[#8E5D30] text-[#FEF9EF] text-[15px] font-semibold tracking-[-0.023em] shadow-sm transition-all"
                   style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
                 >
                   <span>{primaryAction.label}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 stroke-[1.5]" />
+                  <ArrowUpRight className="w-4 h-4 stroke-[1.75]" />
                 </Link>
               )}
               {secondaryAction && (
                 <Link
                   to={secondaryAction.to}
-                  className="inline-flex items-center gap-1.5 text-[#F6F2EA] text-[13.5px] tracking-[0.03em] border-b border-[#D2CCBE]/60 hover:border-[#A6A26A] hover:text-[#D2CCBE] pb-0.5 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[40px] border-[1.5px] border-[#D2CCBE]/70 hover:border-[#A7713F] text-[#FEF9EF] hover:bg-[#A7713F]/15 text-[14.5px] font-medium tracking-[-0.023em] transition-all"
                   style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
                 >
                   <span>{secondaryAction.label}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 stroke-[1.5]" />
+                  <ArrowUpRight className="w-4 h-4 stroke-[1.75]" />
                 </Link>
               )}
             </div>
           </div>
         </div>
 
-        {/* Soft Botanical Footnote & Scroll Invitation */}
-        <div className="mt-10 pt-5 border-t border-[#D2CCBE]/25 flex flex-wrap items-center justify-between gap-4 text-[13px] text-[#D2CCBE]">
+        {/* Soft Botanical Footnote & Scroll Indicator */}
+        <div className="mt-10 pt-5 border-t border-[#D2CCBE]/25 flex flex-wrap items-center justify-between gap-4 text-[13.5px] text-[#D2CCBE]">
           <div className="flex items-center gap-3">
             <span
-              className="uppercase text-[10px] tracking-[0.28em] text-[#A6A26A]"
+              className="uppercase text-[11px] tracking-[0.24em] text-[#A7713F] bg-[#FEF9EF]/10 px-2.5 py-0.5 rounded-full"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              EST. SANTA YNEZ VALLEY
+              SANTA YNEZ VALLEY · CA
             </span>
             <span className="text-[#D2CCBE]/40">·</span>
             <span
-              className="italic text-[15.5px] text-[#F6F2EA]/90"
+              className="italic text-[16px] text-[#FEF9EF]/90"
               style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
             >
-              Hand-tended heirloom roses, stoneware tables &amp; bespoke gatherings
+              Living biodynamic soils, hand-tended heirloom roses &amp; unhurried celebrations
             </span>
           </div>
           <a
             href="#content-start"
-            className="inline-flex items-center gap-2.5 text-[#F6F2EA] hover:text-[#D2CCBE] transition-colors"
+            className="inline-flex items-center gap-2.5 text-[#FEF9EF] hover:text-[#A7713F] transition-colors"
           >
             <span
               className="italic text-[15.5px]"
@@ -165,7 +172,7 @@ export const ReferoHeroFrame: React.FC<ReferoHeroFrameProps> = ({
             >
               Wander the grounds
             </span>
-            <span className="w-7 h-7 rounded-[100px] border border-[#D2CCBE]/45 inline-flex items-center justify-center bg-[#0E2725]/40">
+            <span className="w-7 h-7 rounded-[40px] border border-[#D2CCBE]/45 inline-flex items-center justify-center bg-[#0E2725]/40">
               <ArrowDown className="w-3.5 h-3.5 stroke-[1.5]" />
             </span>
           </a>
@@ -175,7 +182,290 @@ export const ReferoHeroFrame: React.FC<ReferoHeroFrameProps> = ({
   );
 };
 
-interface ReferoSageStripProps {
+/* ============================================================================
+   2. NUMBERED STEP CARD (Refero 21b71be3 Spec)
+      Role: Feature steps ('01', '02', '03')
+      Aged Paper (#F5EEE1) background, 24px border-radius, 40px padding, no harsh shadow.
+      Step number in Terracotta (#A7713F) at 14px 600 weight.
+      Title in Sorts Mill Goudy roman + italic pairing.
+============================================================================ */
+export interface ApothecaryStepCardProps {
+  step: string;
+  category?: string;
+  titleRoman: string;
+  titleItalic: string;
+  body: string;
+  image?: string;
+  imageAlt?: string;
+  tags?: string[];
+  link?: { label: string; to: string };
+  badge?: string;
+}
+
+export const ApothecaryStepCard: React.FC<ApothecaryStepCardProps> = ({
+  step,
+  category,
+  titleRoman,
+  titleItalic,
+  body,
+  image,
+  imageAlt,
+  tags,
+  link,
+  badge
+}) => {
+  return (
+    <div className="step-card group relative">
+      <div className="space-y-4">
+        {/* Step Number & Category Bar */}
+        <div className="flex items-center justify-between pb-3 border-b border-[#D2CCBE]/60">
+          <div className="flex items-center gap-2.5">
+            <span
+              className="text-[14px] font-semibold text-[#A7713F] tracking-[-0.023em]"
+              style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+            >
+              {step}
+            </span>
+            {category && (
+              <>
+                <span className="text-[#A7713F]">·</span>
+                <span
+                  className="text-[11.5px] uppercase tracking-[0.18em] text-[#0E2725]/70"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  {category}
+                </span>
+              </>
+            )}
+          </div>
+          {badge && (
+            <span className="px-2.5 py-0.5 rounded-[9999px] bg-[#FEF9EF] border border-[#D2CCBE] text-[11px] font-medium text-[#0E2725]/80 tracking-[-0.023em]">
+              {badge}
+            </span>
+          )}
+        </div>
+
+        {/* Display Title with Roman + Italic Signature Pairing */}
+        <h3
+          className="headline-dual text-[#0E2725] text-[28px] md:text-[32px] leading-[1.12]"
+          style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+        >
+          <span>{titleRoman} </span>
+          <em className="italic font-light text-[#A7713F]">{titleItalic}</em>
+        </h3>
+
+        {/* Body Text in Kumbh Sans with tight -0.023em tracking */}
+        <p
+          className="text-[15.5px] text-[#333333] leading-[1.65] font-light tracking-[-0.023em]"
+          style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+        >
+          {body}
+        </p>
+
+        {/* Optional Micro-Image or UI preview with 24px radius */}
+        {image && (
+          <div className="rounded-[20px] overflow-hidden aspect-[16/10] bg-[#FEF9EF] border border-[#D2CCBE]/70 my-3">
+            <img
+              src={image}
+              alt={imageAlt || titleRoman}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        )}
+
+        {/* Optional Tag List */}
+        {tags && tags.length > 0 && (
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 pt-2">
+            {tags.map((t, idx) => (
+              <React.Fragment key={t}>
+                {idx > 0 && <span className="text-[#A7713F] text-[12px]">·</span>}
+                <span className="text-[13px] text-[#4E5852] font-normal tracking-[-0.023em]">
+                  {t}
+                </span>
+              </React.Fragment>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Action Footer */}
+      {link && (
+        <div className="pt-6 mt-6 border-t border-[#D2CCBE]/50 flex items-center justify-between">
+          <Link
+            to={link.to}
+            className="refero-ghost-link text-[14.5px] font-medium text-[#0E2725] group-hover:text-[#A7713F]"
+          >
+            <span>{link.label}</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+};
+
+/* ============================================================================
+   3. BOTANICAL OFFERING TAG LIST (Refero 21b71be3 Spec)
+      Role: Inline items separated by a terracotta bullet '·' with 16px horizontal spacing
+============================================================================ */
+export const BotanicalTagList: React.FC<{
+  items: string[];
+  className?: string;
+}> = ({ items, className = '' }) => {
+  return (
+    <div
+      className={`flex flex-wrap items-center gap-y-2.5 gap-x-4 ${className}`}
+      style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+    >
+      {items.map((item, i) => (
+        <React.Fragment key={item}>
+          {i > 0 && (
+            <span className="text-[#A7713F] font-semibold select-none text-[13px]">·</span>
+          )}
+          <span className="text-[14.5px] text-[#333333] tracking-[-0.023em] font-normal">
+            {item}
+          </span>
+        </React.Fragment>
+      ))}
+    </div>
+  );
+};
+
+/* ============================================================================
+   4. ESTATE METRIC / STAT GRID (Refero 21b71be3 Spec)
+      Role: Large metric in Sorts Mill Goudy (36-45px), sub-label in Kumbh Sans 14px,
+            separated by 1px vertical Warm Taupe divider.
+============================================================================ */
+export interface StatItem {
+  val: string;
+  lbl: string;
+  notes?: string;
+}
+
+export const EstateStatGrid: React.FC<{
+  stats: StatItem[];
+  className?: string;
+  dark?: boolean;
+}> = ({ stats, className = '', dark = false }) => {
+  return (
+    <div
+      className={`grid grid-cols-2 md:grid-cols-4 rounded-[24px] p-6 md:p-8 border ${
+        dark
+          ? 'bg-[#0E2725] border-[#A7713F]/40 text-[#FEF9EF]'
+          : 'bg-[#F5EEE1] border-[#D2CCBE] text-[#0E2725]'
+      } ${className}`}
+    >
+      {stats.map((s, idx) => (
+        <div
+          key={s.lbl}
+          className={`flex flex-col justify-center px-4 md:px-6 py-2 ${
+            idx < stats.length - 1 ? 'md:border-r border-[#D2CCBE]/70' : ''
+          }`}
+        >
+          <div
+            className={`text-[36px] md:text-[44px] leading-tight font-normal ${
+              dark ? 'text-[#FEF9EF]' : 'text-[#A7713F]'
+            }`}
+            style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+          >
+            {s.val}
+          </div>
+          <div
+            className={`text-[14px] font-medium tracking-[-0.023em] mt-1 ${
+              dark ? 'text-[#D2CCBE]' : 'text-[#333333]'
+            }`}
+            style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+          >
+            {s.lbl}
+          </div>
+          {s.notes && (
+            <div
+              className={`text-[12px] font-light mt-0.5 ${
+                dark ? 'text-[#D2CCBE]/70' : 'text-[#7A7467]'
+              }`}
+            >
+              {s.notes}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+/* ============================================================================
+   5. FOUNDER / EDITORIAL TESTIMONIAL ROW (Refero 21b71be3 Spec)
+      Role: Social proof without heavy card chrome, sitting directly on parchment canvas.
+      Circular seal/avatar 48-56px, quote in 20-24px italic serif, attribution + credentials.
+============================================================================ */
+export const EditorialTestimonialRow: React.FC<{
+  quote: string;
+  author: string;
+  role: string;
+  avatar?: string;
+  illustration?: string;
+  stamp?: string;
+}> = ({
+  quote,
+  author,
+  role,
+  avatar = '/images/03-james-and-jess-at-ecomama-farms.jpg',
+  illustration = '/images/brandkit/illustration-09.png',
+  stamp = 'HEIRLOOM ROSE SANCTUARY'
+}) => {
+  return (
+    <div className="py-12 px-6 max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
+      {/* 52px Circular Stamped Avatar */}
+      <div className="relative shrink-0">
+        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#A7713F]/60 p-0.5 bg-[#F5EEE1]">
+          <img src={avatar} alt={author} className="w-full h-full object-cover rounded-full" />
+        </div>
+        <img
+          src={illustration}
+          alt=""
+          className="w-6 h-6 object-contain absolute -bottom-1 -right-1 drop-shadow-sm"
+        />
+      </div>
+
+      <div className="space-y-3 text-center md:text-left">
+        {stamp && (
+          <div
+            className="text-[11px] uppercase tracking-[0.22em] text-[#A7713F] font-semibold"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            {stamp}
+          </div>
+        )}
+        <p
+          className="text-[21px] md:text-[23px] text-[#0E2725] italic leading-[1.38]"
+          style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+        >
+          “{quote}”
+        </p>
+        <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 justify-center md:justify-start">
+          <span
+            className="text-[15px] font-semibold text-[#0E2725] tracking-[-0.023em]"
+            style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+          >
+            {author}
+          </span>
+          <span className="hidden sm:inline text-[#D2CCBE]">·</span>
+          <span
+            className="text-[14px] text-[#515151] font-light tracking-[-0.023em]"
+            style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+          >
+            {role}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ============================================================================
+   6. APOTHECARY & ROSE FIELDS STRIP
+============================================================================ */
+export interface ReferoSageStripProps {
   label?: string;
   statement: string;
   rightLabel?: string;
@@ -191,7 +481,7 @@ export const ReferoSageStrip: React.FC<ReferoSageStripProps> = ({
   illustration = '/images/brandkit/illustration-04.png'
 }) => {
   return (
-    <div className="relative overflow-hidden w-full bg-[#0E2725] text-[#EDE8DC] py-6 px-6 md:px-12 border-y border-[#A7713F]/35">
+    <div className="relative overflow-hidden w-full bg-[#0E2725] text-[#FEF9EF] py-6 px-6 md:px-12 border-y border-[#A7713F]/35">
       {/* Subtle watermark pressed rose from Brand Kit */}
       <img
         src="/images/brandkit/illustration-08.png"
@@ -215,7 +505,7 @@ export const ReferoSageStrip: React.FC<ReferoSageStripProps> = ({
               {label} —
             </span>
             <p
-              className="text-[14.5px] text-[#EDE8DC]/95 font-light leading-relaxed"
+              className="text-[14.5px] text-[#FEF9EF]/95 font-light leading-relaxed tracking-[-0.023em]"
               style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
             >
               {statement}
@@ -245,8 +535,7 @@ export const ReferoSageStrip: React.FC<ReferoSageStripProps> = ({
 };
 
 /* ============================================================================
-   BRAND KIT BOTANICAL SPECIMEN SEAL / DIVIDER
-   Showcases the hand-painted vintage rose & pottery craft feel between sections
+   7. BRAND KIT BOTANICAL SPECIMEN SEAL / DIVIDER
 ============================================================================ */
 export const BrandKitBotanicalSeal: React.FC<{
   illustration?: string;
@@ -258,20 +547,20 @@ export const BrandKitBotanicalSeal: React.FC<{
   quote = 'Grown in living biodynamic soil, gathered by hand at first light, and arranged in wheel-thrown stoneware.'
 }) => {
   return (
-    <div className="py-10 px-6 flex flex-col items-center text-center max-w-2xl mx-auto">
+    <div className="py-12 px-6 flex flex-col items-center text-center max-w-2xl mx-auto">
       <img
         src={illustration}
         alt="Botanical Rose Specimen"
         className="w-20 h-24 object-contain mb-3 drop-shadow-[0_4px_10px_rgba(14,39,37,0.08)]"
       />
       <div
-        className="text-[10.5px] uppercase tracking-[0.28em] text-[#A7713F] mb-2"
+        className="text-[11px] uppercase tracking-[0.28em] text-[#A7713F] mb-2 font-medium"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
       >
         {stamp}
       </div>
       <p
-        className="italic text-[19px] md:text-[21px] text-[#0E2725]/85 leading-relaxed"
+        className="italic text-[19px] md:text-[22px] text-[#0E2725]/85 leading-relaxed"
         style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
       >
         “{quote}”
@@ -281,9 +570,7 @@ export const BrandKitBotanicalSeal: React.FC<{
 };
 
 /* ============================================================================
-   2. ORIGINAL REFERO (Lightship fdcd4cbb) HERO & SAGE STRIP
-      Retains original Refero geometric typography, GPS eyebrow & tight tracking,
-      enhanced with the soft bottom-half hero gradient so the upper image is unshaded.
+   8. ORIGINAL REFERO (Lightship fdcd4cbb) HERO & SAGE STRIP
 ============================================================================ */
 export const OriginalReferoHeroFrame: React.FC<ReferoHeroFrameProps> = ({
   image,
@@ -302,23 +589,18 @@ export const OriginalReferoHeroFrame: React.FC<ReferoHeroFrameProps> = ({
         fullHeight ? 'min-h-screen' : 'min-h-[86vh]'
       } rounded-none overflow-hidden flex flex-col justify-between bg-[#252A26] text-white select-none`}
     >
-      {/* Full-Bleed 100vw x 100vh Photograph — Zero Border Radius per Refero Spec */}
       <img
         src={image}
         alt={imageAlt}
         className="absolute inset-0 w-full h-full object-cover object-center scale-[1.01]"
       />
-      {/* Soft top nav whisper + Bottom-Half Gradient ONLY (keeps upper half of photo unshaded) */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-28 hero-top-nav-whisper" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[56%] hero-bottom-shade" />
 
-      {/* Top Spacer for Transparent 3-Zone Navigation Bar */}
       <div className="h-28 md:h-36 relative z-10" />
 
-      {/* Opposite Viewport Edges Split Headline (Left + Right Compositional Tension) */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 pb-12 md:pb-16 flex-1 flex flex-col justify-end">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-          {/* Left Edge Display Statement */}
           <div className="lg:col-span-7">
             {eyebrowLeft && (
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-[100px] border border-white/35 text-[12px] tracking-[-0.03em] mb-6 text-white/90">
@@ -344,7 +626,6 @@ export const OriginalReferoHeroFrame: React.FC<ReferoHeroFrameProps> = ({
             </h1>
           </div>
 
-          {/* Right Edge Counter-Statement & Ghost Text Actions */}
           <div className="lg:col-span-5 lg:pl-8 flex flex-col justify-end items-start lg:items-end lg:text-right">
             <p
               className="text-white/95 font-normal max-w-md mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.25)]"
@@ -386,7 +667,6 @@ export const OriginalReferoHeroFrame: React.FC<ReferoHeroFrameProps> = ({
           </div>
         </div>
 
-        {/* Hairline Bottom Rule & Scroll Indicator */}
         <div className="mt-10 pt-5 border-t border-white/25 flex items-center justify-between text-[12px] tracking-[-0.03em] text-white/80">
           <span>2550 Calzada Ave · Santa Ynez, California</span>
           <a

@@ -10,6 +10,15 @@
   --brand-deep-pine: #0E2725;
   --brand-vintage-olive: #A6A26A;
 
+  /* Refero 21b71be3 ("Function" Warm Apothecary Journal) Surfaces & Elevation */
+  --color-parchment: #FEF9EF;
+  --color-aged-paper: #F5EEE1;
+  --color-warm-taupe: #D2CCBE;
+  --color-ink: #0E2725;
+  --color-charcoal: #333333;
+  --color-graphite: #515151;
+  --color-ash: #808988;
+
   /* Tactile Pottery & Cotton Rag Surfaces */
   --color-raw-linen: #EDE8DC;
   --color-cotton-rag: #F6F2EA;
@@ -34,13 +43,14 @@
   --font-display: 'Old Standard TT', Georgia, serif;
   --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Layout & Radii */
+  /* Layout & Radii per Refero 21b71be3 Spec */
   --page-max-width: 1440px;
-  --section-gap: 100px;
+  --section-gap: 80px;
   --radius-cards: 24px;
+  --radius-buttons: 40px;
+  --radius-inputs: 9999px;
+  --radius-tags: 9999px;
   --radius-images: 24px;
-  --radius-inputs: 100px;
-  --radius-buttons: 100px;
 }
 
 @layer base {
@@ -52,29 +62,31 @@
 
   body {
     margin: 0;
-    background-color: var(--color-raw-linen);
+    background-color: var(--color-parchment);
     color: var(--brand-deep-pine);
     font-family: var(--font-brand-body);
   }
 }
 
 /* ============================================================================
-   1. ORGANIC REFERO MODE (.refero-organic) — BRAND KIT EDITION
-   Tactile stoneware & raw clay (#EDE8DC / #D2CCBE), kiln terracotta (#A7713F),
-   vintage olive (#A6A26A), dusty ceramic slate (#99AAAF), deep pine ink (#0E2725),
-   Sorts Mill Goudy headings, and Kumbh Sans (Europa) body copy.
+   1. ORGANIC REFERO MODE (.refero-organic) — WARM APOTHECARY JOURNAL ON PARCHMENT
+   Refero Spec 21b71be3-78a0-4681-a5b9-64cc4b40eb67 + Ecomama Brand Kit:
+   - Surfaces: Level 0 Parchment (#FEF9EF), Level 1 Aged Paper (#F5EEE1),
+               Level 2 Warm Taupe (#D2CCBE) outline, Level 3 Terracotta Seal (#A7713F).
+   - Fonts: Sorts Mill Goudy (roman + italic display pairing) & Kumbh Sans (-0.023em tracking).
+   - Radii: 24px cards, 40px buttons, 9999px pills.
 ============================================================================ */
 .refero-system.refero-organic {
-  background-color: #EDE8DC;
+  background-color: #FEF9EF;
   background-image:
-    radial-gradient(rgba(167, 113, 63, 0.045) 1px, transparent 0),
-    radial-gradient(rgba(14, 39, 37, 0.03) 1px, transparent 0);
+    radial-gradient(rgba(167, 113, 63, 0.04) 1px, transparent 0),
+    radial-gradient(rgba(14, 39, 37, 0.025) 1px, transparent 0);
   background-size: 28px 28px;
   background-position: 0 0, 14px 14px;
   color: #0E2725;
   font-family: 'Kumbh Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 300;
-  letter-spacing: 0.005em;
+  letter-spacing: -0.023em;
 }
 
 .refero-system.refero-organic h1,
@@ -83,9 +95,16 @@
 .refero-system.refero-organic h4,
 .refero-system.refero-organic .font-editorial {
   font-family: 'Sorts Mill Goudy', Georgia, serif !important;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.012em;
   line-height: 1.08;
   color: #0E2725;
+}
+
+/* Typographic Signature: Roman + Italic Pairing within headlines */
+.headline-dual em,
+.headline-dual i {
+  font-style: italic;
+  font-weight: 300;
 }
 
 /* ============================================================================
@@ -109,7 +128,7 @@
 }
 
 /* ============================================================================
-   TYPOGRAPHY & TACTILE POTTERY / VINTAGE ROSE FARM CLASSES
+   TYPOGRAPHY & TACTILE APOTHECARY / VINTAGE ROSE FARM CLASSES
 ============================================================================ */
 .refero-display {
   font-family: 'Sorts Mill Goudy', Georgia, serif;
@@ -163,21 +182,31 @@
   color: #A7713F;
 }
 
-/* Tactile Unbleached Cotton & Stoneware Card */
+/* Refero 21b71be3 Apothecary Eyebrow Label */
+.apothecary-eyebrow {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.28px;
+  color: #A7713F;
+}
+
+/* Refero 21b71be3 Aged Paper Card Surface (24px radius, 32-40px padding, no harsh shadow) */
 .refero-card {
   position: relative;
-  background-color: #F6F2EA;
-  background-image: radial-gradient(rgba(167, 113, 63, 0.04) 1px, transparent 0);
+  background-color: #F5EEE1;
+  background-image: radial-gradient(rgba(167, 113, 63, 0.035) 1px, transparent 0);
   background-size: 20px 20px;
-  border-radius: 26px 22px 28px 20px;
-  padding: 30px;
-  border: 1px solid rgba(167, 113, 63, 0.26);
-  box-shadow: inset 0 0 0 4px rgba(210, 204, 190, 0.28) !important;
+  border-radius: 24px;
+  padding: 36px 32px;
+  border: 1px solid rgba(210, 204, 190, 0.85);
+  box-shadow: none !important;
   transition: border-color 0.35s ease, transform 0.35s ease;
 }
 
 .refero-card:hover {
-  border-color: rgba(167, 113, 63, 0.48);
+  border-color: rgba(167, 113, 63, 0.5);
 }
 
 .refero-original .refero-card {
@@ -187,6 +216,22 @@
   padding: 24px;
   border: 1px solid #D9D4CC;
   box-shadow: none !important;
+}
+
+/* Refero 21b71be3 Numbered Step Card */
+.step-card {
+  background-color: #F5EEE1;
+  border-radius: 24px;
+  padding: 40px 32px;
+  border: 1px solid rgba(210, 204, 190, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.3s ease;
+}
+
+.step-card:hover {
+  border-color: rgba(167, 113, 63, 0.55);
 }
 
 /* Raw Stoneware Clay Surface (#D2CCBE from Brand Kit) */
@@ -208,9 +253,9 @@
 }
 
 .refero-photo {
-  border-radius: 26px 20px 26px 22px;
+  border-radius: 24px;
   overflow: hidden;
-  border: 1px solid rgba(167, 113, 63, 0.2);
+  border: 1px solid rgba(210, 204, 190, 0.7);
   box-shadow: none !important;
 }
 
@@ -221,9 +266,9 @@
 
 /* Hand-Thrown Vessel / Amphora Arch Frame */
 .refero-arch-photo {
-  border-radius: 200px 200px 26px 26px;
+  border-radius: 200px 200px 24px 24px;
   overflow: hidden;
-  border: 1px solid rgba(167, 113, 63, 0.28);
+  border: 1px solid rgba(210, 204, 190, 0.8);
   box-shadow: none !important;
 }
 
@@ -232,27 +277,51 @@
   border: none;
 }
 
-/* Tactile Pottery / Kiln-Fired Pill Button */
-.refero-pill-btn {
+/* Refero 21b71be3 40px Radius Pill Buttons */
+.refero-pill-btn,
+.refero-btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  border-radius: 100px;
-  padding: 11px 25px;
+  border-radius: 40px;
+  padding: 12px 24px;
   font-family: 'Kumbh Sans', sans-serif;
-  font-size: 13.5px;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  border: 1px solid rgba(167, 113, 63, 0.55);
-  background: rgba(246, 242, 234, 0.85);
-  color: #0E2725;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.023em;
+  background-color: #A7713F;
+  color: #FEF9EF;
+  border: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.refero-pill-btn:hover {
+.refero-pill-btn:hover,
+.refero-btn-primary:hover {
+  background-color: #8E5D30;
+  color: #FFFFFF;
+}
+
+.refero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 40px;
+  padding: 11px 24px;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.023em;
+  background: transparent;
+  color: #A7713F;
+  border: 1.5px solid #A7713F;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.refero-btn-secondary:hover {
   background-color: #A7713F;
-  color: #F6F2EA;
-  border-color: #A7713F;
+  color: #FEF9EF;
 }
 
 .refero-original .refero-pill-btn {
@@ -263,6 +332,7 @@
   border: 1px solid currentColor;
   background: transparent;
   color: #3E3E3E;
+  border-radius: 100px;
 }
 
 .refero-original .refero-pill-btn:hover {
@@ -271,18 +341,19 @@
   border-color: #3E3E3E;
 }
 
-/* Botanical Ghost Link with Terracotta / Olive Underline */
+/* Botanical Ghost Link */
 .refero-ghost-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-family: 'Kumbh Sans', sans-serif;
-  font-size: 13.5px;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.023em;
   text-decoration: none;
   border-bottom: 1px solid rgba(167, 113, 63, 0.45);
   padding-bottom: 2px;
+  color: #0E2725;
   transition: border-color 0.25s ease, color 0.25s ease;
 }
 
@@ -296,6 +367,7 @@
   font-size: 14px;
   letter-spacing: -0.02em;
   border-bottom-color: transparent;
+  color: #3E3E3E;
 }
 
 .refero-original .refero-ghost-link:hover {
@@ -303,25 +375,26 @@
   border-bottom-color: currentColor;
 }
 
-/* Tactile Stoneware Form Input */
+/* Tactile Stoneware Form Input (Parchment background, 9999px radius, terracotta focus ring) */
 .refero-pill-input {
   width: 100%;
-  border-radius: 100px !important;
-  border: 1px solid rgba(167, 113, 63, 0.36) !important;
-  background-color: #F6F2EA !important;
+  border-radius: 9999px !important;
+  border: 1px solid #D2CCBE !important;
+  background-color: #FEF9EF !important;
   padding: 14px 22px !important;
   font-family: 'Kumbh Sans', sans-serif !important;
-  font-size: 14.5px !important;
-  font-weight: 300 !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.023em !important;
   color: #0E2725 !important;
   outline: none !important;
   box-shadow: none !important;
-  transition: border-color 0.25s ease, background-color 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .refero-pill-input:focus {
   border-color: #A7713F !important;
-  background-color: #FFFFFF !important;
+  box-shadow: 0 0 0 3px rgba(167, 113, 63, 0.22) !important;
 }
 
 .refero-original .refero-pill-input {
@@ -336,6 +409,14 @@
 
 .refero-original .refero-pill-input:focus {
   border-color: #3E3E3E !important;
+}
+
+/* Botanical Tag Separator Bullet */
+.botanical-tag-bullet {
+  color: #A7713F;
+  padding-left: 12px;
+  padding-right: 12px;
+  user-select: none;
 }
 
 /* Soft Bottom-Half Hero Gradient — keeps top half of hero image completely unshaded */

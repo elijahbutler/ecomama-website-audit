@@ -22,7 +22,12 @@ export const ContactPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           image="/images/92-sunkissed-hair-2021-finals.jpg"
           imageAlt="Contact Ecomama Farms in Santa Ynez"
           eyebrowLeft="2550 Calzada Ave · Santa Ynez, California"
-          headlineLeft="Begin Your Ecomama Conversation."
+          headlineLeft={
+            <>
+              Begin Your{' '}
+              <em className="italic font-light text-[#E4DDD0]">Ecomama Conversation.</em>
+            </>
+          }
           statementRight="Arrange a private estate walkthrough, inquire about 2026–2027 celebration dates, or reserve seasonal heirloom garden roses."
           botanicalIllustration="/images/brandkit/illustration-04.png"
           fullHeight={false}
@@ -37,7 +42,7 @@ export const ContactPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 space-y-6">
-              <div className="refero-card relative overflow-hidden p-8 md:p-10 space-y-5">
+              <div className="step-card relative overflow-hidden p-8 md:p-10 space-y-5">
                 <img
                   src="/images/brandkit/illustration-08.png"
                   alt=""
@@ -46,26 +51,35 @@ export const ContactPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 <span className="brandkit-stamp block">
                   P R I V A T E   W A L K T H R O U G H S   B Y   A P P O I N T M E N T
                 </span>
-                <h2 className="refero-heading-lg text-[#0E2725]">Visit Us in Santa Ynez</h2>
-                <p className="text-[14.5px] text-[#0E2725]/80 leading-[1.7] font-light">
+                <h2
+                  className="headline-dual text-[30px] md:text-[36px] text-[#0E2725] leading-snug"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                >
+                  <span>Visit Us in </span>
+                  <em className="italic font-light text-[#A7713F]">Santa Ynez</em>
+                </h2>
+                <p
+                  className="text-[15px] text-[#333333] leading-[1.7] font-light tracking-[-0.023em]"
+                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                >
                   We welcome couples, wedding planners, floral designers, ceramicists, and retreat
                   hosts for private, unhurried walks through the heirloom rose gardens, orchards,
                   and barns.
                 </p>
-                <div className="pt-4 border-t border-[#A7713F]/25 space-y-2.5 text-[14px] font-light">
+                <div className="pt-4 border-t border-[#D2CCBE]/70 space-y-2.5 text-[14.5px] font-light tracking-[-0.023em]">
                   <div>
-                    <strong className="font-normal">Estate Address:</strong> 2550 Calzada Ave, Santa
-                    Ynez, CA 93460
+                    <strong className="font-semibold text-[#0E2725]">Estate Address:</strong> 2550
+                    Calzada Ave, Santa Ynez, CA 93460
                   </div>
                   <div>
-                    <strong className="font-normal">Telephone:</strong>{' '}
-                    <a href="tel:+18058941477" className="refero-ghost-link">
+                    <strong className="font-semibold text-[#0E2725]">Telephone:</strong>{' '}
+                    <a href="tel:+18058941477" className="refero-ghost-link text-[#A7713F]">
                       (805) 894-1477
                     </a>
                   </div>
                   <div>
-                    <strong className="font-normal">Weddings &amp; Events:</strong>{' '}
-                    <a href="mailto:events@ecomamafarms.com" className="refero-ghost-link">
+                    <strong className="font-semibold text-[#0E2725]">Weddings &amp; Events:</strong>{' '}
+                    <a href="mailto:events@ecomamafarms.com" className="refero-ghost-link text-[#A7713F]">
                       events@ecomamafarms.com
                     </a>
                   </div>
@@ -73,12 +87,20 @@ export const ContactPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               </div>
             </div>
 
-            <div className="lg:col-span-7 refero-card p-8 md:p-12">
+            <div className="lg:col-span-7 step-card p-8 md:p-12">
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
                   <CheckCircle2 className="w-12 h-12 text-[#A7713F] mx-auto" />
-                  <h3 className="refero-heading-lg text-[#0E2725]">Thank You for Reaching Out</h3>
-                  <p className="text-[15px] text-[#0E2725]/75 max-w-md mx-auto font-light">
+                  <h3
+                    className="text-[28px] text-[#0E2725]"
+                    style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                  >
+                    Thank You for Reaching Out
+                  </h3>
+                  <p
+                    className="text-[15px] text-[#333333] max-w-md mx-auto font-light tracking-[-0.023em]"
+                    style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                  >
                     Our Santa Ynez estate team has received your note and will be in touch within
                     24 hours.
                   </p>
@@ -91,13 +113,17 @@ export const ContactPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   }}
                   className="space-y-4"
                 >
-                  <div className="flex items-center justify-between pb-4 border-b border-[#A7713F]/25">
+                  <div className="flex items-center justify-between pb-4 border-b border-[#D2CCBE]/70">
                     <div>
                       <span className="brandkit-stamp block mb-1">
                         S H A R E   Y O U R   V I S I O N
                       </span>
-                      <h3 className="refero-heading text-[#0E2725]">
-                        Celebration &amp; Rose Farm Inquiry
+                      <h3
+                        className="headline-dual text-[26px] md:text-[30px] text-[#0E2725]"
+                        style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                      >
+                        <span>Celebration &amp; </span>
+                        <em className="italic font-light text-[#A7713F]">Rose Farm Inquiry</em>
                       </h3>
                     </div>
                     <img
@@ -149,14 +175,16 @@ export const ContactPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   <textarea
                     rows={4}
                     placeholder="Tell us about your celebration, estimated guest count, and vision..."
-                    className="w-full rounded-[24px] border border-[#A7713F]/35 bg-[#F6F2EA] p-5 text-[14.5px] font-light text-[#0E2725] focus:outline-none focus:border-[#A7713F]"
+                    className="w-full rounded-[24px] border border-[#D2CCBE] bg-[#FEF9EF] p-5 text-[15px] font-light text-[#0E2725] focus:outline-none focus:border-[#A7713F] focus:ring-2 focus:ring-[#A7713F]/25 tracking-[-0.023em]"
+                    style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
                   />
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="px-8 py-3.5 rounded-[100px] bg-[#A7713F] text-[#F6F2EA] hover:bg-[#0E2725] text-[14px] tracking-[0.03em] transition-colors"
+                      className="refero-pill-btn px-8 py-3.5"
                     >
-                      Send Note to Ecomama →
+                      <span>Send Note to Ecomama</span>
+                      <ArrowUpRight className="w-4 h-4" />
                     </button>
                   </div>
                 </form>
@@ -322,7 +350,12 @@ export const PartnerWithUsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           image="/images/94-screenshot-2024-07-16-at-5-37-18-pm.png"
           imageAlt="Partner With Ecomama Farms"
           eyebrowLeft="Planners, Florists, Ceramicists, Chefs & Educators"
-          headlineLeft="Partner With Ecomama Farms."
+          headlineLeft={
+            <>
+              Partner With{' '}
+              <em className="italic font-light text-[#E4DDD0]">Ecomama Farms.</em>
+            </>
+          }
           statementRight="Collaborate with our Santa Ynez sanctuary on bespoke weddings, botanical & pottery workshops, orchard dinners, and restorative retreats."
           primaryAction={{ label: 'Connect With Our Team', to: '/contact' }}
           botanicalIllustration="/images/brandkit/illustration-06.png"
@@ -355,7 +388,7 @@ export const PartnerWithUsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           ].map((card, i) => (
             <div
               key={card.title}
-              className={`refero-card relative overflow-hidden space-y-4 ${
+              className={`step-card relative overflow-hidden space-y-4 ${
                 i === 1 ? 'md:mt-10' : i === 2 ? 'md:mt-20' : ''
               }`}
             >
@@ -364,13 +397,18 @@ export const PartnerWithUsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 alt=""
                 className="pointer-events-none absolute -right-4 -bottom-4 w-28 h-28 object-contain opacity-15"
               />
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between pb-3 border-b border-[#D2CCBE]/60">
                 <span className="brandkit-stamp">{card.stamp}</span>
                 <img src={card.botanical} alt="" className="w-6 h-6 object-contain" />
               </div>
               <h2 className="refero-heading text-[#0E2725]">{card.title}</h2>
-              <p className="text-[14.5px] text-[#0E2725]/75 leading-[1.65] font-light">{card.desc}</p>
-              <div>
+              <p
+                className="text-[14.5px] text-[#333333] leading-[1.65] font-light tracking-[-0.023em]"
+                style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+              >
+                {card.desc}
+              </p>
+              <div className="pt-2">
                 <Link to="/contact" className="refero-ghost-link text-[#0E2725]">
                   <span>Begin a collaboration</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -454,7 +492,7 @@ export const PartnerWithUsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
 export const PrivacyPolicyPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
   return (
     <div className="pt-32 pb-[100px] px-6 md:px-12 max-w-4xl mx-auto">
-      <div className="refero-card space-y-6">
+      <div className="step-card space-y-6">
         {mode === 'organic' ? (
           <div className="brandkit-stamp">
             E C O M A M A   F A R M S   S A N C T U A R Y   S T E W A R D S H I P
@@ -465,23 +503,27 @@ export const PrivacyPolicyPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           </div>
         )}
         <h1 className="refero-heading-lg text-[#0E2725]">Privacy Policy</h1>
-        <p className="text-[14.5px] text-[#0E2725]/80 leading-[1.65] font-light">
+        <p
+          className="text-[15px] text-[#333333] leading-[1.7] font-light tracking-[-0.023em]"
+          style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+        >
           Ecomama Farms LLC (“we,” “our,” or “us”) respects your privacy and is committed to
           protecting the personal information you share with us through our website, inquiry forms,
           and newsletter dispatches.
         </p>
-        <div className="pt-4 border-t border-[#A7713F]/25 text-[14px] text-[#0E2725] space-y-1 font-light">
+        <div className="pt-4 border-t border-[#D2CCBE]/70 text-[14px] text-[#0E2725] space-y-1 font-light tracking-[-0.023em]">
           <div>
-            <strong className="font-normal">Address:</strong> 2550 Calzada Ave, Santa Ynez, CA 93460
+            <strong className="font-semibold text-[#0E2725]">Address:</strong> 2550 Calzada Ave,
+            Santa Ynez, CA 93460
           </div>
           <div>
-            <strong className="font-normal">Phone:</strong>{' '}
+            <strong className="font-semibold text-[#0E2725]">Phone:</strong>{' '}
             <a href="tel:+18058941477" className="underline">
               {mode === 'original' ? '805-350-0073 (Original Live Site Value)' : '(805) 894-1477'}
             </a>
           </div>
           <div>
-            <strong className="font-normal">Email:</strong>{' '}
+            <strong className="font-semibold text-[#0E2725]">Email:</strong>{' '}
             <a href="mailto:info@ecomamafarms.com" className="underline">
               info@ecomamafarms.com
             </a>

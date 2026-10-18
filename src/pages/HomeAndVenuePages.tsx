@@ -72,45 +72,6 @@ const SERVICE_TIERS = [
   }
 ];
 
-const BRANDKIT_ROSE_SPECIMENS = [
-  {
-    id: 'NO. 01',
-    name: 'Apricot Clay Tea Rose',
-    notes: 'Warm terracotta petal heart · Late spring harvest',
-    img: '/images/brandkit/illustration-01.png'
-  },
-  {
-    id: 'NO. 02',
-    name: 'Parchment Alba Heirloom',
-    notes: 'Unbleached linen bloom · Honeyed myrrh scent',
-    img: '/images/brandkit/illustration-02.png'
-  },
-  {
-    id: 'NO. 03',
-    name: 'Sun-Baked Ochre Austin',
-    notes: 'Kiln-fired amber rosette · Gathered at dawn',
-    img: '/images/brandkit/illustration-04.png'
-  },
-  {
-    id: 'NO. 04',
-    name: 'Velvet Damask Cutting',
-    notes: 'Deep botanical crimson · Long-stem apothecary rose',
-    img: '/images/brandkit/illustration-06.png'
-  },
-  {
-    id: 'NO. 05',
-    name: 'Long-Stemmed Garden Sprig',
-    notes: 'Hand-pruned stem with wild olive-toned foliage',
-    img: '/images/brandkit/illustration-08.png'
-  },
-  {
-    id: 'NO. 06',
-    name: 'Pressed Herbarium Bough',
-    notes: 'Botanical field study · Santa Ynez sanctuary',
-    img: '/images/brandkit/illustration-09.png'
-  }
-];
-
 /* ============================================================================
    1. HOME PAGE (/ and /home)
 ============================================================================ */
@@ -169,26 +130,26 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           </div>
         </section>
 
-        {/* 4. Numbered 3-Step Estate Planning & Experience Cards (Refero 21b71be3 Spec) */}
+        {/* 4. Biodynamic Rose Farm & Event Venue Core Offerings */}
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-16">
             <div className="lg:col-span-7 space-y-3">
               <div className="inline-flex items-center gap-2.5">
                 <img
-                  src="/images/brandkit/illustration-01.png"
+                  src="/images/ecomama-rose-icon.png"
                   alt=""
-                  className="w-6 h-6 object-contain"
+                  className="w-5 h-5 object-contain"
                 />
                 <span className="brandkit-stamp">
-                  T H R E E   P I L L A R S   O F   T H E   E S T A T E
+                  B I O D Y N A M I C   R O S E   F A R M   &amp;   E V E N T   V E N U E
                 </span>
               </div>
               <h2
                 className="headline-dual text-[34px] md:text-[44px] text-[#0E2725] leading-[1.12]"
                 style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
               >
-                <span>Rooted in living soil and raw clay—crafted for </span>
-                <em className="italic font-light text-[#A7713F]">unhurried celebrations</em>.
+                <span>Rooted in living soil—crafted for </span>
+                <em className="italic font-light text-[#A7713F]">unforgettable gatherings</em>.
               </h2>
             </div>
             <div className="lg:col-span-5">
@@ -196,53 +157,151 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 className="text-[16px] leading-[1.65] text-[#333333] font-light tracking-[-0.023em]"
                 style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
               >
-                Every gathering at Ecomama Farms unfolds inside a working heirloom rose farm and
-                homestead—surrounded by fragrant David Austin roses, silver-leafed olive lanes,
-                stoneware vessels, and sweeping views of the Santa Ynez Mountains.
+                Unlike conventional event spaces, every celebration at Ecomama Farms unfolds inside
+                a living 30+ acre biodynamic farmstead—surrounded by 2,500+ fragrant heirloom
+                roses, ancient olive trees, weathered barns, and panoramic views of the Santa Ynez
+                Mountains.
               </p>
             </div>
           </div>
 
-          {/* 3 Numbered Step Cards on Aged Paper (#F5EEE1) with 24px radius & 40px padding */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-16">
-            <ApothecaryStepCard
-              step="STEP 01"
-              category="THE SANCTUARY VENUE"
-              titleRoman="Sunlit Ceremony Lawns &"
-              titleItalic="Weathered Barns"
-              body="Six distinct outdoor spaces and private suites accommodating up to 180 guests—with an unhurried progressive flow from garden vows to candlelit stoneware dining under mountain starlight."
-              image="/images/06-dji-0676-enhanced-nr-copy.jpg"
-              imageAlt="The Venue at Ecomama Farms"
-              tags={['Heart of the Rose Garden', 'Terraced Lawn', 'Mountain View Barn', 'Bridal Loft']}
-              link={{ label: 'Explore the 12 Estate Vignettes', to: '/vignettes' }}
-              badge="Exclusive Weekend Buyout"
-            />
+          {/* Dual Core Pillars: The Sanctuary Venue & The Biodynamic Rose Farm */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-16">
+            {/* PILLAR 1: The Private Estate Venue */}
+            <div className="step-card flex flex-col justify-between group">
+              <div>
+                <div className="aspect-[16/10] rounded-[18px] overflow-hidden mb-6 bg-[#FEF9EF] border border-[#D2CCBE]/60">
+                  <img
+                    src="/images/06-dji-0676-enhanced-nr-copy.jpg"
+                    alt="Aerial view of the Estate Venue at Ecomama Farms"
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                  />
+                </div>
+                <div className="flex items-center justify-between text-[11.5px] text-[#A7713F] mb-3 font-semibold">
+                  <span
+                    className="uppercase tracking-[0.2em]"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    THE PRIVATE ESTATE VENUE
+                  </span>
+                  <span className="px-3 py-1 rounded-[100px] bg-[#FEF9EF] border border-[#D2CCBE] text-[#0E2725] font-medium tracking-[-0.023em]">
+                    Up to 180 Guests · 1 Wedding Per Weekend
+                  </span>
+                </div>
+                <h3
+                  className="headline-dual text-[26px] md:text-[32px] text-[#0E2725] mb-3 leading-snug"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                >
+                  <span>Six Intimate Facilities &amp; </span>
+                  <em className="italic font-light text-[#A7713F]">Sunlit Ceremony Lawns</em>
+                </h3>
+                <p
+                  className="text-[15.5px] text-[#333333] leading-[1.65] font-light tracking-[-0.023em] mb-6"
+                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                >
+                  Dedicated to one exclusive celebration each weekend. Experience total sanctuary
+                  privacy across 30+ acres with progressive flow from rose garden vows to cocktail
+                  hour beside the weeping willow pond and starlit dining on the Terraced Lawn.
+                </p>
 
-            <ApothecaryStepCard
-              step="STEP 02"
-              category="HEIRLOOM FLORALS"
-              titleRoman="2,500+ Garden Roses"
-              titleItalic="Gathered at Dawn"
-              body="Grown in biodynamic Santa Ynez earth without synthetic chemicals, pruned by hand, and arranged in wheel-thrown ceramic vessels hours before your guests arrive."
-              image="/images/03-james-and-jess-at-ecomama-farms.jpg"
-              imageAlt="Heirloom Garden Roses at Ecomama Farms"
-              tags={['1,200+ Heirloom Varieties', 'David Austin Rosettes', 'Foam-Free Mechanics', 'Stoneware Urns']}
-              link={{ label: 'Visit the Floral Atelier', to: '/floral' }}
-              badge="Seed to Centerpiece"
-            />
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {[
+                    'Heart of the Rose Garden',
+                    'The Terraced Lawn',
+                    'The Rose Barn',
+                    'Mountain View Barn',
+                    'Bridal Loft & Cottage'
+                  ].map((t) => (
+                    <span
+                      key={t}
+                      className="px-3 py-1 rounded-[100px] bg-[#FEF9EF] border border-[#D2CCBE] text-[#515151] text-[12px] tracking-[-0.023em]"
+                      style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-            <ApothecaryStepCard
-              step="STEP 03"
-              category="SOIL & STEWARDSHIP"
-              titleRoman="Living Soil Fertility &"
-              titleItalic="Sanctuary Living"
-              body="Every rose trimming and harvest cutting returns to our active compost windrows—building deep microbial fertility, rich clay tilth, and drought resilience across 30+ acres."
-              image="/images/34-dji-0656.jpg"
-              imageAlt="Regenerative Farming at Ecomama Farms"
-              tags={['100% Chemical Free', 'Closed-Loop Composting', 'Orchard & Olive Grove', 'Heritage Animals']}
-              link={{ label: 'Discover Our Farm Practices', to: '/the-farm' }}
-              badge="100% Biodynamic"
-            />
+              <div className="pt-5 border-t border-[#D2CCBE]/70 flex flex-wrap items-center justify-between gap-3">
+                <Link to="/venue" className="refero-pill-btn">
+                  <span>Explore the Venue</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link to="/vignettes" className="refero-ghost-link text-[#0E2725]">
+                  <span>View All 12 Vignettes</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* PILLAR 2: The Biodynamic Rose Farm */}
+            <div className="step-card flex flex-col justify-between group">
+              <div>
+                <div className="aspect-[16/10] rounded-[18px] overflow-hidden mb-6 bg-[#FEF9EF] border border-[#D2CCBE]/60">
+                  <img
+                    src="/images/03-james-and-jess-at-ecomama-farms.jpg"
+                    alt="2,500+ Heirloom Garden Roses at Ecomama Farms"
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                  />
+                </div>
+                <div className="flex items-center justify-between text-[11.5px] text-[#A7713F] mb-3 font-semibold">
+                  <span
+                    className="uppercase tracking-[0.2em]"
+                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                  >
+                    BIODYNAMIC ROSE FARM
+                  </span>
+                  <span className="px-3 py-1 rounded-[100px] bg-[#FEF9EF] border border-[#D2CCBE] text-[#0E2725] font-medium tracking-[-0.023em]">
+                    2,500+ Bushes · Seed to Centerpiece
+                  </span>
+                </div>
+                <h3
+                  className="headline-dual text-[26px] md:text-[32px] text-[#0E2725] mb-3 leading-snug"
+                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
+                >
+                  <span>2,500+ Heirloom Garden Roses &amp; </span>
+                  <em className="italic font-light text-[#A7713F]">Living Soil Stewardship</em>
+                </h3>
+                <p
+                  className="text-[15.5px] text-[#333333] leading-[1.65] font-light tracking-[-0.023em] mb-6"
+                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                >
+                  Grown in living Santa Ynez soil without synthetic chemicals, pesticides, or
+                  commercial fertilizers. Our heirloom and David Austin garden roses are harvested
+                  hours before your event for incomparable fragrance, botanical vitality, and natural form.
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {[
+                    '2,500+ Heirloom Rose Bushes',
+                    'David Austin Rosettes',
+                    '100% Foam-Free Mechanics',
+                    'Closed-Loop Composting',
+                    'Olive Grove & Heritage Animals'
+                  ].map((t) => (
+                    <span
+                      key={t}
+                      className="px-3 py-1 rounded-[100px] bg-[#FEF9EF] border border-[#D2CCBE] text-[#515151] text-[12px] tracking-[-0.023em]"
+                      style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-5 border-t border-[#D2CCBE]/70 flex flex-wrap items-center justify-between gap-3">
+                <Link to="/the-farm" className="refero-pill-btn">
+                  <span>Discover the Farm</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link to="/floral" className="refero-ghost-link text-[#0E2725]">
+                  <span>View Floral Lookbook</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* Estate Metric / Stat Grid with 1px Warm Taupe Dividers */}
@@ -256,165 +315,16 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           />
         </section>
 
-        {/* 5. Editorial Testimonial Row (Direct on Parchment Canvas, no heavy chrome) */}
+        {/* 5. Editorial Testimonial Row (Direct on Parchment Canvas) */}
         <section className="bg-[#EDE8DC]/50 border-y border-[#D2CCBE]/70 py-6">
           <EditorialTestimonialRow
             quote="We envisioned a sanctuary where wedding celebrations feel deeply rooted in the land—where guests dine on raw linen beside heirloom roses harvested that very morning, surrounded by the quiet rhythm of the Santa Ynez mountains."
             author="The Ecomama Farm Stewards"
-            role="Founders & Biodynamic Rose Growers · Santa Ynez, California"
+            role="Founders &amp; Biodynamic Rose Growers · Santa Ynez, California"
             avatar="/images/03-james-and-jess-at-ecomama-farms.jpg"
             illustration="/images/brandkit/illustration-09.png"
             stamp="THE ART OF SLOW GATHERING"
           />
-        </section>
-
-        {/* 6. Brand Kit Heirloom Rose Herbarium & Tactile Materials */}
-        <section className="stoneware-surface py-[96px] px-6 md:px-12 border-b border-[#A7713F]/30">
-          <div className="max-w-[1440px] mx-auto space-y-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-              <div className="lg:col-span-7 space-y-2.5">
-                <span className="brandkit-stamp block">
-                  F R O M   T H E   E C O M A M A   B R A N D   A T E L I E R
-                </span>
-                <h2
-                  className="headline-dual text-[32px] md:text-[42px] text-[#0E2725] leading-[1.12]"
-                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
-                >
-                  <span>Pressed Botanical Studies, </span>
-                  <em className="italic font-light text-[#A7713F]">Raw Stoneware &amp; Sun-Warmed Clay</em>.
-                </h2>
-              </div>
-              <div className="lg:col-span-5">
-                <p
-                  className="text-[15.5px] text-[#0E2725]/80 leading-[1.7] font-light tracking-[-0.023em]"
-                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
-                >
-                  Inspired by hand-thrown ceramics, vintage botanical studies, and unhurried
-                  countryside tables—explore the seasonal rose varieties and tactile textures that
-                  shape every celebration at Ecomama Farms.
-                </p>
-              </div>
-            </div>
-
-            {/* 6 Pressed Botanical Rose Specimen Cards from Brand Kit Pages 2 & 3 */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
-              {BRANDKIT_ROSE_SPECIMENS.map((spec) => (
-                <div
-                  key={spec.id}
-                  className="refero-card p-5 flex flex-col items-center text-center justify-between group"
-                >
-                  <div className="w-full flex items-center justify-between text-[11px] tracking-[0.2em] text-[#A7713F] mb-2 font-medium">
-                    <span style={{ fontFamily: "'Montserrat', sans-serif" }}>{spec.id}</span>
-                    <span className="w-2 h-2 rounded-full bg-[#A6A26A]" />
-                  </div>
-                  <div className="h-32 w-full flex items-center justify-center my-2">
-                    <img
-                      src={spec.img}
-                      alt={spec.name}
-                      className="max-h-28 max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="mt-2">
-                    <h3
-                      className="text-[17px] text-[#0E2725] leading-snug"
-                      style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
-                    >
-                      {spec.name}
-                    </h3>
-                    <p
-                      className="italic text-[13px] text-[#0E2725]/70 mt-1"
-                      style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
-                    >
-                      {spec.notes}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Tactile Brand Kit Materiality Strip */}
-            <div className="pine-glaze-surface rounded-[24px] p-8 md:p-12 border border-[#A7713F]/40 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-5 space-y-4">
-                <span
-                  className="text-[11px] uppercase tracking-[0.28em] text-[#A6A26A] block font-medium"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
-                >
-                  T A C T I L E   M A T E R I A L I T Y
-                </span>
-                <h3
-                  className="text-[30px] md:text-[36px] leading-[1.08] text-[#FEF9EF]"
-                  style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
-                >
-                  Linen, terracotta, weathered slate &amp; morning-cut roses.
-                </h3>
-                <p
-                  className="text-[15px] text-[#D2CCBE]/90 leading-[1.7] font-light tracking-[-0.023em]"
-                  style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
-                >
-                  Our aesthetic honors the raw beauty of the Santa Ynez Valley: unbleached cotton
-                  menus, wheel-thrown ceramic vessels, beeswax tapers, and heirloom blooms that look
-                  and smell as though they were just gathered from the garden path.
-                </p>
-                <div className="pt-2 flex flex-wrap items-center gap-4">
-                  <Link
-                    to="/floral"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-[40px] bg-[#A7713F] hover:bg-[#8E5D30] text-[#FEF9EF] text-[14.5px] font-semibold tracking-[-0.023em] transition-colors"
-                  >
-                    <span>Explore Event Florals</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
-                  <Link
-                    to="/gatherings"
-                    className="inline-flex items-center gap-2 text-[#D2CCBE] hover:text-[#FEF9EF] text-[14.5px] border-b border-[#D2CCBE]/45 pb-0.5 tracking-[-0.023em] transition-colors"
-                  >
-                    <span>Workshops &amp; Farm Dinners</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-4 items-center">
-                {[
-                  {
-                    src: '/images/brandkit/mood-1.jpg',
-                    caption: 'Heirloom Blooms',
-                    arch: true
-                  },
-                  {
-                    src: '/images/brandkit/mood-2.jpg',
-                    caption: 'Golden Hour Fields',
-                    arch: false
-                  },
-                  {
-                    src: '/images/brandkit/mood-3.jpg',
-                    caption: 'Stoneware & Linen',
-                    arch: true
-                  },
-                  {
-                    src: '/images/brandkit/mood-4.jpg',
-                    caption: 'Garden Gatherings',
-                    arch: false
-                  }
-                ].map((m) => (
-                  <div key={m.caption} className="space-y-2 text-center">
-                    <div
-                      className={`overflow-hidden aspect-[3/4] border border-[#D2CCBE]/30 ${
-                        m.arch ? 'rounded-t-[120px] rounded-b-[18px]' : 'rounded-[20px]'
-                      }`}
-                    >
-                      <img src={m.src} alt={m.caption} className="w-full h-full object-cover" />
-                    </div>
-                    <span
-                      className="italic text-[14px] text-[#D2CCBE] block"
-                      style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
-                    >
-                      {m.caption}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* 7. Full-Bleed Sunset Section Break with Bottom-Half Gradient Only */}

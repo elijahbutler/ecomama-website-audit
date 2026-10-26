@@ -7,11 +7,9 @@ import {
   JournalFarm,
   JournalGatherings,
   JournalFloral,
-  JournalExplore,
   JournalGuide,
   JournalAbout,
   JournalStory,
-  JournalSustainability,
   JournalPartners,
 } from "./pages/JournalPages";
 import React, { useState } from "react";
@@ -29,11 +27,9 @@ import {
   FloralPage,
 } from "./pages/FarmAndFloralPages";
 import {
-  ExplorePage,
   LocalRecommendationsPage,
   AboutPage,
   OurStoryPage,
-  SustainabilityPage,
 } from "./pages/ExploreAndAboutPages";
 import {
   ContactPage,
@@ -114,13 +110,7 @@ export function App() {
           />
           <Route
             path="/explore"
-            element={
-              mode === "organic" ? (
-                <JournalExplore />
-              ) : (
-                <ExplorePage mode={mode} />
-              )
-            }
+            element={<Navigate to="/local-recommendations" replace />}
           />
           <Route
             path="/local-recommendations"
@@ -150,13 +140,7 @@ export function App() {
           />
           <Route
             path="/sustainability"
-            element={
-              mode === "organic" ? (
-                <JournalSustainability />
-              ) : (
-                <SustainabilityPage mode={mode} />
-              )
-            }
+            element={<Navigate to="/the-farm" replace />}
           />
           <Route path="/contact" element={<ContactPage mode={mode} />} />
           <Route

@@ -11,39 +11,46 @@
 .celebration-flow ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; list-style: decimal; padding-left: 1.5rem; margin: 2.5rem 0; }
 .celebration-flow li { padding-left: .5rem; }
 .celebration-flow h3 { font-size: 1.8rem; }
-.floral-photo-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.5rem; }
-.floral-photo-grid img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
-.floral-photo-grid figure:nth-child(even) { padding-top: 3rem; }
-.floral-photo-grid figcaption { font-size: .9rem; padding-top: .75rem; }
+.floral-gallery-title { margin-bottom: 2.5rem; }
+.floral-gallery { columns: 4 220px; column-gap: 1rem; }
+.floral-gallery img { display: block; width: 100%; height: auto; margin-bottom: 1rem; break-inside: avoid; background: #efe7d8; }
+.season-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4.5rem 3.5rem; }
+.season-photos { position: relative; margin-bottom: 1.6rem; }
+.season-photos .season-main { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.season-photos .season-detail { position: absolute; right: -1rem; bottom: -1.5rem; width: 34%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center bottom; border: 6px solid #fef9ef; }
+.season-photos .photo-fallback.season-detail { display: none; }
+.season-months { margin: 0; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: #8e5d30; }
+.season-card h3 { margin: .4rem 0 .6rem; font-size: clamp(1.9rem, 2.6vw, 2.6rem); }
+.season-card p:last-child { max-width: 52ch; }
 .floral-practice { background: #f5eee1; }
 .floral-practice > div { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; margin-top: 2.5rem; }
 .floral-practice h3 { font-size: 1.9rem; }
 .sustainability-spread { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; }
 .sustainability-spread img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
-.estate-services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.8rem; }
-.estate-services article { border-top: 1px solid #d2ccbe; padding-top: 2rem; }
-.estate-services h2 { font-size: clamp(2rem, 3vw, 3rem); }
-.estate-services h3 { margin-top: 1.7rem; font-size: 1.4rem; }
-.estate-services ul { padding-left: 1.2rem; list-style: disc; }
-.estate-services li { margin: .7rem 0; }
-.estate-services .journal-button { margin-top: 1.2rem; }
-.access-planning { background: #f5eee1; }
-.access-planning > p { max-width: 75ch; }
-.access-planning dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; margin: 2.5rem 0; }
-.access-planning dt { font-family: 'Sorts Mill Goudy', serif; font-size: 1.7rem; margin-bottom: .6rem; }
-.access-planning dd { margin: 0; }
+.service-offers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem 3.5rem; }
+.service-offers img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.service-number { display: block; margin-top: 1.4rem; font-size: .8rem; letter-spacing: .1em; color: #8e5d30; }
+.service-offers h3 { margin: .3rem 0 .4rem; font-size: clamp(1.8rem, 2.4vw, 2.4rem); }
+.service-offers p { max-width: 56ch; }
+.service-buyout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: #f5eee1; }
+.service-buyout img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.service-steps ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; list-style: decimal; padding-left: 1.5rem; margin: 2.5rem 0; }
+.service-steps li { padding-left: .5rem; }
+.service-steps h3 { font-size: 1.7rem; }
 .story-chapter { display: grid; grid-template-columns: 1fr 3fr; gap: 3rem; }
 .story-date { font-family: 'Sorts Mill Goudy', serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 1.1; color: #8e5d30; }
 .story-chapter p { max-width: 70ch; }
 @media (max-width: 1000px) {
-  .estate-services { grid-template-columns: 1fr; }
-  .estate-services article { max-width: 75ch; }
-  .floral-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .service-offers { gap: 3rem 2rem; }
+  .service-buyout { gap: 2.5rem; }
 }
 @media (max-width: 700px) {
+  .service-offers, .service-buyout, .service-steps ol { grid-template-columns: 1fr; gap: 2rem; }
   .estate-section-intro, .estate-photo-grid, .sustainability-spread, .story-chapter { grid-template-columns: 1fr; gap: 1.5rem; }
   .estate-photo-grid { row-gap: 2.5rem; }
-  .celebration-flow ol, .floral-practice > div, .access-planning dl { grid-template-columns: 1fr; gap: 1.5rem; }
-  .floral-photo-grid { gap: 1.5rem 1rem; }
-  .floral-photo-grid figure:nth-child(even) { padding-top: 1.5rem; }
+  .celebration-flow ol, .floral-practice > div { grid-template-columns: 1fr; gap: 1.5rem; }
+  .floral-gallery { columns: 2; column-gap: .6rem; }
+  .floral-gallery img { margin-bottom: .6rem; }
+  .season-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .season-photos .season-detail { right: .75rem; width: 38%; }
 }

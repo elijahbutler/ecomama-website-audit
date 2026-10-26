@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 export type DesignMode = "organic" | "refero" | "original";
 import { SiteNavigation } from "./SiteNavigation";
+import { WeatherPill } from "../features/weather/WeatherPill";
 export function Layout({
   mode,
   setMode,
@@ -27,19 +28,22 @@ export function Layout({
         Skip to content
       </a>
       <header className="journal-header">
-        <Link to="/" className="farm-wordmark" aria-label="Ecomama Farms home">
-          <img
-            src="/images/01-ecomama-logo-white-2x.png"
-            width="150"
-            height="62"
-            alt="Ecomama Farms"
-          />
-        </Link>
+        <div className="header-brand">
+          <Link to="/" className="farm-wordmark" aria-label="Ecomama Farms home">
+            <img
+              src="/images/01-ecomama-logo-white-2x.png"
+              width="150"
+              height="62"
+              alt="Ecomama Farms"
+            />
+          </Link>
+          <WeatherPill />
+        </div>
         <nav aria-label="Main navigation" className="desktop-navigation">
           <SiteNavigation />
         </nav>
         <Link className="journal-button header-inquiry" to="/contact">
-          Contact & Inquire
+          <span className="header-inquiry-prefix">Contact &amp;&nbsp;</span>Inquire
         </Link>
         <button
           className="mobile-menu-button"
@@ -103,13 +107,13 @@ export function Layout({
         </div>
         <nav aria-label="Footer navigation">
           {[
-            ["The farm", "/the-farm"],
+            ["The venue", "/venue"],
             ["Walk the estate", "/vignettes"],
-            ["Gatherings", "/gatherings"],
             ["Services", "/services"],
+            ["The farm & practices", "/the-farm"],
+            ["Gatherings", "/gatherings"],
             ["Roses", "/floral"],
-            ["Living soil", "/sustainability"],
-            ["Explore", "/explore"],
+            ["Valley guide", "/local-recommendations"],
             ["Our story", "/our-story"],
             ["Partner with us", "/partner-with-us"],
             ["Privacy", "/privacy-policy"],

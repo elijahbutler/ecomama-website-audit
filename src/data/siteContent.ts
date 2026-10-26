@@ -20,14 +20,14 @@ export const NAVIGATION: NavItem[] = [
     children: [
       { label: 'Venue Overview', path: '/venue', subtitle: 'The private estate in full' },
       { label: 'Vignettes & Locations', path: '/vignettes', subtitle: '6 facilities & 6 photo spaces' },
-      { label: 'Services', path: '/services', subtitle: 'Full-service & venue-only offerings' }
+      { label: 'Services', path: '/services', subtitle: 'In-house weddings, catering & buyouts' }
     ]
   },
   {
     label: 'The Farm',
     path: '/the-farm',
     children: [
-      { label: 'The Farm & Practices', path: '/the-farm', subtitle: 'Roses, orchard, compost & animals' },
+      { label: 'The Farm & Practices', path: '/the-farm', subtitle: 'Living soil, compost, beneficials & animals' },
       { label: 'Gatherings & Retreats', path: '/gatherings', subtitle: 'Private dinners, retreats & celebrations' }
     ]
   },
@@ -36,21 +36,12 @@ export const NAVIGATION: NavItem[] = [
     path: '/floral'
   },
   {
-    label: 'Explore',
-    path: '/explore',
-    children: [
-      { label: 'Explore & Press', path: '/explore', subtitle: 'Couple testimonials & press features' },
-      { label: 'Local Recommendations & Valley Guide', path: '/local-recommendations', subtitle: 'Curated Santa Ynez Valley guide' }
-    ]
+    label: 'Guide',
+    path: '/local-recommendations'
   },
   {
-    label: 'About',
-    path: '/about',
-    children: [
-      { label: 'About Us', path: '/about', subtitle: 'Our philosophy & mission' },
-      { label: 'Our Story', path: '/our-story', subtitle: 'Founded in 2019 by Tamie Posnick' },
-      { label: 'Sustainability & Biodynamics', path: '/sustainability', subtitle: 'Biodynamic & regenerative practices' }
-    ]
+    label: 'Our Story',
+    path: '/our-story'
   },
   {
     label: 'Contact & Inquire',

@@ -1,0 +1,89 @@
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-right: auto;
+  min-width: 0;
+}
+.header-brand .farm-wordmark {
+  margin-right: 0;
+}
+.weather-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 34px;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid #d2ccbe;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  line-height: 1;
+  white-space: nowrap;
+  color: #4b554d;
+  cursor: default;
+  font-variant-numeric: tabular-nums;
+}
+.weather-pill.is-live {
+  color: var(--ink);
+}
+.weather-dot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a8a598;
+  flex-shrink: 0;
+}
+.is-live .weather-dot {
+  background: #3f8a4f;
+}
+.is-live .weather-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #3f8a4f;
+  animation: weather-pulse 2.4s ease-out infinite;
+}
+@keyframes weather-pulse {
+  from { transform: scale(1); opacity: 0.55; }
+  to { transform: scale(3); opacity: 0; }
+}
+.weather-tooltip {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  z-index: 30;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -3px);
+  transition: opacity 0.15s, transform 0.15s;
+}
+.weather-pill:hover .weather-tooltip,
+.weather-pill:focus-visible .weather-tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+@media (max-width: 600px) {
+  .header-brand { gap: 0.6rem; }
+  .weather-place { display: none; }
+  .weather-pill { padding: 0.3rem 0.6rem; }
+  .weather-tooltip { left: 0; transform: translateY(-3px); }
+  .weather-pill:hover .weather-tooltip,
+  .weather-pill:focus-visible .weather-tooltip { transform: none; }
+}
+@media (max-width: 480px) {
+  .header-brand .farm-wordmark img { width: 104px; }
+  .weather-pill { min-height: 30px; padding: 0.25rem 0.5rem; gap: 0.4rem; }
+}
+@media (max-width: 430px) {
+  .header-inquiry-prefix { display: none; }
+}

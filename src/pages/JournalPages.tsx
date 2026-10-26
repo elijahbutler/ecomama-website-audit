@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { JournalPhoto } from "../components/JournalPhoto";
 import { EstateMap } from "../features/EstateMap";
-import { RoseSeasonGuide } from "../features/RoseSeasonGuide";
+import { SeasonalGarden } from "../features/SeasonalGarden";
 import { TableStudy } from "../features/TableStudy";
 import { SoilStory } from "../features/SoilStory";
 import { ValleyGuide } from "../features/ValleyGuide";
@@ -106,9 +106,9 @@ export function JournalHome() {
           <p>Get to know the garden, barns, lawn, and preparation spaces.</p>
           <span aria-hidden="true">↗</span>
         </Link>
-        <Link to="/sustainability">
+        <Link to="/the-farm">
           <span>Look below the surface</span>
-          <p>Compost, roots, beneficial life, and water stewardship.</p>
+          <p>Compost, living soil, beneficial life, and heritage animals.</p>
           <span aria-hidden="true">↗</span>
         </Link>
         <Link to="/local-recommendations">
@@ -183,70 +183,37 @@ export function JournalVignettes() {
   </div>;
 }
 export function JournalFarm() {
-  return (
-    <div className="journal-page">
-      <Heading
-        title="It starts with the soil"
-        description="A biodynamic rose farm in the Santa Ynez Valley, with more than 2,500 heirloom bushes, an orchard, and the daily work of caring for the land."
-      />
-      <section className="journal-section field-spread">
-        <figure>
-          <JournalPhoto
-            file="35-the-laras-sb1-87.jpg"
-            alt="Sunlight on roses around the garden arch"
-            priority
-          />
-          <figcaption>A path through the rose garden.</figcaption>
-        </figure>
-        <div>
-          <h2>
-            Cut at dawn.
-            <br />
-            Grown through the seasons.
-          </h2>
-          <p className="large-reading">
-            The garden changes through the year. A stem’s colour and form tell
-            only part of its story; the grower knows when it is ready.
-          </p>
-          <p>
-            Browse the archive and choose a few references to bring into a
-            conversation about flowers.
-          </p>
-          <Link className="journal-button" to="/floral">
-            Meet the roses
-          </Link>
-        </div>
-      </section>
-      <SoilStory />
-    </div>
-  );
+  return <div className="journal-page"><Heading title="The farm & its practices" description="A biodynamic rose farm in the Santa Ynez Valley. More than 2,500 heirloom bushes, an orchard, heritage animals, and the daily work of caring for living soil." />
+    <section className="journal-section field-spread"><figure><JournalPhoto file="35-the-laras-sb1-87.jpg" alt="Sunlight on roses around the garden arch" priority /><figcaption>A path through the rose garden.</figcaption></figure><div><h2>Cut at dawn.<br />Grown through the seasons.</h2><p className="large-reading">The garden changes through the year. A stem's colour and form tell only part of its story; the grower knows when it is ready.</p><p>Soil, roses, orchard trees, animals, and wildlife all belong to the same daily work. Biodynamic growing treats the whole farm as one living system, so care for the ground comes before anything is cut.</p><Link className="journal-button" to="/floral">See the roses by season</Link></div></section>
+    <section className="journal-section reading-column"><h2>Give back to the land</h2><p>Ecomama's approach to biodynamic and regenerative farming is to return organic matter to the ground, support diverse life, and work with seasonal growth. The rose garden is part of that wider system, alongside the orchard, grazing animals, and planted habitats.</p><p>Biodynamic preparations and compost teas are part of the farm's soil care. The work is seasonal and specific to the ground and plants, rather than a promise that every rose will flower on a particular date.</p></section>
+    <section className="journal-section sustainability-spread"><div><h2>Keep the nutrients here</h2><p>Closed-loop composting starts with material already on the property. Plant trimmings, animal waste, and other organic matter become compost for the gardens and orchard. Cover crops protect the soil between growing cycles, while grazing rotation returns material to the ground.</p><p>The farm's published practices avoid pesticides, insecticides, and synthetic fertilisers. Compost, observation, and patient growing guide the work.</p></div><figure><JournalPhoto file="28-ecomamasocials-june-14.jpg" alt="Fruit trees in the farm orchard" /><figcaption>The orchard shares in the farm's compost cycle.</figcaption></figure></section>
+    <SoilStory />
+    <section className="journal-section sustainability-spread"><figure><JournalPhoto file="41-ecomamasocials-june-9.jpg" alt="A bee visiting purple lavender flowers" /><figcaption>Flowers provide habitat for pollinators.</figcaption></figure><div><h2>Make room for beneficial life</h2><p>Owl boxes offer nesting habitat. Lavender, flowering borders, and planted areas support birds, bees, butterflies, and beneficial insects, which help with pollination and natural pest control across the working farm.</p><h3>Water with the season</h3><p>Drip irrigation delivers water near the roots. The farm adjusts watering around rainfall, collects rainwater, and tends natural waterways. These are practices of care, not a claim of measured water savings.</p></div></section>
+    <section className="journal-section sustainability-spread"><div><h2>Heritage animals among the roses</h2><p>Heritage and rescued farm animals live alongside the cultivated garden. Chickens, ducks, turkeys, goats, and pigs each need care, space, and routines of their own.</p><p>They are part of the farm's cycle too. Grazing and manure return organic matter to the soil that feeds the roses and orchard.</p></div><figure><JournalPhoto file="47-ecomama-spring-15.jpg" alt="A pig walking between rows of flowering rose bushes" /><figcaption>A resident of the farm on a spring walk through the rose rows.</figcaption></figure></section>
+    <section className="journal-section reading-column"><h2>A celebration shares this ground</h2><p>Foam-free flowers, thoughtful material choices, and care for the garden connect gatherings to the work of the farm. Ask the team how your event can fit those practices.</p><Link className="journal-button" to="/contact">Ask about the farm</Link></section>
+  </div>;
 }
-const floralLookbook = [
-  ["55-hanna-carl-wedding-by-rachel-wakefield.jpg", "Pale blush rose opening against dark foliage", "The detail of a garden rose"],
-  ["57-41644fac5b61ef23a218be562535fba8-xxlarge.jpg", "White flower bouquet resting on an upholstered wooden bench", "A bouquet before the ceremony"],
-  ["58-val-and-blake-wedding-preview.jpg", "Wedding party holding rose bouquets", "Flowers carried by your people"],
-  ["62-ecomama-farms-james-and-jess-2.jpg", "Yellow and blush roses arranged with foliage on a ceremony arch", "Colour around the ceremony arch"],
-  ["64-sb4-9.jpg", "Basket of white flowers beside ceremony seating", "A garden-led ceremony"],
-  ["69-ecomama-farms-james-and-jess.jpg", "Bride holding a pink, peach, and yellow bouquet", "Warm colour, gathered by hand"],
-  ["63-ecomama-farms-james-and-jess-3.jpg", "Pink roses growing in the garden", "Among the rose beds"],
-  ["18-sb5-52.jpg", "Long outdoor reception tables with low floral arrangements", "Flowers at the table"],
+const floralGallery: [file: string, alt: string, width: number, height: number][] = [
+  ["55-hanna-carl-wedding-by-rachel-wakefield.jpg", "Pale blush rose opening against dark foliage", 1024, 1535],
+  ["18-sb5-52.jpg", "Long outdoor reception tables with low floral arrangements", 1500, 1001],
+  ["57-41644fac5b61ef23a218be562535fba8-xxlarge.jpg", "White flower bouquet resting on an upholstered wooden bench", 1500, 2250],
+  ["62-ecomama-farms-james-and-jess-2.jpg", "Yellow and blush roses arranged with foliage on a ceremony arch", 1500, 2250],
+  ["65-sb6-56.jpg", "A couple embracing, a white bouquet in hand", 1500, 1807],
+  ["58-val-and-blake-wedding-preview.jpg", "Wedding party holding rose bouquets", 1500, 2250],
+  ["63-ecomama-farms-james-and-jess-3.jpg", "Pink roses growing in the garden", 1500, 2250],
+  ["71-sb6-59.jpg", "A white bouquet raised against a clear sky", 1500, 1000],
+  ["69-ecomama-farms-james-and-jess.jpg", "Bride holding a pink, peach, and yellow bouquet", 1500, 2250],
+  ["64-sb4-9.jpg", "Basket of white flowers beside ceremony seating", 1500, 2247],
+  ["60-img-4443-large.png", "Zinnias and summer flowers in bloom beside a dark barn wall", 960, 1280],
+  ["56-hanna-carl-wedding-day-1.jpg", "A basket of white flowers on a reception table", 1024, 1535],
 ];
 export function JournalFloral() {
   return <div className="journal-page"><Heading title="Roses with a sense of place" description="More than 2,500 heirloom and David Austin rose bushes. Grown in living Santa Ynez soil, cut at dawn, and gathered for the moments you will remember." />
     <section className="journal-section field-spread"><figure><JournalPhoto file="83-ecomama-md22-20.jpg" alt="Hands lifting a colourful garden bouquet" priority /><figcaption>A handful of colour from the farm's floral archive.</figcaption></figure><div><h2>The old-fashioned beauty of a garden rose</h2><p className="large-reading">Layered petals, open cups, soft colour, and stems that keep their natural movement. Heirloom roses and David Austin English roses bring a vintage garden character to bouquets and tables.</p><p>Heirloom roses carry the forms of older garden varieties. David Austin roses are a distinct breeding tradition associated with that same full, romantic flower shape. The farm grows both; each harvest offers its own mix of form, colour, and fragrance.</p><p>For couples and planners, the garden is a starting point for the whole celebration. Choose a palette and a feeling, then work with the floral team on bouquets, ceremony flowers, and table arrangements that suit your date.</p><Link className="journal-button" to="/contact">Talk with the floral team</Link></div></section>
-    <section className="journal-section floral-lookbook"><div className="estate-section-intro"><h2>A floral lookbook</h2><p>Individual blooms, bouquets, wedding parties, and flowers at the table. Gather references from past celebrations; the team will confirm varieties and quantities for your season.</p></div><div className="floral-photo-grid">{floralLookbook.map(([file, alt, caption]) => <figure key={file}><JournalPhoto file={file} alt={alt} /><figcaption>{caption}</figcaption></figure>)}</div></section>
-    <section className="journal-section floral-practice"><h2>From living soil to the table</h2><div><article><h3>A dawn harvest</h3><p>The day starts among the roses, before the heat settles in. Cutting close to the celebration keeps the flowers connected to the garden and lets the floral team work with the day's harvest.</p></article><article><h3>Foam-free design</h3><p>Our floral approach favours foam-free arrangements and the natural shape of each stem. Discuss vessels, supports, installation needs, and what can be reused after your celebration.</p></article><article><h3>A garden fed by the farm</h3><p>Plant trimmings and other organic material return to the compost cycle. Soil care supports the roses long before a stem reaches a vase. Read about the farm's biodynamic practices and closed-loop composting.</p><Link className="text-link" to="/sustainability">How we care for the soil</Link></article></div></section>
-    <RoseSeasonGuide />
-    <section className="journal-section reading-column"><h2>Bring your references. Leave room for the season.</h2><p>Share your date, guest count, colours, and the arrangements you have in mind. The archive is inspiration rather than a current stock list. Cultivar identities, fragrance, bloom timing, and harvest quantities are confirmed with the grower.</p><Link className="journal-button" to="/contact">Begin a floral inquiry</Link></section>
-  </div>;
-}
-export function JournalSustainability() {
-  return <div className="journal-page"><Heading title="Care for the ground" description="Biodynamic growing begins with the whole farm. Soil, roses, orchard trees, animals, and wildlife all belong to the same daily work." />
-    <figure className="wide-photo"><JournalPhoto file="35-the-laras-sb1-87.jpg" alt="Roses growing around a garden arch" priority /><figcaption>Healthy flowers begin long before the harvest.</figcaption></figure>
-    <section className="journal-section reading-column"><h2>Give back to the land</h2><p>Ecomama's approach to biodynamic and regenerative farming is to return organic matter to the ground, support diverse life, and work with seasonal growth. The rose garden is part of that wider system, alongside the orchard, grazing animals, and planted habitats.</p><p>Biodynamic preparations and compost teas are part of the farm's soil care. The work is seasonal and specific to the ground and plants, rather than a promise that every rose will flower on a particular date.</p></section>
-    <section className="journal-section sustainability-spread"><div><h2>Keep the nutrients here</h2><p>Closed-loop composting starts with material already on the property. Plant trimmings, animal waste, and other organic matter become compost for the gardens and orchard. Cover crops protect the soil between growing cycles, while grazing rotation returns material to the ground.</p><p>The farm's published practices avoid pesticides, insecticides, and synthetic fertilisers. Compost, observation, and patient growing guide the work.</p></div><figure><JournalPhoto file="28-ecomamasocials-june-14.jpg" alt="Fruit trees in the farm orchard" /><figcaption>The orchard shares in the farm's compost cycle.</figcaption></figure></section>
-    <section className="journal-section sustainability-spread"><figure><JournalPhoto file="41-ecomamasocials-june-9.jpg" alt="A bee visiting purple lavender flowers" /><figcaption>Flowers provide habitat for pollinators.</figcaption></figure><div><h2>Make room for other lives</h2><p>Heritage and rescued farm animals live alongside the cultivated garden. Chickens, ducks, turkeys, goats, and pigs each need care, space, and routines of their own.</p><p>Owl boxes offer nesting habitat. Flowers and planted areas support birds, bees, butterflies, and beneficial insects. These habitats make space for pollination and natural pest control within the working farm.</p><h3>Water with the season</h3><p>Drip irrigation delivers water near the roots. The farm adjusts watering around rainfall, collects rainwater, and tends natural waterways. These are practices of care, not a claim of measured water savings.</p></div></section>
-    <SoilStory /><section className="journal-section reading-column"><h2>A celebration shares this ground</h2><p>Foam-free flowers, thoughtful material choices, and care for the garden connect gatherings to the work of the farm. Ask the team how your event can fit those practices.</p><Link className="journal-button" to="/contact">Ask about the farm</Link></section>
+    <section className="journal-section floral-lookbook" aria-labelledby="lookbook-title"><h2 id="lookbook-title" className="floral-gallery-title">A floral lookbook</h2><div className="floral-gallery">{floralGallery.map(([file, alt, width, height]) => <JournalPhoto key={file} file={file} alt={alt} width={width} height={height} sizes="(max-width: 600px) 50vw, (max-width: 1000px) 33vw, 25vw" />)}</div></section>
+    <SeasonalGarden />
+    <section className="journal-section floral-practice"><h2>From living soil to the table</h2><div><article><h3>A dawn harvest</h3><p>The day starts among the roses, before the heat settles in. Cutting close to the celebration keeps the flowers connected to the garden and lets the floral team work with the day's harvest.</p></article><article><h3>Foam-free design</h3><p>Our floral approach favours foam-free arrangements and the natural shape of each stem. Discuss vessels, supports, installation needs, and what can be reused after your celebration.</p></article><article><h3>A garden fed by the farm</h3><p>Plant trimmings and other organic material return to the compost cycle. Soil care supports the roses long before a stem reaches a vase. Read about the farm's biodynamic practices and closed-loop composting.</p><Link className="text-link" to="/the-farm">How we care for the soil</Link></article></div></section>
+    <section className="journal-section reading-column"><h2>Bring your references. Leave room for the season.</h2><p>Share your date, guest count, colours, and the arrangements you have in mind. The photographs here are inspiration rather than a current stock list. Varieties, fragrance, bloom timing, and harvest quantities are confirmed with the grower.</p><Link className="journal-button" to="/contact">Begin a floral inquiry</Link></section>
   </div>;
 }
 export function JournalGuide() {
@@ -254,7 +221,7 @@ export function JournalGuide() {
     <div className="journal-page">
       <Heading
         title="A guest’s valley guide"
-        description="A few places to begin when you have a morning, an afternoon, or another day in the valley."
+        description="Where we send friends and family when they visit: places to stay, tasting rooms, good food, and ways to spend a day in the Santa Ynez Valley."
       />
       <ValleyGuide />
     </div>
@@ -289,15 +256,39 @@ export function JournalGatherings() {
     </div>
   );
 }
+const inHouseServices = [
+  {
+    title: "Bespoke weddings and events",
+    text: "Every celebration starts from a blank page. We shape the day around you: where you say your vows, how guests move from the garden to dinner, and the small details that make it feel like yours.",
+    file: "18-sb5-52.jpg",
+    alt: "Long reception tables set on the lawn beside the barn",
+  },
+  {
+    title: "In-house catering and culinary team",
+    text: "Our own chefs and service staff cook farm-to-table menus inspired by the Santa Ynez Valley's growers, ranchers, and winemakers. Menus follow the season, from a relaxed family-style supper to a plated dinner.",
+    file: "20-shannon-james-wedding-websize.jpg",
+    alt: "A candlelit dinner setting inside the Mountain View Barn",
+  },
+  {
+    title: "Planning, florals, and styling",
+    text: "Planning, design, and day-of coordination sit with one team. Your flowers are cut from the estate's own garden roses, and styling draws on our in-house rental collection, so every piece belongs to the same vision.",
+    file: "69-ecomama-farms-james-and-jess.jpg",
+    alt: "A bride holding a pink, peach, and yellow garden rose bouquet",
+  },
+  {
+    title: "Custom, transparent pricing",
+    text: "There are no fixed packages to squeeze into. After we talk through your vision, guest count, and date, you receive a clear, itemised proposal and can see what each part costs before you commit.",
+    file: "57-41644fac5b61ef23a218be562535fba8-xxlarge.jpg",
+    alt: "A white bouquet resting on an upholstered wooden bench",
+  },
+];
 export function JournalServices() {
-  return <div className="journal-page"><Heading title="Choose how you gather" description="A full-service estate wedding, a private sanctuary buyout, or a custom gathering. Begin with the level of support you need, then build a clear proposal together." />
-    <figure className="wide-photo"><JournalPhoto file="20-shannon-james-wedding-websize.jpg" alt="A candlelit reception in the Mountain View Barn" priority /></figure>
-    <section className="journal-section estate-services">
-      <article><h2>Full-Service Estate Wedding Experience</h2><p>For couples who want the setting, planning, flowers, food, and design considered together. Ecomama's published offering brings its culinary team, planning and design team, floral studio, and rental collection in-house.</p><h3>Build your proposal around</h3><ul><li>Private estate ceremony and reception spaces</li><li>Planning, design, and wedding-day coordination</li><li>Estate florals shaped around the seasonal harvest</li><li>Culinary service and selections from the rental collection</li><li>Bridal Loft and Groomsmen's Cottage preparation access</li></ul><p className="content-note">Your proposal confirms the menu, floral scope, staffing, rentals, spaces, and access window. No fixed price or availability is promised here.</p><Link className="journal-button" to="/contact">Plan an estate wedding</Link></article>
-      <article><h2>Private Sanctuary Buyout</h2><p>For hosts who want the estate as their setting and intend to bring their own planning team. Start with the venue-only offering and agree the division of responsibilities before booking vendors.</p><h3>Confirm together</h3><ul><li>Exclusive-use areas and preparation suite access</li><li>Your planner's role and the estate team's responsibilities</li><li>Approved vendors, catering arrangements, and insurance</li><li>Furniture, lighting, power, and rental needs</li><li>Optional estate florals and other in-house services</li></ul><p className="content-note">A buyout does not imply overnight accommodation or unrestricted access. The written agreement defines the spaces and services included.</p><Link className="journal-button" to="/contact">Discuss an estate buyout</Link></article>
-      <article><h2>Custom Gatherings</h2><p>A private dinner, birthday, retreat, or time together on the farm can call for a different rhythm. Past gatherings have included yoga and painting retreats; activities are arranged by inquiry.</p><h3>Shape the gathering</h3><ul><li>A setting suited to your group size and activities</li><li>A meal, floral direction, and table plan if requested</li><li>Facilitator and supplier arrangements</li><li>Arrival, activity, and departure times</li></ul><p className="content-note">Custom gatherings are quoted individually. There is no public workshop timetable or standard retreat package.</p><Link className="journal-button" to="/contact">Tell us about your gathering</Link></article>
-    </section>
-    <section className="journal-section access-planning"><h2>Estate access hours, agreed in writing</h2><p>Access hours are confirmed for your date in the proposal. Before you commit, ask for the full window covering vendor arrival, setup, preparation suites, guest arrival, the end of music, and final load-out. The public information available here does not establish fixed opening hours.</p><dl><div><dt>Before guests arrive</dt><dd>Confirm delivery times, rehearsal access, setup, and when the preparation suites open.</dd></div><div><dt>During the gathering</dt><dd>Confirm the event start, meal service, music limits, and any space changes.</dd></div><div><dt>At the end of the day</dt><dd>Confirm guest departure, cleanup responsibilities, collection times, and final estate departure.</dd></div></dl><p>Share your date, guest estimate, preferred offering, and priorities. The team will clarify availability, inclusions, pricing, and the next step toward a walkthrough.</p><Link className="journal-button" to="/contact">Request a tailored proposal</Link></section><TableStudy />
+  return <div className="journal-page"><Heading title="Your wedding, made here" description="Ecomama plans, cooks, grows, and designs in-house. One team carries your celebration from the first walkthrough to the last dance, with pricing built around your plans." />
+    <figure className="wide-photo"><JournalPhoto file="17-dji-0658-enhanced-sr.jpg" alt="The rose garden and central lawn seen from above" priority /></figure>
+    <section className="journal-section reading-column"><h2>One team, every detail</h2><p className="large-reading">Most couples juggle a venue, a caterer, a florist, a planner, and a rental company. Here they are the same people, working on the same ground.</p><p>That makes planning simpler. You have one point of contact, one proposal, and a team that already knows every corner of the estate, from the Rose Barn to the last bed of roses.</p></section>
+    <section className="journal-section service-offers" aria-label="What the estate team provides">{inHouseServices.map((service, index) => <article key={service.title}><JournalPhoto file={service.file} alt={service.alt} sizes="(max-width: 700px) 100vw, 50vw" /><span className="service-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><h3>{service.title}</h3><p>{service.text}</p></article>)}</section>
+    <section className="journal-section service-buyout"><div><h2>Bringing your own planner?</h2><p className="large-reading">Reserve the estate as a private sanctuary for your celebration.</p><p>A sanctuary buyout gives you the garden, barns, lawn, and preparation suites for your day, with your own approved planner leading the event. The estate team supports them on site, and you can add in-house catering, garden-rose florals, or styling whenever you like.</p><p className="content-note">Outside planners work with the estate team and need approval before booking. Ask us about the process.</p><Link className="journal-button" to="/contact">Ask about a sanctuary buyout</Link></div><JournalPhoto file="19-kathy-justin-251.jpg" alt="The Rose Barn entrance draped with white curtains" sizes="(max-width: 700px) 100vw, 45vw" /></section>
+    <section className="journal-section service-steps"><h2>How planning works</h2><ol><li><h3>Tell us about your day</h3><p>Share your date or season, guest count, and what matters most to you.</p></li><li><h3>Walk the estate</h3><p>Visit the garden and barns with the team and talk through food, flowers, and the shape of the day.</p></li><li><h3>Receive your proposal</h3><p>Get an itemised proposal tailored to your vision, then refine it together until it feels right.</p></li></ol><p>Planning a dinner, retreat, or smaller gathering? <Link className="text-link" to="/gatherings">See gatherings and retreats</Link>.</p><Link className="journal-button" to="/contact">Start planning with us</Link></section>
   </div>;
 }
 export function JournalAbout() {
@@ -348,35 +339,8 @@ export function JournalStory() {
     <section className="journal-section story-chapter"><span className="story-date">2019</span><div><h2>First, hands in the dirt</h2><p className="large-reading">The property was wild and untamed when Tamie found it. Its room for growth became the starting point for a biodynamic farm, with the relationship between farmer and soil at the centre.</p><p>Restoring the land meant attending to what would sustain it. Planting roses and orchard trees went alongside water management, composting, and places for wildlife. The work asked for time before it could offer flowers.</p></div></section>
     <section className="journal-section field-spread"><figure><JournalPhoto file="35-the-laras-sb1-87.jpg" alt="A garden path framed by climbing roses" /><figcaption>Growth measured in seasons.</figcaption></figure><div><h2>A garden takes shape</h2><p className="large-reading">The years that followed brought a larger rose garden, fruit trees, olives, and a closed-loop compost area to feed the ground again.</p><p>The farm's earlier story records a garden of more than 1,500 plants. Today, more than 2,500 heirloom and David Austin rose bushes grow here. That growth sits alongside the less visible work of tending soil, managing water, and caring for animals.</p><p>Structures and gathering spaces developed within the working estate. The roses remained part of the daily life of the farm, from growing through the season to the dawn harvest.</p></div></section>
     <section className="journal-section field-spread"><div><h2>A place to share</h2><p>Weddings and private gatherings brought another kind of life to the garden. Couples exchange vows among the roses, guests sit down together at long tables, and the barns make room for the evening.</p><p>The flowers give these days a connection to the place they happen. A bouquet begins here in the soil; its colours and shapes reflect what the garden can offer that season.</p><Link className="text-link" to="/venue">Explore the estate today</Link></div><figure><JournalPhoto file="18-sb5-52.jpg" alt="Guests' tables set for a celebration on the lawn" /><figcaption>The working farm makes room for celebration.</figcaption></figure></section>
-    <section className="journal-section reading-column"><h2>The next season</h2><p>Ecomama's published ambitions include sharing biodynamic practices more widely, expanding its floral offerings, and building relationships with organic and regenerative growers. The work of caring for this ground continues with each season.</p><Link className="journal-button" to="/sustainability">Read about our growing practices</Link></section>
+    <section className="journal-section reading-column"><h2>The next season</h2><p>Ecomama's published ambitions include sharing biodynamic practices more widely, expanding its floral offerings, and building relationships with organic and regenerative growers. The work of caring for this ground continues with each season.</p><Link className="journal-button" to="/the-farm">Read about our growing practices</Link></section>
   </div>;
-}
-export function JournalExplore() {
-  return (
-    <div className="journal-page">
-      <Heading
-        title="Spend some time here"
-        description="Follow your curiosity through the garden, across the estate, and into the valley."
-      />
-      <section className="journal-section journal-index">
-        <Link to="/vignettes">
-          <span>Walk the estate</span>
-          <p>Choose a place and look closer.</p>
-          <span>↗</span>
-        </Link>
-        <Link to="/floral">
-          <span>The rose year</span>
-          <p>Gather colour and flower references.</p>
-          <span>↗</span>
-        </Link>
-        <Link to="/local-recommendations">
-          <span>The valley guide</span>
-          <p>Useful links for the rest of your visit.</p>
-          <span>↗</span>
-        </Link>
-      </section>
-    </div>
-  );
 }
 export function JournalPartners() {
   return (

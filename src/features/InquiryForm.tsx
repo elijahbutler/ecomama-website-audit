@@ -1,6 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Link } from "react-router-dom";
-import { places, roses, pairings } from "../data/fieldJournal";
+import { places, pairings } from "../data/fieldJournal";
 import { preferenceSummary, usePreferences } from "./preferences";
 
 export const WEDDING_INQUIRY_URL = "https://crm.ecomamafarms.com/f/wedding-inquiry";
@@ -122,29 +121,6 @@ export function InquiryForm() {
           <p className="content-note">
             These are references to discuss, not reservations.
           </p>
-          {roses
-            .filter((r) => preferences.roses.includes(r.id))
-            .map((rose) => (
-              <label className="check-choice" key={rose.id}>
-                <input
-                  type="checkbox"
-                  checked
-                  onChange={() =>
-                    setPreferences((p) => ({
-                      ...p,
-                      roses: p.roses.filter((id) => id !== rose.id),
-                    }))
-                  }
-                />
-                {rose.name}
-              </label>
-            ))}
-          {!preferences.roses.length && (
-            <p>
-              No rose references selected.{" "}
-              <Link to="/floral">Browse the rose guide</Link>.
-            </p>
-          )}
           <label htmlFor="inquiry-place">
             Estate place
             <select

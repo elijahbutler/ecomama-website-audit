@@ -1,3 +1,4 @@
+import { LOCAL_RECOMMENDATIONS_DATA } from "./siteContent";
 /** Content reviewed 2026-10-26 against the supplied proposal and archived farm pages.
  * Pending facts are intentionally absent. See CONTENT_SOURCES.md before publishing. */
 export const places = [
@@ -62,70 +63,6 @@ export const places = [
       "The Bridal Loft and Groomsmen’s Cottage are preparation spaces. They are not advertised here as overnight accommodation.",
   },
 ];
-export type Season =
-  "All" | "Spring" | "Summer" | "Autumn" | "Winter" | "Unknown";
-export const seasons: Season[] = [
-  "All",
-  "Spring",
-  "Summer",
-  "Autumn",
-  "Winter",
-  "Unknown",
-];
-export const seasonNotes: Record<Season, string> = {
-  All: "Explore photographs from the farm. Cultivar names and flowering windows are awaiting grower identification.",
-  Spring:
-    "A season to ask about new growth and the first cuts. Exact flowering dates depend on the cultivar and weather.",
-  Summer:
-    "Ask the grower about repeat flowering and how heat affects the cut. A photograph is not a promise of summer availability.",
-  Autumn:
-    "Ask about late-season cuts for your date. Weather and the condition of each bush determine the harvest.",
-  Winter:
-    "A time to ask about soil care and the coming rose year. No winter cuts are listed as available.",
-  Unknown:
-    "These archive photographs do not yet have verified cultivar names or seasonal windows. You can still share a visual preference.",
-};
-export const roses: {
-  id: string;
-  name: string;
-  color: string;
-  image: string;
-  alt: string;
-  seasons: Season[];
-}[] = [
-  {
-    id: "blush-cup",
-    name: "Blush cup",
-    color: "Pale blush",
-    image: "55-hanna-carl-wedding-by-rachel-wakefield.jpg",
-    alt: "Pale blush rose opening against dark leaves",
-    seasons: [],
-  },
-  {
-    id: "ivory-open",
-    name: "Open ivory",
-    color: "Ivory with a warm centre",
-    image: "59-ecomamasocials-june-6.jpg",
-    alt: "Ivory rose with an open, softly coloured centre",
-    seasons: [],
-  },
-  {
-    id: "apricot-branch",
-    name: "Apricot arrangement",
-    color: "Apricot and cream",
-    image: "62-ecomama-farms-james-and-jess-2.jpg",
-    alt: "Apricot and cream roses arranged with foliage on a ceremony arch",
-    seasons: [],
-  },
-  {
-    id: "pink-garden",
-    name: "Pink in the garden",
-    color: "Pink",
-    image: "63-ecomama-farms-james-and-jess-3.jpg",
-    alt: "Pink rose on a leafy stem in the garden",
-    seasons: [],
-  },
-];
 export const pairings = [
   {
     id: "lawn-supper",
@@ -163,7 +100,7 @@ export const soilNotes = [
   {
     id: "roots",
     name: "Roots & cover crops",
-    text: "Cover crops help protect the ground between plantings. Roots support soil structure; this diagram does not measure the depth of the farm’s soil.",
+    text: "Cover crops protect the ground between plantings, and their roots hold the soil together so it can take in water and air.",
     image: "35-the-laras-sb1-87.jpg",
     alt: "Planted rose beds beneath a rose arch",
   },
@@ -182,50 +119,47 @@ export const soilNotes = [
     alt: "Organised planted beds in the estate garden",
   },
 ];
-export const valleyPlaces = [
-  {
-    id: "bobs-los-alamos",
-    name: "Bob’s Well Bread",
-    town: "Los Alamos",
-    category: "Food",
-    note: "Bread, pastries, and a café menu. Check the bakery’s site before making the drive.",
-    url: "https://www.bobswellbread.com/",
-    address: "550 Bell Street, Los Alamos, CA 93440",
-  },
-  {
-    id: "bobs-ballard",
-    name: "Bob’s Well Bread, Ballard",
-    town: "Ballard",
-    category: "Food",
-    note: "The bakery’s Ballard location on Baseline Avenue.",
-    url: "https://www.bobswellbread.com/pages/directions",
-    address: "2449 Baseline Avenue, Ballard, CA 93463",
-  },
-  {
-    id: "solvang",
-    name: "A day in Solvang",
-    town: "Solvang",
-    category: "Explore",
-    note: "The official visitor guide lists bakeries, museums, and local events.",
-    url: "https://solvangusa.com/",
-    address: "Solvang, CA",
-  },
-  {
-    id: "los-olivos",
-    name: "Explore Los Olivos",
-    town: "Los Olivos",
-    category: "Explore",
-    note: "The local chamber’s guide to galleries, shops, dining, and tasting rooms.",
-    url: "https://www.losolivosca.com/",
-    address: "Los Olivos, CA",
-  },
-  {
-    id: "santa-ynez",
-    name: "Santa Ynez town guide",
-    town: "Santa Ynez",
-    category: "Explore",
-    note: "Plan a visit with the valley tourism organisation’s town guide.",
-    url: "https://www.visitsyv.com/",
-    address: "Santa Ynez, CA",
-  },
-];
+export type GuideCategory = "Stay" | "Wine" | "Eat & Drink" | "Activities";
+export const guideCategories: GuideCategory[] = ["Stay", "Wine", "Eat & Drink", "Activities"];
+export type GuidePlace = {
+  id: string;
+  name: string;
+  town: string;
+  category: GuideCategory;
+  kind: string;
+  url?: string;
+};
+/** Maps each list from the farm's original recommendations page to a guide category. */
+const guideSources: Record<string, { category: GuideCategory; kind: string }> = {
+  "Places to Stay": { category: "Stay", kind: "Place to stay" },
+  "Wineries & Wine Tasting": { category: "Wine", kind: "Winery & tasting" },
+  Restaurants: { category: "Eat & Drink", kind: "Restaurant" },
+  "Coffee Shops": { category: "Eat & Drink", kind: "Coffee & bakery" },
+  "Bars & Nightlife": { category: "Eat & Drink", kind: "Bar & brewery" },
+  Activities: { category: "Activities", kind: "Outing" },
+  Hiking: { category: "Activities", kind: "Hike" },
+  Shopping: { category: "Activities", kind: "Shop" },
+};
+/** Official websites checked October 26, 2026. Other places link to a map search. */
+const guideWebsites: Record<string, string> = {
+  "Bob’s Well Bread": "https://www.bobswellbread.com/",
+};
+const slug = (value: string) =>
+  value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+export const valleyPlaces: GuidePlace[] = ([
+  ...LOCAL_RECOMMENDATIONS_DATA.flatMap(({ category, items }) => {
+    const source = guideSources[category];
+    if (!source) return [];
+    return items.map((item): GuidePlace => ({
+      id: slug(`${item.name}-${item.town}`),
+      name: item.name,
+      town: item.town,
+      category: source.category,
+      kind: source.kind,
+      url: guideWebsites[item.name],
+    }));
+  }),
+  { id: "solvang", name: "A day in Solvang", town: "Solvang", category: "Activities", kind: "Town guide", url: "https://solvangusa.com/" },
+  { id: "los-olivos", name: "Explore Los Olivos", town: "Los Olivos", category: "Activities", kind: "Town guide", url: "https://www.losolivosca.com/" },
+  { id: "santa-ynez", name: "Santa Ynez Valley guide", town: "Santa Ynez", category: "Activities", kind: "Town guide", url: "https://www.visitsyv.com/" },
+] satisfies GuidePlace[]).sort((a, b) => guideCategories.indexOf(a.category) - guideCategories.indexOf(b.category));

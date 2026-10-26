@@ -95,7 +95,7 @@ export const ExplorePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
               >
                 <span>Eat, Drink, Stay &amp; </span>
-                <em className="italic font-light text-[#A7713F]">Wander in Santa Ynez</em>
+                <em className="italic font-light text-[#8E5D30]">Wander in Santa Ynez</em>
               </h2>
               <p
                 className="text-[15.5px] text-[#333333] font-light leading-relaxed tracking-[-0.023em]"
@@ -206,7 +206,7 @@ export const LocalRecommendationsPage: React.FC<{ mode: DesignMode }> = ({ mode 
         />
 
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-14 pb-6 border-b border-[#A7713F]/30">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-14 pb-6 border-b border-[#8E5D30]/30">
             <div>
               <span className="brandkit-stamp block mb-1">
                 C U R A T E D   B Y   O U R   T E A M
@@ -216,7 +216,7 @@ export const LocalRecommendationsPage: React.FC<{ mode: DesignMode }> = ({ mode 
                 style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
               >
                 <span>Valley </span>
-                <em className="italic font-light text-[#A7713F]">Favorites &amp; Tables</em>
+                <em className="italic font-light text-[#8E5D30]">Favorites &amp; Tables</em>
               </h2>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -226,8 +226,8 @@ export const LocalRecommendationsPage: React.FC<{ mode: DesignMode }> = ({ mode 
                   onClick={() => setSelectedCategory(c)}
                   className={`px-5 py-2.5 rounded-[40px] text-[13.5px] font-medium tracking-[-0.023em] border transition-colors ${
                     selectedCategory === c
-                      ? 'bg-[#A7713F] text-[#FEF9EF] border-[#A7713F]'
-                      : 'bg-[#F5EEE1] text-[#0E2725] border-[#D2CCBE] hover:border-[#A7713F]'
+                      ? 'bg-[#8E5D30] text-[#FEF9EF] border-[#8E5D30]'
+                      : 'bg-[#F5EEE1] text-[#0E2725] border-[#D2CCBE] hover:border-[#8E5D30]'
                   }`}
                   style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
                 >
@@ -243,7 +243,7 @@ export const LocalRecommendationsPage: React.FC<{ mode: DesignMode }> = ({ mode 
                 <div className="flex items-center justify-between border-b border-[#D2CCBE]/70 pb-3">
                   <h3 className="refero-heading text-[#0E2725]">{group.category}</h3>
                   <span
-                    className="italic text-[16px] text-[#A7713F]"
+                    className="italic text-[16px] text-[#8E5D30]"
                     style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                   >
                     {group.items.length} recommendations
@@ -587,7 +587,7 @@ export const OurStoryPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
               >
                 <span>Healing the earth while </span>
-                <em className="italic font-light text-[#A7713F]">celebrating life’s milestones</em>.
+                <em className="italic font-light text-[#8E5D30]">celebrating life’s milestones</em>.
               </h2>
               <p
                 className="text-[15.5px] text-[#333333] leading-[1.75] font-light tracking-[-0.023em]"
@@ -744,7 +744,7 @@ export const SustainabilityPage: React.FC<{ mode: DesignMode }> = ({ mode }) => 
                 />
                 <div className="flex items-center justify-between pb-3 border-b border-[#D2CCBE]/60">
                   <span
-                    className="text-[14px] font-semibold text-[#A7713F] tracking-[-0.023em]"
+                    className="text-[14px] font-semibold text-[#8E5D30] tracking-[-0.023em]"
                     style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
                   >
                     STEP {p.step}
@@ -752,7 +752,7 @@ export const SustainabilityPage: React.FC<{ mode: DesignMode }> = ({ mode }) => 
                   <span className="brandkit-stamp">{p.stamp}</span>
                 </div>
                 <div
-                  className="italic text-[16.5px] text-[#A7713F]"
+                  className="italic text-[16.5px] text-[#8E5D30]"
                   style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
                   {p.metric}
@@ -762,7 +762,7 @@ export const SustainabilityPage: React.FC<{ mode: DesignMode }> = ({ mode }) => 
                   style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
                   <span>{p.titleRoman} </span>
-                  <em className="italic font-light text-[#A7713F]">{p.titleItalic}</em>
+                  <em className="italic font-light text-[#8E5D30]">{p.titleItalic}</em>
                 </h2>
                 <p
                   className="text-[14.5px] text-[#333333] leading-[1.65] font-light tracking-[-0.023em]"

@@ -90,7 +90,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               <em className="italic font-light text-[#E4DDD0]">Memorable Gatherings</em> Converge.
             </>
           }
-          statementRight="A tactile sanctuary of heirloom garden roses, hand-thrown stoneware tables, and bespoke California ranch celebrations."
+          statementRight="A tactile sanctuary of heirloom garden roses, gatherings around long tables, and bespoke California ranch celebrations."
           subcaptionRight="Welcome to our 30+ acre biodynamic farmstead in the Santa Ynez Valley—tended by hand, rooted in living clay, and opened with quiet devotion for unforgettable celebrations."
           primaryAction={{ label: 'Explore the Estate', to: '/venue' }}
           secondaryAction={{ label: 'Inquire for 2026–2027', to: '/contact' }}
@@ -110,7 +110,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
         <section className="bg-[#FEF9EF] py-6 px-6 md:px-12 border-b border-[#D2CCBE]/60">
           <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
             <span
-              className="text-[11px] uppercase tracking-[0.24em] text-[#A7713F] font-semibold shrink-0"
+              className="text-[11px] uppercase tracking-[0.24em] text-[#8E5D30] font-semibold shrink-0"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               ESTATE REGISTRY
@@ -149,7 +149,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
               >
                 <span>Rooted in living soil—crafted for </span>
-                <em className="italic font-light text-[#A7713F]">unforgettable gatherings</em>.
+                <em className="italic font-light text-[#8E5D30]">unforgettable gatherings</em>.
               </h2>
             </div>
             <div className="lg:col-span-5">
@@ -177,7 +177,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
                   />
                 </div>
-                <div className="flex items-center justify-between text-[11.5px] text-[#A7713F] mb-3 font-semibold">
+                <div className="flex items-center justify-between text-[11.5px] text-[#8E5D30] mb-3 font-semibold">
                   <span
                     className="uppercase tracking-[0.2em]"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -193,7 +193,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
                   <span>Six Intimate Facilities &amp; </span>
-                  <em className="italic font-light text-[#A7713F]">Sunlit Ceremony Lawns</em>
+                  <em className="italic font-light text-[#8E5D30]">Sunlit Ceremony Lawns</em>
                 </h3>
                 <p
                   className="text-[15.5px] text-[#333333] leading-[1.65] font-light tracking-[-0.023em] mb-6"
@@ -245,7 +245,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
                   />
                 </div>
-                <div className="flex items-center justify-between text-[11.5px] text-[#A7713F] mb-3 font-semibold">
+                <div className="flex items-center justify-between text-[11.5px] text-[#8E5D30] mb-3 font-semibold">
                   <span
                     className="uppercase tracking-[0.2em]"
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -261,7 +261,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
                   <span>2,500+ Heirloom Garden Roses &amp; </span>
-                  <em className="italic font-light text-[#A7713F]">Living Soil Stewardship</em>
+                  <em className="italic font-light text-[#8E5D30]">Living Soil Stewardship</em>
                 </h3>
                 <p
                   className="text-[15.5px] text-[#333333] leading-[1.65] font-light tracking-[-0.023em] mb-6"
@@ -365,7 +365,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 </p>
                 <Link
                   to="/vignettes"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-[40px] bg-[#A7713F] hover:bg-[#8E5D30] text-[#FEF9EF] text-[14.5px] font-semibold tracking-[-0.023em] transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-[40px] bg-[#8E5D30] hover:bg-[#8E5D30] text-[#FEF9EF] text-[14.5px] font-semibold tracking-[-0.023em] transition-colors"
                 >
                   <span>Explore All Garden &amp; Barn Spaces</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -377,7 +377,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
 
         {/* 8. Six Vignettes Showcase on Aged Paper Cards */}
         <section className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#A7713F]/30">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-6 border-b border-[#8E5D30]/30">
             <div>
               <span className="brandkit-stamp block mb-2">
                 G A T H E R E D   A C R O S S   T H E   G R O U N D S
@@ -387,7 +387,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
               >
                 <span>Six Intimate Spaces, </span>
-                <em className="italic font-light text-[#A7713F]">One Homegrown Sanctuary</em>
+                <em className="italic font-light text-[#8E5D30]">One Homegrown Sanctuary</em>
               </h2>
             </div>
             <Link to="/vignettes" className="refero-pill-btn self-start md:self-auto">
@@ -417,7 +417,7 @@ export const HomePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                       />
                     </div>
-                    <div className="flex items-center justify-between text-[13px] text-[#A7713F] mb-2 font-medium">
+                    <div className="flex items-center justify-between text-[13px] text-[#8E5D30] mb-2 font-medium">
                       <span
                         className="italic text-[16.5px]"
                         style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
@@ -830,7 +830,7 @@ export const VenuePage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
               >
                 <span>An unhurried flow from </span>
-                <em className="italic font-light text-[#A7713F]">sunlit rose gardens</em>
+                <em className="italic font-light text-[#8E5D30]">sunlit rose gardens</em>
                 <span> to starlit stoneware dining.</span>
               </h2>
               <p
@@ -1059,7 +1059,7 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
         />
 
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-16 pb-6 border-b border-[#A7713F]/30">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-16 pb-6 border-b border-[#8E5D30]/30">
             <div>
               <span className="brandkit-stamp block mb-1.5">
                 W A N D E R   T H E   E S T A T E
@@ -1069,7 +1069,7 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
               >
                 <span>Sanctuary Spaces &amp; </span>
-                <em className="italic font-light text-[#A7713F]">Botanical Vignettes</em>
+                <em className="italic font-light text-[#8E5D30]">Botanical Vignettes</em>
               </h2>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -1083,8 +1083,8 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   onClick={() => setTab(item.id as 'all' | 'facilities' | 'photo')}
                   className={`px-5 py-2.5 rounded-[40px] text-[13.5px] font-medium tracking-[-0.023em] border transition-colors ${
                     tab === item.id
-                      ? 'bg-[#A7713F] text-[#FEF9EF] border-[#A7713F]'
-                      : 'bg-[#F5EEE1] text-[#0E2725] border-[#D2CCBE] hover:border-[#A7713F]'
+                      ? 'bg-[#8E5D30] text-[#FEF9EF] border-[#8E5D30]'
+                      : 'bg-[#F5EEE1] text-[#0E2725] border-[#D2CCBE] hover:border-[#8E5D30]'
                   }`}
                   style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
                 >
@@ -1103,7 +1103,7 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   className="w-6 h-6 object-contain"
                 />
                 <span
-                  className="italic text-[22px] text-[#A7713F]"
+                  className="italic text-[22px] text-[#8E5D30]"
                   style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
                   Ceremony Lawns, Heritage Barns &amp; Private Suites
@@ -1120,7 +1120,7 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                     <div className="refero-photo aspect-[4/3]">
                       <img src={f.image} alt={f.alt} className="w-full h-full object-cover" />
                     </div>
-                    <div className="flex items-center justify-between text-[12px] text-[#A7713F]">
+                    <div className="flex items-center justify-between text-[12px] text-[#8E5D30]">
                       <span
                         className="italic text-[16px]"
                         style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
@@ -1153,7 +1153,7 @@ export const VignettesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   className="w-6 h-6 object-contain"
                 />
                 <span
-                  className="italic text-[22px] text-[#A7713F]"
+                  className="italic text-[22px] text-[#8E5D30]"
                   style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
                   Botanical Walks, Orchards &amp; Golden-Hour Portrait Vignettes
@@ -1361,7 +1361,7 @@ export const ServicesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between pb-3 border-b border-[#D2CCBE]/60">
                     <span
-                      className="text-[14px] font-semibold text-[#A7713F] tracking-[-0.023em]"
+                      className="text-[14px] font-semibold text-[#8E5D30] tracking-[-0.023em]"
                       style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
                     >
                       TIER {pkg.step}
@@ -1379,7 +1379,7 @@ export const ServicesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
 
                   <div>
                     <span
-                      className="italic text-[16px] text-[#A7713F] block"
+                      className="italic text-[16px] text-[#8E5D30] block"
                       style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                     >
                       {pkg.subtitle}
@@ -1389,7 +1389,7 @@ export const ServicesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                       style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                     >
                       <span>{pkg.titleRoman} </span>
-                      <em className="italic font-light text-[#A7713F]">{pkg.titleItalic}</em>
+                      <em className="italic font-light text-[#8E5D30]">{pkg.titleItalic}</em>
                     </h2>
                   </div>
 
@@ -1403,7 +1403,7 @@ export const ServicesPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   <ul className="space-y-2.5 pt-3 border-t border-[#D2CCBE]/60 text-[13.5px] text-[#0E2725] font-light tracking-[-0.023em] relative z-10">
                     {pkg.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-[#A7713F] shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-[#8E5D30] shrink-0 mt-0.5" />
                         <span>{h}</span>
                       </li>
                     ))}

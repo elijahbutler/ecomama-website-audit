@@ -17,14 +17,14 @@ const FARM_PILLARS = [
     id: 'roses',
     stamp: 'H E I R L O O M   R O S E   F I E L D S',
     botanical: '/images/brandkit/illustration-04.png',
-    subtitle: 'Over 2,500 Bushes · 1,200+ Heirloom Varieties',
+    subtitle: 'Over 2,500 Heirloom Rose Bushes',
     titleRoman: 'Heirloom & David Austin',
     titleItalic: 'Garden Roses',
     title: 'Heirloom & David Austin Roses',
     originalCopy:
-      'Our farm is home to over 1,200 heirloom roses, each nurtured using biodynamic and organic practices.',
+      'Our farm is home to over 2,500 heirloom rose bushes, each nurtured using biodynamic and organic practices.',
     redesignCopy:
-      'Our sanctuary cultivates over 2,500 organic garden rose bushes spanning 1,200+ heirloom and David Austin varieties—grown in living Santa Ynez soils without synthetic sprays and gathered at daybreak in stoneware buckets.',
+      'Our sanctuary cultivates over 2,500 organic garden rose bushes including heirloom garden roses—grown in living Santa Ynez soils without synthetic sprays and gathered at daybreak in harvest buckets.',
     images: [
       '/images/35-the-laras-sb1-87.jpg',
       '/images/36-screenshot-2024-08-07-at-12-45-23-pm.png',
@@ -79,7 +79,7 @@ const GATHERINGS_LIST = [
     cadence: 'Up to 180 Guests',
     image: '/images/51-sunkissed-hair-2021-finals-2.jpg',
     description:
-      'Begin your wedding weekend with wood-fired Santa Ynez cuisine, wheel-thrown stoneware platters, and local biodynamic wines in the Rose Barn or beneath the century oak.'
+      'Begin your wedding weekend with wood-fired Santa Ynez cuisine, shared tables, and local biodynamic wines in the Rose Barn or beneath the century oak.'
   },
   {
     titleRoman: 'Farm-to-Table',
@@ -93,9 +93,9 @@ const GATHERINGS_LIST = [
       'Intimate candlelit long-table suppers featuring seasonal produce from our orchard, local Santa Ynez chefs, unbleached linen runners, and freshly cut garden roses.'
   },
   {
-    titleRoman: 'Botanical, Pottery &',
+    titleRoman: 'Botanical &',
     titleItalic: 'Floral Workshops',
-    title: 'Botanical, Pottery & Floral Workshops',
+    title: 'Botanical & Floral Workshops',
     stamp: 'G A T H E R I N G   N O .   0 3',
     botanical: '/images/brandkit/illustration-06.png',
     cadence: 'Spring through Autumn',
@@ -150,7 +150,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
         <section className="bg-[#FEF9EF] py-6 px-6 md:px-12 border-b border-[#D2CCBE]/60">
           <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
             <span
-              className="text-[11px] uppercase tracking-[0.24em] text-[#A7713F] font-semibold shrink-0"
+              className="text-[11px] uppercase tracking-[0.24em] text-[#8E5D30] font-semibold shrink-0"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               FARM SPECIFICATIONS
@@ -158,7 +158,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
             <BotanicalTagList
               items={[
                 'Over 2,500 Rose Bushes',
-                '1,200+ Heirloom Varieties',
+                '2,500+ Heirloom Rose Bushes',
                 'Living Thermal Compost',
                 'Closed-Loop Ranch Soil',
                 'Organic Orchard & Olive Lane',
@@ -175,7 +175,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           {FARM_PILLARS.map((sec, idx) => (
             <div
               key={sec.id}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-8 border-t border-[#A7713F]/25 first:border-t-0"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start pt-8 border-t border-[#8E5D30]/25 first:border-t-0"
             >
               <div
                 className={`lg:col-span-5 step-card relative overflow-hidden space-y-4 ${
@@ -192,7 +192,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   <span className="brandkit-stamp">{sec.stamp}</span>
                 </div>
                 <div
-                  className="italic text-[17.5px] text-[#A7713F]"
+                  className="italic text-[17.5px] text-[#8E5D30]"
                   style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
                   {sec.subtitle}
@@ -202,7 +202,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
                   <span>{sec.titleRoman} </span>
-                  <em className="italic font-light text-[#A7713F]">{sec.titleItalic}</em>
+                  <em className="italic font-light text-[#8E5D30]">{sec.titleItalic}</em>
                 </h2>
                 <p
                   className="text-[15.5px] text-[#333333] leading-[1.7] font-light tracking-[-0.023em]"
@@ -249,7 +249,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           ))}
 
           {/* Resident Farm Animals Asymmetric Mosaic */}
-          <div className="pt-14 border-t border-[#A7713F]/30">
+          <div className="pt-14 border-t border-[#8E5D30]/30">
             <span className="brandkit-stamp block mb-2">
               G E N T L E   C O M P A N I O N S   O F   T H E   L A N D
             </span>
@@ -258,7 +258,7 @@ export const TheFarmPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
             >
               <span>Meet Our Resident </span>
-              <em className="italic font-light text-[#A7713F]">Sanctuary Animals</em>
+              <em className="italic font-light text-[#8E5D30]">Sanctuary Animals</em>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {FARM_ANIMALS.map((animal, i) => (
@@ -450,7 +450,7 @@ export const GatheringsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
 
         <ReferoSageStrip
           label="Seasonal Table & Studio"
-          statement="Botanical & Pottery Workshops · Orchard-to-Table Harvest Dinners · Restorative Wellness & Creative Retreats"
+          statement="private gatherings by arrangement · Orchard-to-Table Harvest Dinners · Restorative Wellness & Creative Retreats"
           illustration="/images/brandkit/illustration-01.png"
         />
 
@@ -482,7 +482,7 @@ export const GatheringsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
                 >
                   <span>{g.titleRoman} </span>
-                  <em className="italic font-light text-[#A7713F]">{g.titleItalic}</em>
+                  <em className="italic font-light text-[#8E5D30]">{g.titleItalic}</em>
                 </h2>
                 <p
                   className="text-[15px] text-[#333333] leading-[1.65] font-light tracking-[-0.023em]"
@@ -503,7 +503,7 @@ export const GatheringsPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
           <BrandKitBotanicalSeal
             illustration="/images/brandkit/illustration-11.png"
             stamp="L O N G - T A B L E   H O S P I T A L I T Y"
-            quote="Shared loaves, estate-pressed olive oil, hand-thrown ceramics, and heirloom roses freshly cut from the field."
+            quote="Shared loaves, estate-pressed olive oil, table settings, and heirloom roses freshly cut from the field."
           />
         </section>
       </div>
@@ -603,7 +603,7 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
               <em className="italic font-light text-[#E4DDD0]">Floral Atelier.</em>
             </>
           }
-          statementRight="Grown in living Santa Ynez soils without synthetic chemicals, harvested at peak fragrance, and arranged in wheel-thrown vessels."
+          statementRight="Grown in living Santa Ynez soils without synthetic chemicals, harvested at peak fragrance, and arranged in floral arrangements."
           primaryAction={{ label: 'Inquire for Event Florals', to: '/contact' }}
           secondaryAction={{ label: 'Explore the Rose Fields', to: '/the-farm' }}
           botanicalIllustration="/images/brandkit/illustration-06.png"
@@ -620,14 +620,14 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
         <section className="bg-[#FEF9EF] py-6 px-6 md:px-12 border-b border-[#D2CCBE]/60">
           <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
             <span
-              className="text-[11px] uppercase tracking-[0.24em] text-[#A7713F] font-semibold shrink-0"
+              className="text-[11px] uppercase tracking-[0.24em] text-[#8E5D30] font-semibold shrink-0"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               BOTANICAL REGISTRY
             </span>
             <BotanicalTagList
               items={[
-                '1,200+ Heirloom Varieties',
+                '2,500+ Heirloom Rose Bushes',
                 'David Austin Rosettes',
                 'Cut at First Dawn',
                 '100% Foam-Free',
@@ -640,7 +640,7 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
         </section>
 
         {/* 12-Illustration Brand Kit Botanical Study Strip */}
-        <section className="stoneware-surface py-12 px-6 md:px-12 border-b border-[#A7713F]/30">
+        <section className="stoneware-surface py-12 px-6 md:px-12 border-b border-[#8E5D30]/30">
           <div className="max-w-[1440px] mx-auto">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
               <span className="brandkit-stamp">
@@ -659,7 +659,7 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 return (
                   <div
                     key={num}
-                    className="bg-[#FEF9EF] rounded-[18px] p-2.5 border border-[#D2CCBE]/80 flex flex-col items-center justify-center aspect-square hover:border-[#A7713F] transition-colors"
+                    className="bg-[#FEF9EF] rounded-[18px] p-2.5 border border-[#D2CCBE]/80 flex flex-col items-center justify-center aspect-square hover:border-[#8E5D30] transition-colors"
                   >
                     <img
                       src={`/images/brandkit/illustration-${num}.png`}
@@ -674,7 +674,7 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
         </section>
 
         <section id="content-start" className="py-[100px] px-6 md:px-12 max-w-[1440px] mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 pb-6 border-b border-[#A7713F]/30">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 pb-6 border-b border-[#8E5D30]/30">
             <div>
               <span className="brandkit-stamp block mb-1.5">
                 G A T H E R E D   F R O M   O U R   F I E L D S
@@ -684,7 +684,7 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                 style={{ fontFamily: "'Sorts Mill Goudy', Georgia, serif" }}
               >
                 <span>Heirloom Rose &amp; </span>
-                <em className="italic font-light text-[#A7713F]">Ceramic Vessel Lookbook</em>
+                <em className="italic font-light text-[#8E5D30]">Ceramic Vessel Lookbook</em>
               </h2>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -694,8 +694,8 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                   onClick={() => setTagFilter(t)}
                   className={`px-5 py-2.5 rounded-[40px] text-[13.5px] font-medium tracking-[-0.023em] border transition-colors ${
                     tagFilter === t
-                      ? 'bg-[#A7713F] text-[#FEF9EF] border-[#A7713F]'
-                      : 'bg-[#F5EEE1] text-[#0E2725] border-[#D2CCBE] hover:border-[#A7713F]'
+                      ? 'bg-[#8E5D30] text-[#FEF9EF] border-[#8E5D30]'
+                      : 'bg-[#F5EEE1] text-[#0E2725] border-[#D2CCBE] hover:border-[#8E5D30]'
                   }`}
                   style={{ fontFamily: "'Kumbh Sans', sans-serif" }}
                 >
@@ -719,7 +719,7 @@ export const FloralPage: React.FC<{ mode: DesignMode }> = ({ mode }) => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  <div className="flex items-center justify-between text-[11.5px] text-[#A7713F] mb-1 font-semibold">
+                  <div className="flex items-center justify-between text-[11.5px] text-[#8E5D30] mb-1 font-semibold">
                     <span className="uppercase tracking-[0.16em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                       {item.tag}
                     </span>

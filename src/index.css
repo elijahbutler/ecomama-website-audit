@@ -5,7 +5,7 @@
 :root {
   /* Official Ecomama Farms Brand Kit Palette (Page 1) */
   --brand-stoneware-clay: #D2CCBE;
-  --brand-terracotta-ochre: #A7713F;
+  --brand-terracotta-ochre: #8E5D30;
   --brand-coastal-slate: #99AAAF;
   --brand-deep-pine: #0E2725;
   --brand-vintage-olive: #A6A26A;
@@ -72,7 +72,7 @@
    1. ORGANIC REFERO MODE (.refero-organic) — WARM APOTHECARY JOURNAL ON PARCHMENT
    Refero Spec 21b71be3-78a0-4681-a5b9-64cc4b40eb67 + Ecomama Brand Kit:
    - Surfaces: Level 0 Parchment (#FEF9EF), Level 1 Aged Paper (#F5EEE1),
-               Level 2 Warm Taupe (#D2CCBE) outline, Level 3 Terracotta Seal (#A7713F).
+               Level 2 Warm Taupe (#D2CCBE) outline, Level 3 Terracotta Seal (#8E5D30).
    - Fonts: Sorts Mill Goudy (roman + italic display pairing) & Kumbh Sans (-0.023em tracking).
    - Radii: 24px cards, 40px buttons, 9999px pills.
 ============================================================================ */
@@ -179,7 +179,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.28em;
-  color: #A7713F;
+  color: #8E5D30;
 }
 
 /* Refero 21b71be3 Apothecary Eyebrow Label */
@@ -189,7 +189,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: -0.28px;
-  color: #A7713F;
+  color: #8E5D30;
 }
 
 /* Refero 21b71be3 Aged Paper Card Surface (24px radius, 32-40px padding, no harsh shadow) */
@@ -290,7 +290,7 @@
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.023em;
-  background-color: #A7713F;
+  background-color: #8E5D30;
   color: #FEF9EF;
   border: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -314,13 +314,13 @@
   font-weight: 600;
   letter-spacing: -0.023em;
   background: transparent;
-  color: #A7713F;
-  border: 1.5px solid #A7713F;
+  color: #8E5D30;
+  border: 1.5px solid #8E5D30;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .refero-btn-secondary:hover {
-  background-color: #A7713F;
+  background-color: #8E5D30;
   color: #FEF9EF;
 }
 
@@ -358,8 +358,8 @@
 }
 
 .refero-ghost-link:hover {
-  color: #A7713F;
-  border-bottom-color: #A7713F;
+  color: #8E5D30;
+  border-bottom-color: #8E5D30;
 }
 
 .refero-original .refero-ghost-link {
@@ -393,7 +393,7 @@
 }
 
 .refero-pill-input:focus {
-  border-color: #A7713F !important;
+  border-color: #8E5D30 !important;
   box-shadow: 0 0 0 3px rgba(167, 113, 63, 0.22) !important;
 }
 
@@ -413,7 +413,7 @@
 
 /* Botanical Tag Separator Bullet */
 .botanical-tag-bullet {
-  color: #A7713F;
+  color: #8E5D30;
   padding-left: 12px;
   padding-right: 12px;
   user-select: none;
@@ -452,5 +452,5 @@
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A7713F;
+  background: #8E5D30;
 }

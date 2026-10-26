@@ -1,0 +1,853 @@
+/* Field journal: plain paper, documentary images, and readable working notes. */
+.journal-site {
+  --paper: #fef9ef;
+  --ink: #0e2725;
+  --ochre: #8e5d30;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+}
+.journal-site h1,
+.journal-site h2,
+.journal-site h3 {
+  font-family: "Sorts Mill Goudy", Georgia, serif;
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+.journal-site h1 {
+  font-size: clamp(2.8rem, 5.6vw, 5.9rem);
+}
+.journal-site h2 {
+  font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+}
+.journal-site h3 {
+  font-size: 1.8rem;
+  margin: 1rem 0;
+}
+.journal-site p {
+  margin: 1rem 0;
+}
+.journal-site a,
+.journal-site button,
+.journal-site input,
+.journal-site select,
+.journal-site textarea,
+.journal-site summary {
+  -webkit-tap-highlight-color: transparent;
+}
+.journal-site :focus-visible {
+  outline: 3px solid var(--ochre);
+  outline-offset: 5px;
+}
+.journal-site ::selection {
+  background: #d2ccbe;
+  color: var(--ink);
+}
+.journal-site button,
+.journal-site a {
+  touch-action: manipulation;
+}
+.journal-site button {
+  cursor: pointer;
+}
+.journal-site button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+.journal-site input,
+.journal-site select,
+.journal-site textarea {
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid #7a8176;
+  border-radius: 3px;
+  padding: 0.75rem;
+  width: 100%;
+  min-height: 46px;
+}
+.journal-site input[type="checkbox"],
+.journal-site input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  accent-color: var(--ink);
+  flex-shrink: 0;
+}
+.journal-site label {
+  display: block;
+  font-size: 0.95rem;
+}
+.journal-site label input,
+.journal-site label select,
+.journal-site label textarea {
+  margin-top: 0.4rem;
+}
+.journal-header {
+  min-height: 104px;
+  padding: 20px 4vw;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  border-bottom: 1px solid #d2ccbe;
+  position: relative;
+  z-index: 20;
+  background: var(--paper);
+}
+.farm-wordmark {
+  font-family: "Sorts Mill Goudy", serif;
+  font-size: 2.8rem;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  margin-right: auto;
+}
+.farm-wordmark span {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  margin-top: 0.7rem;
+}
+.desktop-navigation {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 0.88rem;
+}
+.desktop-navigation a {
+  padding: 0.7rem 0;
+}
+.desktop-navigation a.active {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+.journal-site .journal-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--ochre);
+  color: var(--paper);
+  border: 1px solid var(--ochre);
+  border-radius: 3px;
+  min-height: 46px;
+  padding: 0.7rem 1.3rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+.journal-site .journal-button:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.text-link {
+  display: inline-block;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  padding: 0.6rem 0;
+}
+.mobile-menu-button {
+  display: none;
+  padding: 0.7rem;
+}
+.mobile-navigation {
+  padding: 1rem 5vw;
+  border-bottom: 1px solid #d2ccbe;
+}
+.mobile-navigation a {
+  display: block;
+  padding: 0.65rem;
+}
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  padding: 1rem;
+  background: var(--ink);
+  color: var(--paper);
+}
+.skip-link:focus {
+  top: 1rem;
+}
+.journal-page {
+  max-width: 1600px;
+  margin: auto;
+}
+.farm-opening {
+  padding: 5vw 4vw 2vw;
+}
+.opening-copy {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  column-gap: 9vw;
+  align-items: start;
+}
+.opening-copy h1 {
+  grid-row: span 3;
+}
+.opening-copy > p {
+  max-width: 38rem;
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+}
+.opening-copy .opening-location {
+  font-size: 0.75rem;
+  margin-top: 1.8rem;
+}
+.farm-opening figure {
+  margin-top: 3rem;
+}
+.farm-opening figure img {
+  width: 100%;
+  height: clamp(290px, 43vw, 650px);
+  object-fit: cover;
+}
+.journal-site figcaption {
+  font-size: 0.8rem;
+  margin-top: 0.65rem;
+  color: #4b554d;
+}
+.journal-section {
+  margin: 0 auto;
+  padding: 5.5rem 4vw;
+}
+.section-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5vw;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+.section-intro p {
+  max-width: 38rem;
+  margin: 0;
+}
+.field-spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9vw;
+  align-items: center;
+}
+.field-spread figure img {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+}
+.large-reading {
+  font-family: "Sorts Mill Goudy", serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.field-note {
+  max-width: 25rem;
+  margin: 3rem 0 0 auto;
+  padding: 1.5rem 0;
+  border-top: 1px solid #8e5d30;
+}
+.field-note h3 {
+  font-style: italic;
+}
+.gathering-spread {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  background: #e9e3d7;
+  align-items: center;
+}
+.gathering-spread > img {
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+}
+.gathering-spread > div {
+  padding: 3rem;
+}
+.journal-index > h2 {
+  margin-bottom: 2.5rem;
+}
+.journal-index > a {
+  display: grid;
+  grid-template-columns: 1fr 1fr 30px;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid #d2ccbe;
+}
+.journal-index > a > span:first-child {
+  font-family: "Sorts Mill Goudy", serif;
+  font-size: 2rem;
+}
+.journal-index a:hover {
+  color: var(--ochre);
+}
+.journal-index p {
+  margin: 0;
+}
+.compact-heading {
+  padding: 4rem 4vw 2rem;
+  max-width: 1100px;
+}
+.compact-heading p {
+  max-width: 48rem;
+  font-size: 1.1rem;
+}
+.wide-photo {
+  margin: 1.5rem 4vw;
+}
+.wide-photo img {
+  width: 100%;
+  max-height: 650px;
+  object-fit: cover;
+}
+.reading-column {
+  max-width: 850px;
+}
+.reading-column h2:not(:first-child) {
+  margin-top: 3rem;
+}
+.content-note {
+  font-size: 0.85rem;
+  color: #4b554d;
+  line-height: 1.6;
+}
+.choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+.choice-row button,
+.empty-state button,
+.selection-summary li button,
+.email-draft > button {
+  border: 1px solid #7a8176;
+  border-radius: 3px;
+  padding: 0.6rem 1rem;
+  min-height: 44px;
+}
+.choice-row button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.estate-explorer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+.estate-plan {
+  position: relative;
+  aspect-ratio: 800/550;
+  margin-bottom: 1.5rem;
+}
+.estate-plan svg {
+  width: 100%;
+  height: 100%;
+}
+.estate-plan button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 0.4rem 0.65rem;
+  min-height: 44px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 3px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.estate-plan button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+.estate-detail img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.estate-detail .text-link {
+  margin-left: 1rem;
+}
+.photo-button {
+  width: 100%;
+  text-align: left;
+}
+.photo-button > span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 0.85rem;
+}
+.photo-dialog {
+  width: min(1000px, 95vw);
+  max-height: 92dvh;
+  padding: 2rem;
+  color: var(--ink);
+  background: var(--paper);
+  overflow: auto;
+  border: 0;
+}
+.photo-dialog::backdrop {
+  background: #0e2725dd;
+}
+.photo-dialog img {
+  max-height: 65dvh;
+  width: 100%;
+  object-fit: contain;
+}
+.dialog-close {
+  display: block;
+  margin-left: auto;
+  padding: 0.6rem;
+}
+.rose-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.rose-grid img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+}
+.rose-grid h3 {
+  margin-bottom: 0.4rem;
+}
+.rose-grid p {
+  margin: 0.4rem 0;
+}
+.journal-site .check-choice {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+  min-height: 48px;
+}
+.selection-summary {
+  border-top: 1px solid #d2ccbe;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+.selection-summary ul {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.selection-summary li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.table-study {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.table-study > img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+.journal-site .material-choice {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  border-bottom: 1px solid #d2ccbe;
+  padding: 1rem 0;
+}
+.soil-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.soil-layout img {
+  height: 330px;
+  width: 100%;
+  object-fit: cover;
+}
+.soil-layer {
+  padding: 1.5rem;
+}
+.soil-surface {
+  background: #ccd0b9;
+}
+.soil-compost {
+  background: #685343;
+  color: #fef9ef;
+}
+.soil-roots {
+  background: #846649;
+  color: #fef9ef;
+}
+.soil-roots svg {
+  height: 100px;
+  width: 100%;
+}
+.soil-water {
+  background: #c2cfcc;
+}
+.soil-story details {
+  margin-top: 2rem;
+  border-top: 1px solid #d2ccbe;
+  padding-top: 1rem;
+}
+.soil-story summary {
+  cursor: pointer;
+  padding: 0.75rem 0;
+}
+.human-note {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6vw;
+  align-items: center;
+}
+.human-note img {
+  width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+}
+.guide {
+  padding-top: 1rem;
+}
+.guide-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 1.5rem;
+}
+.guide-list article {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid #d2ccbe;
+}
+.guide-list h2 {
+  font-size: 2rem;
+  margin-top: 0.4rem;
+}
+.guide-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.guide-links a {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  min-height: 44px;
+}
+.empty-state {
+  padding: 2rem;
+  background: #f5eee1;
+  margin: 2rem 0;
+}
+.inquiry-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 6vw;
+  padding: 1.5rem 4vw 6rem;
+}
+.inquiry-layout aside h2 {
+  font-size: 2.2rem;
+}
+.inquiry-layout aside {
+  max-width: 30rem;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+.inquiry-preferences {
+  margin: 2rem 0;
+  border: 1px solid #d2ccbe;
+  padding: 1rem;
+}
+.inquiry-preferences label {
+  margin-bottom: 1rem;
+}
+.inquiry-preferences a {
+  text-decoration: underline;
+}
+.email-draft {
+  margin-top: 2rem;
+  background: #f5eee1;
+  padding: 1.5rem;
+}
+.email-draft label {
+  margin: 1rem 0;
+}
+.service-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  padding-top: 1rem;
+}
+.service-comparison article {
+  border-top: 1px solid #d2ccbe;
+  padding-top: 2rem;
+}
+.journal-footer {
+  padding: 4rem 4vw 2rem;
+  background: var(--ink);
+  color: var(--paper);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+.journal-footer h2 {
+  font-size: 3rem;
+  max-width: 30rem;
+}
+.journal-footer nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 2rem;
+  align-content: start;
+}
+.journal-footer nav a {
+  padding: 0.4rem 0;
+}
+.footer-bottom {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-top: 1px solid #78908c;
+  padding-top: 1.5rem;
+  font-size: 0.8rem;
+}
+.photo-fallback {
+  min-height: 220px;
+  background: #e9e3d7;
+  padding: 2rem;
+}
+.review-controls {
+  padding: 1rem 4vw;
+  background: #e9e3d7;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+.review-controls button {
+  padding: 0.5rem;
+  border: 1px solid var(--ink);
+}
+.review-controls button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+@media (max-width: 1100px) {
+  .desktop-navigation {
+    gap: 1rem;
+  }
+  .journal-header {
+    gap: 1rem;
+  }
+  .rose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .estate-explorer {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 1.5rem;
+  }
+  .estate-plan button {
+    font-size: 0.65rem;
+  }
+}
+@media (max-width: 800px) {
+  .desktop-navigation {
+    display: none;
+  }
+  .mobile-menu-button {
+    display: block;
+  }
+  .opening-copy,
+  .section-intro,
+  .field-spread,
+  .gathering-spread,
+  .estate-explorer,
+  .table-study,
+  .soil-layout,
+  .human-note,
+  .inquiry-layout,
+  .service-comparison {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .farm-opening {
+    padding-top: 2.5rem;
+  }
+  .opening-copy h1 {
+    grid-row: auto;
+  }
+  .opening-copy > p {
+    margin: 0;
+  }
+  .opening-copy .opening-location {
+    margin-top: 0;
+  }
+  .journal-section {
+    padding: 3.5rem 5vw;
+  }
+  .field-spread figure img {
+    height: 450px;
+  }
+  .field-note {
+    margin-left: 0;
+  }
+  .gathering-spread > img {
+    height: 400px;
+  }
+  .gathering-spread > div {
+    padding: 0 5vw 3rem;
+  }
+  .compact-heading {
+    padding-top: 2.5rem;
+  }
+  .estate-plan button {
+    font-size: 0.75rem;
+  }
+  .table-study > img {
+    height: 400px;
+  }
+  .journal-index > a {
+    grid-template-columns: 1fr 25px;
+    gap: 0.5rem;
+  }
+  .journal-index > a p {
+    grid-row: 2;
+  }
+  .journal-index > a > span:last-child {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .guide-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+  .guide-filters label:last-child {
+    grid-column: 1/-1;
+  }
+  .inquiry-layout {
+    padding-top: 0;
+  }
+  .inquiry-layout > aside {
+    order: 0;
+  }
+  .journal-footer {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .guide {
+    padding-top: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .journal-header {
+    min-height: 90px;
+    padding: 16px 5vw;
+    gap: 0.5rem;
+  }
+  .farm-wordmark {
+    font-size: 2.2rem;
+  }
+  .header-inquiry {
+    padding: 0.6rem 0.7rem !important;
+    font-size: 0.8rem !important;
+  }
+  .rose-grid {
+    gap: 1rem;
+  }
+  .rose-grid img {
+    height: 220px;
+  }
+  .rose-grid h3 {
+    font-size: 1.5rem;
+  }
+  .rose-grid .check-choice {
+    align-items: flex-start;
+    font-size: 0.85rem;
+  }
+  .estate-plan button {
+    font-size: 0.6rem;
+    padding: 0.3rem;
+    white-space: normal;
+    max-width: 105px;
+  }
+  .form-grid,
+  .guide-filters {
+    grid-template-columns: 1fr;
+  }
+  .guide-list article {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .guide-links {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+  .journal-footer h2 {
+    font-size: 2.4rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.farm-wordmark img {
+  width: 150px;
+  height: auto;
+  filter: brightness(0);
+}
+@media (max-width: 480px) {
+  .farm-wordmark img {
+    width: 120px;
+  }
+}
+
+/* Full estate navigation: button disclosures on desktop, accordions on mobile. */
+.nav-groups { display: flex; align-items: center; gap: 1.5rem; }
+.nav-group { position: relative; }
+.nav-group-trigger { display: flex; align-items: center; gap: .4rem; min-height: 46px; background: none; border: 0; color: inherit; font: inherit; }
+.nav-group-trigger.current { text-decoration: underline; text-underline-offset: 7px; }
+.nav-group-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+.nav-submenu { position: absolute; top: calc(100% + .3rem); left: -1.2rem; width: 310px; padding: .6rem; background: var(--paper); border: 1px solid #d2ccbe; box-shadow: 0 12px 24px #0e27251a; }
+.nav-submenu[hidden] { display: none; }
+.journal-site .nav-submenu a { display: block; padding: .8rem; text-decoration: none; }
+.nav-submenu a:hover, .nav-submenu a.active { background: #f5eee1; }
+.nav-submenu small { display: block; color: #4b554d; font-size: .75rem; margin-top: .25rem; }
+.nav-group:last-child .nav-submenu { left: auto; right: 0; }
+.nav-accordions { display: block; }
+.nav-accordions .nav-group { border-bottom: 1px solid #d2ccbe; }
+.nav-accordions .nav-group-trigger { width: 100%; justify-content: space-between; padding: .8rem .65rem; }
+.nav-accordions .nav-submenu { position: static; width: auto; border: 0; box-shadow: none; padding: 0 .5rem .7rem; }
+.wedding-inquiry-intro { margin: 0 4vw 4rem; padding: 2rem; border-block: 1px solid #d2ccbe; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.wedding-inquiry-intro h2 { font-size: 2.5rem; }
+.wedding-inquiry-intro p { max-width: 55ch; }
+.inquiry-routing { margin-top: 2rem; font-size: .85rem; }
+.inquiry-routing summary { cursor: pointer; min-height: 44px; }
+@media (max-width: 1100px) { .nav-groups { gap: 1rem; } .journal-header { gap: 1rem; } }
+@media (max-width: 800px) { .nav-accordions { display: block; } .wedding-inquiry-intro { display: block; padding: 1.5rem 0; } }
+@media (max-width: 1000px) {
+  .desktop-navigation { display: none; }
+  .mobile-menu-button { display: block; }
+}
+@media (min-width: 1001px) { .mobile-navigation { display: none; } }

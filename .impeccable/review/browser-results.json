@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "routes": 17,
+  "modes": 3,
+  "viewportWidths": [
+    360,
+    390,
+    768,
+    1440,
+    667
+  ],
+  "errors": [],
+  "missing": [],
+  "checks": [
+    "rose limit and persistence",
+    "email encoding and honest status",
+    "invalid inputs",
+    "map selection and native dialog Escape",
+    "table and place handoff",
+    "URL validation",
+    "soil selection",
+    "guide filter and empty state",
+    "mobile navigation",
+    "keyboard checkbox",
+    "reduced motion",
+    "missing-photo fallback",
+    "contact at 200% CSS zoom",
+    "overflow"
+  ]
+}

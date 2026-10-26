@@ -19,7 +19,7 @@ export const NAVIGATION: NavItem[] = [
     path: '/venue',
     children: [
       { label: 'Venue Overview', path: '/venue', subtitle: 'The private estate in full' },
-      { label: 'Vignettes', path: '/vignettes', subtitle: '6 facilities & 6 photo spaces' },
+      { label: 'Vignettes & Locations', path: '/vignettes', subtitle: '6 facilities & 6 photo spaces' },
       { label: 'Services', path: '/services', subtitle: 'Full-service & venue-only offerings' }
     ]
   },
@@ -27,8 +27,8 @@ export const NAVIGATION: NavItem[] = [
     label: 'The Farm',
     path: '/the-farm',
     children: [
-      { label: 'The Farm', path: '/the-farm', subtitle: 'Roses, orchard, compost & animals' },
-      { label: 'Gatherings', path: '/gatherings', subtitle: 'Private dinners, retreats & celebrations' }
+      { label: 'The Farm & Practices', path: '/the-farm', subtitle: 'Roses, orchard, compost & animals' },
+      { label: 'Gatherings & Retreats', path: '/gatherings', subtitle: 'Private dinners, retreats & celebrations' }
     ]
   },
   {
@@ -40,7 +40,7 @@ export const NAVIGATION: NavItem[] = [
     path: '/explore',
     children: [
       { label: 'Explore & Press', path: '/explore', subtitle: 'Couple testimonials & press features' },
-      { label: 'Local Recommendations', path: '/local-recommendations', subtitle: 'Curated Santa Ynez Valley guide' }
+      { label: 'Local Recommendations & Valley Guide', path: '/local-recommendations', subtitle: 'Curated Santa Ynez Valley guide' }
     ]
   },
   {
@@ -49,11 +49,11 @@ export const NAVIGATION: NavItem[] = [
     children: [
       { label: 'About Us', path: '/about', subtitle: 'Our philosophy & mission' },
       { label: 'Our Story', path: '/our-story', subtitle: 'Founded in 2019 by Tamie Posnick' },
-      { label: 'Sustainability', path: '/sustainability', subtitle: 'Biodynamic & regenerative practices' }
+      { label: 'Sustainability & Biodynamics', path: '/sustainability', subtitle: 'Biodynamic & regenerative practices' }
     ]
   },
   {
-    label: 'Contact',
+    label: 'Contact & Inquire',
     path: '/contact'
   }
 ];
@@ -173,8 +173,8 @@ export const PAGE_AUDITS: Record<string, { scoreOriginal: number; scoreRedesign:
         id: 'srv-2',
         severity: 'warning',
         category: 'UX & Conversion',
-        title: 'Hidden Package Comparison & External Typeform Bounce',
-        originalProblem: 'Key inclusions for "The Estate Wedding" vs "Venue Only" are hidden inside accordions and "Click here" bounces off-site to Typeform.',
+        title: 'Hidden Package Comparison & External Form Bounce',
+        originalProblem: 'Key inclusions for "The Estate Wedding" vs "Venue Only" are hidden inside accordions and "Click here" bounces off-site to an external form.',
         redesignFix: 'Built a side-by-side luxury package comparison matrix with an instant Investment Guide & Inquiry drawer.'
       }
     ]
@@ -189,7 +189,7 @@ export const PAGE_AUDITS: Record<string, { scoreOriginal: number; scoreRedesign:
         category: 'Copy & Facts',
         title: 'Rose Count Contradiction: "1,200 heirloom roses" vs 1,500 vs 2,500',
         originalProblem: '/the-farm claims "1,200 heirloom roses", /our-story claims "over 1500 plants", and /floral claims "over 2500 bushes".',
-        redesignFix: 'Reconciled across the entire site: 2,500+ heirloom & David Austin rose bushes across 1,200+ rare and heritage cultivars.'
+        redesignFix: 'Reconciled across the entire site: 2,500+ heirloom & David Austin rose bushes with cultivar counts awaiting confirmation.'
       },
       {
         id: 'farm-2',
@@ -332,8 +332,8 @@ export const PAGE_AUDITS: Record<string, { scoreOriginal: number; scoreRedesign:
         severity: 'critical',
         category: 'UX & Conversion',
         title: '4 Fragmented Contact Mechanisms & Conflicting Phone Numbers',
-        originalProblem: 'Sends users to CRM link, 2 different Typeforms, AND an inline form. Lists (805) 894-1477 here vs 805-350-0073 on Privacy Policy.',
-        redesignFix: 'Created a unified interactive Inquiry Concierge (Wedding, Private Gathering, Floral, or General) while preserving direct CRM/Typeform links.'
+        originalProblem: 'Sends users to CRM link, 2 different external forms, AND an inline form. Lists (805) 894-1477 here vs 805-350-0073 on Privacy Policy.',
+        redesignFix: 'Created a unified interactive Inquiry Concierge (Wedding, Private Gathering, Floral, or General) while preserving direct the direct wedding CRM link.'
       },
       {
         id: 'cnt-2',
@@ -387,7 +387,7 @@ export const VIGNETTES_FACILITIES = [
   },
   {
     title: 'The Terraced Lawn',
-    capacity: 'Up to 150 Seated Al Fresco (180 Extended)',
+    capacity: 'Up to 150 Seated Al Fresco',
     tag: 'Al Fresco Reception',
     image: '/images/18-sb5-52.jpg',
     alt: 'Outdoor long-table wedding reception on the Terraced Lawn under string lights',
@@ -436,7 +436,7 @@ export const VIGNETTES_PHOTO_OPS = [
   {
     title: 'The Rose Arch',
     image: '/images/23-hanna-carl-wedding-day-santa-ynez-2.jpeg',
-    alt: 'Couple exchanging vows framed by blooming pink and white climbing roses on the Rose Arch',
+    alt: 'Couple framed by pink and white flowers at the Rose Arch',
     originalCopy:
       "A picturesque spot in the Rose Garden, the Rose Arch provides a stunning backdrop for photos. It's a favorite for capturing the romantic essence of Ecomama Farms.",
     redesignCopy:
@@ -454,7 +454,7 @@ export const VIGNETTES_PHOTO_OPS = [
   {
     title: 'The Mountain View Oak',
     image: '/images/25-screenshot-2024-07-24-at-9-08-31-pm.png',
-    alt: 'Century oak tree draped with warm string lights at twilight',
+    alt: 'Couple beside the trunk of a large oak tree in daylight',
     originalCopy:
       'With its majestic presence, the Mountain View Oak serves as a great picture backdrop. Its timeless beauty adds a touch of elegance to any photo.',
     redesignCopy:
